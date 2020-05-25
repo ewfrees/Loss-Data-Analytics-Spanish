@@ -27,3 +27,5 @@ Code, data, offline versions and more are available through these portals.
 
 See the [Open Actuarial Textbooks Project Site](https://sites.google.com/a/wisc.edu/loss-data-analytics/) for more information about this project.
 
+See the current version of our [online Spanish version](https://ewfrees.github.io/Loss-Data-Analytics-Spanish/).
+
