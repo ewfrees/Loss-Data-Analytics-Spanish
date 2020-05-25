@@ -111,7 +111,7 @@ Se sabe que:
 Calcular la media, $\mathrm{E~}(S_{300})$, y la varianza, $\mathrm{Var~}(S_{300})$, de la siniestralidad total. ¿Como variarán los resultados si ahora cada siniestro es igual al máximo de la póliza?  
 
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.2.1" href="javascript:toggleEX('toggleExampleAggLoss.2.1','displayTextExampleAggLoss.2.1');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.2.1" href="javascript:toggleEX('toggleExampleAggLoss.2.1','displayTextExampleAggLoss.2.1');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.2.1" style="display: none">
 
 
@@ -194,7 +194,7 @@ $$
 $$
 Calcular el valor esperado y varianza de la frecuencia de siniestros para el conjunto de la cartera.  
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.2.2" href="javascript:toggleEX('toggleExampleAggLoss.2.2','displayTextExampleAggLoss.2.2');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.2.2" href="javascript:toggleEX('toggleExampleAggLoss.2.2','displayTextExampleAggLoss.2.2');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.2.2" style="display: none">
 
 
@@ -242,7 +242,7 @@ $$\begin{aligned}
 
 Como en el Ejemplo `r chapnum`.2.1, una compañía de seguros ha vendido 300 pólizas de seguro contra incendios, donde el coste del siniestro $X_i$ se distribuye uniformemente entre 0 y el máximo de la póliza $M_i$. Utilizando la aproximación normal, se pide calcular la probabilidad de que el importe total de los siniestros $S_{300}$ supere los $3.500\$$. 
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.2.3" href="javascript:toggleEX('toggleExampleAggLoss.2.3','displayTextExampleAggLoss.2.3');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.2.3" href="javascript:toggleEX('toggleExampleAggLoss.2.3','displayTextExampleAggLoss.2.3');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.2.3" style="display: none">
 
 **Solución.**
@@ -346,7 +346,7 @@ que es la *pgf* de una variable aleatoria negativa binomial con parámetros $(\b
 El número anual de visitas al médico para cada miembro de una familia de 4 tiene una distribución geométrica con una media de 1,5. El número anual de visitas de los miembros de la familia es independiente entre sí. Un seguro paga 100 por visita al médico a partir de la cuarta visita de la familia. Calcula la probabilidad de que la familia cobre del seguro este año.
 
 <h5 style="text-align: center;"><a id="displayTextExampleAggLoss.2.6"
-href="javascript:toggleEX('toggleExampleAggLoss.2.6','displayTextExampleAggLoss.2.6');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+href="javascript:toggleEX('toggleExampleAggLoss.2.6','displayTextExampleAggLoss.2.6');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.2.6" style="display: none">
 
 **Solución.**
@@ -397,7 +397,7 @@ El número de accidentes sigue una distribución de Poisson con media 12. Cada a
 
 Calcular la varianza en el número total de reclamantes.  
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.1" href="javascript:toggleEX('toggleExampleAggLoss.3.1','displayTextExampleAggLoss.3.1');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.1" href="javascript:toggleEX('toggleExampleAggLoss.3.1','displayTextExampleAggLoss.3.1');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.3.1" style="display: none">
 
 **Solución.**
@@ -494,7 +494,7 @@ $$
 
 El presupuesto para premios es igual al valor esperado del total de los premios más la desviación estándar del valor total de los premios. Calcular el presupuesto.
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.2" href="javascript:toggleEX('toggleExampleAggLoss.3.2','displayTextExampleAggLoss.3.2');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.2" href="javascript:toggleEX('toggleExampleAggLoss.3.2','displayTextExampleAggLoss.3.2');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.3.2" style="display: none">
 
 **Solución.**
@@ -546,7 +546,7 @@ F_{S_N}(s) &= \Pr \left(X_1 + \cdots + X_N \le s \right) \\
 **Ejemplo `r chapnum`.3.3. Pregunta de examen actuarial.**
 El número de siniestros en un determinado período sigue una distribución geométrica de media $4$. La cauantía de cada siniestro $X$ tiene la siguiente distribución $\Pr(X=x) = 0,25, \ x=1,2,3,4$, es decir, discreta uniforme en $\{1,2,3,4\}$. El número de siniestros y los importes de los mismos son independientes. Si $S_N$ denota la cuantía total de la siniestralidad durante el período, calcular $F_{S_N}(3)$.
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.3" href="javascript:toggleEX('toggleExampleAggLoss.3.3','displayTextExampleAggLoss.3.3');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.3" href="javascript:toggleEX('toggleExampleAggLoss.3.3','displayTextExampleAggLoss.3.3');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.3.3" style="display: none">
 
 
@@ -620,7 +620,7 @@ $$
 Mediante la aproximación normal, determinar la probabilidad que la pérdida total supere el 150$\%$ de la pérdida esperada.  
 
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.4" href="javascript:toggleEX('toggleExampleAggLoss.3.4','displayTextExampleAggLoss.3.4');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.4" href="javascript:toggleEX('toggleExampleAggLoss.3.4','displayTextExampleAggLoss.3.4');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.3.4" style="display: none">
 
 **Solución.**
@@ -654,7 +654,7 @@ Para un individuo de más de $65$:
 Estimar la probabilidad que el coste total de las reclamaciones del individuo supere los $2000$ mediante la aproximación normal.
 
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.5" href="javascript:toggleEX('toggleExampleAggLoss.3.5','displayTextExampleAggLoss.3.5');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.5" href="javascript:toggleEX('toggleExampleAggLoss.3.5','displayTextExampleAggLoss.3.5');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.3.5" style="display: none">
 
 **Solución.**
@@ -729,7 +729,7 @@ $$
 
 El número de proyectos y el número de horas extras son independientes. Se pagan las horas extras cuando exceden las 15 horas semanales. Calcular el número esperado de horas extras por las que se cobrará en la semana.
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.6" href="javascript:toggleEX('toggleExampleAggLoss.3.6','displayTextExampleAggLoss.3.6');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.3.6" href="javascript:toggleEX('toggleExampleAggLoss.3.6','displayTextExampleAggLoss.3.6');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.3.6" style="display: none">
 
 **Solución.**
@@ -987,7 +987,7 @@ m} x f_X (x) f_{S_N} (s-x)\right\} .
 **Ejemplo `r chapnum`.4.1. Pregunta Examen Actuarial.**
 El número de siniestros en un determinado período $N$ sigue una distribución geométrica de media 4. La cuantía de cada siniestro $X$ tiene ${\rm Pr} (X = x) = 0,25$, para $x = 1,2,3,4$. El número de siniestros y la cuantía de los mismos son independientes. $S_N$ es el coste total de los siniestros en el período. Calcular $F_{S_N}(3)$.
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.4.1" href="javascript:toggleEX('toggleExampleAggLoss.4.1','displayTextExampleAggLoss.4.1');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.4.1" href="javascript:toggleEX('toggleExampleAggLoss.4.1','displayTextExampleAggLoss.4.1');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.4.1" style="display: none">
 
 **Solución.**
@@ -1049,7 +1049,7 @@ El procedimiento anterior asume que se conocen las distribuciones de probabilida
 Consideremos el ejemplo `r chapnum`.3.5 con la frecuencia de siniestros del individuo $N \sim Poi(\lambda=25)$ y severidad de los siniestros $X \sim U(5,95)$. A partir de una muestra simulada de 10.000 observaciones, estimar la media y la varianza de la pérdida agregada $S_N$. Además, utilizar la muestra simulada para estimar la probabilidad que el coste total de la siniestralidad para esta persona será superior a 2000 y compararla con la estimación basada en la aproximación normal del ejemplo `r chapnum`.3.5.
 
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.4.2" href="javascript:toggleEX('toggleExampleAggLoss.4.2','displayTextExampleAggLoss.4.2');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.4.2" href="javascript:toggleEX('toggleExampleAggLoss.4.2','displayTextExampleAggLoss.4.2');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.4.2" style="display: none">
 
 **Solución.**
@@ -1140,7 +1140,7 @@ $$
 }
 $$  
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.1" href="javascript:toggleEX('toggleExampleAggLoss.5.1','displayTextExampleAggLoss.5.1');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.1" href="javascript:toggleEX('toggleExampleAggLoss.5.1','displayTextExampleAggLoss.5.1');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.5.1" style="display: none">
 
 **Solución.**
@@ -1226,7 +1226,7 @@ Por tanto, $N^P \sim NB(\beta v, r)$. Esto significa que el número de pagos tie
 Supongamos que las pérdidas $X_i\sim Pareto(\alpha=4,\ \theta=150)$. Sabemos que la frecuencia de pérdidas es $N^L\sim Poi(\lambda)$ y la frecuencia de pagos es $N^{P}_1\sim Poi(0,4)$ con un deducible de valor igual a $d_1=30$. Encontrar la distribución de la frecuencia de pagos $N^{P}_2$ cuando el valor del deducible es $d_2=100$. 
 
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.2" href="javascript:toggleEX('toggleExampleAggLoss.5.2','displayTextExampleAggLoss.5.2');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.2" href="javascript:toggleEX('toggleExampleAggLoss.5.2','displayTextExampleAggLoss.5.2');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.5.2" style="display: none">
 
 **Solución.**
@@ -1248,7 +1248,7 @@ $$\begin{aligned}
 **Ejemplo `r chapnum`.5.3. Continuación.**
 Ahora supongamos que la frecuencia de pérdidas es $N^L \sim NB(\beta,\ r)$ y para el deducible $d_1=30$, la frecuencia de pagos $N^{P}_1$ es negativa binomial con media $0,4$. Encontrar la media de la frecuencia de pagos $N^{P}_2$ para el deducible $d_2=100$.  
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.3" href="javascript:toggleEX('toggleExampleAggLoss.5.3','displayTextExampleAggLoss.5.3');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.3" href="javascript:toggleEX('toggleExampleAggLoss.5.3','displayTextExampleAggLoss.5.3');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.5.3" style="display: none">
 
 **Solución.**
@@ -1305,7 +1305,7 @@ Las pérdidas agregadas se modelizan de la siguiente manera:
 
 Calcular $\mathrm{E}(N^P)$ y $\mathrm{Var}(N^P)$.  
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.4" href="javascript:toggleEX('toggleExampleAggLoss.5.4','displayTextExampleAggLoss.5.4');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.4" href="javascript:toggleEX('toggleExampleAggLoss.5.4','displayTextExampleAggLoss.5.4');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.5.4" style="display: none">
 
 **Solución.**
@@ -1393,7 +1393,7 @@ $$
 
 Se espera que la severidad aumente un 50\% sin cambiar de frecuencia. Se introduce un deducible de 100 por siniestro. Calcular el valor esperado de la pérdida agregada $S$ después de estos cambios.  
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.5" href="javascript:toggleEX('toggleExampleAggLoss.5.5','displayTextExampleAggLoss.5.5');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.5" href="javascript:toggleEX('toggleExampleAggLoss.5.5','displayTextExampleAggLoss.5.5');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.5.5" style="display: none">
 
 **Solución.**
@@ -1427,7 +1427,7 @@ $$\mathrm{E}(S)=\mathrm{E}(N) ~ \mathrm{E} \left(X^L \right)= 300 (75) = 22.500
 ¿Cuál es la varianza de la pérdida agregada, $\mathrm{Var~}(S)$?  
 
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.6" href="javascript:toggleEX('toggleExampleAggLoss.5.6','displayTextExampleAggLoss.5.6');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.6" href="javascript:toggleEX('toggleExampleAggLoss.5.6','displayTextExampleAggLoss.5.6');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.5.6" style="display: none">
 
 **Solución.** En base a las pérdidas se tiene
@@ -1485,7 +1485,7 @@ Las pérdidas, independientemente del tipo de vehículo, siguen una distribució
 
 Calcular la cantidad total esperada que pagará la compañía después de las modificaciones.
 
-<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.7" href="javascript:toggleEX('toggleExampleAggLoss.5.7','displayTextExampleAggLoss.5.7');"><i><strong>Mostrar Ejemplo de Solución</strong></i></a> </h5>
+<h5 style="text-align: center;"><a id="displayTextExampleAggLoss.5.7" href="javascript:toggleEX('toggleExampleAggLoss.5.7','displayTextExampleAggLoss.5.7');"><i><strong>Mostrar Solución de Ejemplo </strong></i></a> </h5>
 <div id="toggleExampleAggLoss.5.7" style="display: none">
 
 

@@ -397,7 +397,7 @@ $$
 Obtener una expresión cerrada para el *VaR*.
 
 <h5 style="text-align: center;"><a id="displayTextExamplePortMgt.2.1" 
-href="javascript:toggleEX('toggleExamplePortMgt.2.1','displayTextExamplePortMgt.2.1');"><i><strong>Mostrar solución del ejemplo</strong></i></a> </h5>
+href="javascript:toggleEX('toggleExamplePortMgt.2.1','displayTextExamplePortMgt.2.1');"><i><strong>Mostrar Solución de Ejemplo</strong></i></a> </h5>
 <div id="toggleExamplePortMgt.2.1" style="display: none">
 
 **Solución.**
@@ -422,7 +422,7 @@ Se considera una *v.a.* pérdida en seguros $X\sim Normal(\mu,\sigma^2)$ con $\s
 
 
 <h5 style="text-align: center;"><a id="displayTextExamplePortMgt.2.2" 
-href="javascript:toggleEX('toggleExamplePortMgt.2.2','displayTextExamplePortMgt.2.2');"><i><strong>Mostrar solución al ejemplo</strong></i></a> </h5>
+href="javascript:toggleEX('toggleExamplePortMgt.2.2','displayTextExamplePortMgt.2.2');"><i><strong>Mostrar Solución de Ejemplo</strong></i></a> </h5>
 <div id="toggleExamplePortMgt.2.2" style="display: none">
 
 **Solución.**
@@ -450,7 +450,7 @@ En muchas aplicaciones de seguros se tiene que trabajar con transformaciones de 
 Se considera una *v.a.* pérdida de seguros\ $Y\sim lognormal(\mu,\sigma^2)$, para $\mu\in \mathbf{R}$ y $\sigma>0$. Obtener una expresión para el $VaR$ de $Y$ en función de la inversa normal estándar *cdf*.
 
 <h5 style="text-align: center;"><a id="displayTextExamplePortMgt.2.3" 
-href="javascript:toggleEX('toggleExamplePortMgt.2.3','displayTextExamplePortMgt.2.3');"><i><strong>Mostrar solución al ejemplo</strong></i></a> </h5>
+href="javascript:toggleEX('toggleExamplePortMgt.2.3','displayTextExamplePortMgt.2.3');"><i><strong>Mostrar Solución de Ejemplo</strong></i></a> </h5>
 <div id="toggleExamplePortMgt.2.3" style="display: none">
 
 **Solución.**
@@ -483,7 +483,7 @@ $$
 Determina el *VaR* para $q = 0,6, 0,9, 0,95, 0,95001$.
 
 <h5 style="text-align: center;"><a id="displayTextExamplePortMgt.2.4" 
-href="javascript:toggleEX('toggleExamplePortMgt.2.4','displayTextExamplePortMgt.2.4');"><i><strong> Mostrar solución al ejemplo</strong></i></a> </h5>
+href="javascript:toggleEX('toggleExamplePortMgt.2.4','displayTextExamplePortMgt.2.4');"><i><strong>Mostrar Solución de Ejemplo</strong></i></a> </h5>
 <div id="toggleExamplePortMgt.2.4" style="display: none">
 
 **Solución.**
@@ -560,7 +560,7 @@ TVaR_{q}[X]=\frac{1}{(1-q)}\int_{\pi_q}^{\infty}xf_X(x)dx.
 Se considera una *v.a.* pérdida de seguros \ $X\sim Normal (\mu,\sigma^2)$ con $\mu\in \mathbf{R}$ y $\sigma>0$. Obtener una expresión para el *TVaR*.
 
 <h5 style="text-align: center;"><a id="displayTextExamplePortMgt.2.6" 
-href="javascript:toggleEX('toggleExamplePortMgt.2.6','displayTextExamplePortMgt.2.6');"><i><strong>Mostrar solución al ejemplo</strong></i></a> </h5>
+href="javascript:toggleEX('toggleExamplePortMgt.2.6','displayTextExamplePortMgt.2.6');"><i><strong>Mostrar Solución de Ejemplo</strong></i></a> </h5>
 <div id="toggleExamplePortMgt.2.6" style="display: none">
 
 **Solución.**
@@ -601,7 +601,7 @@ Se considera una *v.a.* de pérdidas de seguros \ $X\sim lognormal (\mu,\sigma^2
 \end{eqnarray*}
 
 <h5 style="text-align: center;"><a id="displayTextExamplePortMgt.2.7" 
-href="javascript:toggleEX('toggleExamplePortMgt.2.7','displayTextExamplePortMgt.2.7');"><i><strong>Mostrar solución al ejemplo</strong></i></a> </h5>
+href="javascript:toggleEX('toggleExamplePortMgt.2.7','displayTextExamplePortMgt.2.7');"><i><strong>Mostrar Solución de Ejemplo</strong></i></a> </h5>
 <div id="toggleExamplePortMgt.2.7" style="display: none">
 
 **Solución.**
@@ -648,7 +648,7 @@ TVaR_{q}[X]&=&\left[-x S_X(x)\big |_{\pi_q}^{\infty}+\int_{\pi_q}^{\infty}S_X(x)
 Se considera una *v.a.* pérdida de seguros \ $X\sim Exp(\theta)$ para $\theta>0$. Obtener una expresión para el *TVaR*.
 
 <h5 style="text-align: center;"><a id="displayTextExamplePortMgt.2.8" 
-href="javascript:toggleEX('toggleExamplePortMgt.2.8','displayTextExamplePortMgt.2.8');"><i><strong>Mostrar solución al ejemplo</strong></i></a> </h5>
+href="javascript:toggleEX('toggleExamplePortMgt.2.8','displayTextExamplePortMgt.2.8');"><i><strong>Mostrar Solución de Ejemplo</strong></i></a> </h5>
 <div id="toggleExamplePortMgt.2.8" style="display: none">
 
 **Solución.**

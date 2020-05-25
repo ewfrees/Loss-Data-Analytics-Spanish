@@ -44,7 +44,7 @@ Desde una perspectiva clásica, otras caracterizaciones de la forma de una distr
 **Ejemplo `r chapnum`.1.1. Pregunta de un examen actuarial.** 
 Asumimos que la *v.a.* $X$ tiene una distribución gamma con media 8 y asimetría 1. Determina la varianza de $X$. (*Hint*: La distribución gamma es tratada en la Sección \@ref(S:Loss:Gamma).)
 
-`r HideExample('3.1.1','Mostrar Ejemplo de Solución')`
+`r HideExample('3.1.1','Mostrar Solución de Ejemplo')`
 
 **Solución.** La función de densidad de probabilidad de $X$ viene dada por
 $$
@@ -81,7 +81,7 @@ Por ejemplo, el punto medio de una distribución, $\pi_{0.5}$, es la `r Gloss('m
 **Ejemplo `r chapnum`.1.1. Pregunta de un examen actuarial.**
 Sea $X$ una variable aleatoria continua con función de densidad $f_{X}\left( x \right) = \theta e^{- \theta x}$, para $x > 0$ y 0 en caso contrario. Si la mediana de la distribución es $\frac{1}{3}$, encuentra $\theta$.
 
-`r HideExample('3.1.2','Mostrar Ejemplo de Solución')`
+`r HideExample('3.1.2','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -107,7 +107,7 @@ $$
 **Ejemplo `r chapnum`.1.3. Pregunta de un examen actuarial.**
 La variable aleatoria $X$ tiene una distribución exponencial con media $\frac{1}{b}$. Se determina que $M_{X}\left( - b^{2} \right) = 0,2$. Encuentra $b$. (*Hint*: La exponencial es un caso especial de la distribución gamma que es tratada en la Sección \@ref(S:Loss:Gamma).)
 
-`r HideExample('3.1.3','Mostrar Ejemplo de Solución')`
+`r HideExample('3.1.3','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -129,7 +129,7 @@ Por tanto, $b = 4$.
 **Ejemplo `r chapnum`.1.4. Pregunta de examen actuarial.**
 Sea $X_{1}, \ldots, X_{n}$ variables aleatorias `r Gloss('independientes')`, donde $X_i$ sigue una distribución gamma con parámetros $\alpha_{i}$ y $\theta$. Encuentra la distribución de $S = \sum_{i = 1}^{n}X_{i}$, la media $\mathrm{E}(S)$ y la varianza $\mathrm{Var}(S)$.
 
-`r HideExample('3.1.4','Mostrar Ejemplo de Solución')`
+`r HideExample('3.1.4','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -355,7 +355,7 @@ El tamaño de los siniestros en una cartera de asegurados sigue una distribució
 <li>El percentil 95 de la distribución.</li>
 </ol>
 
-`r HideExample('3.2.1','Mostrar Ejemplo de Solución')`
+`r HideExample('3.2.1','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -453,7 +453,7 @@ Se asume que la distribución de probabilidad del tiempo de vida de pacientes co
 <li>Encuentra el percentil 99 de la distribución de los tiempos de vida.</li>
 </ol>
 
-`r HideExample('3.2.2','Mostrar Ejemplo de Solución')`
+`r HideExample('3.2.2','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -537,7 +537,7 @@ Se asume que $X$ pertenece a un cierto conjunto de `r Gloss('distribuciones para
 **Ejemplo `r chapnum`.3.1. Pregunta de un examen actuarial.**
 Las pérdidas agregadas de Eiffel Auto Insurance se denotan en Euros y siguen una distribución lognormal con $\mu = 8$ y $\sigma = 2$. Dado que 1 euro $=$ 1,3 dólares, encuentra el conjunto de parámetros lognormales que describen la distribución de pérdidas de Eiffel en dólares.
 
-`r HideExample('3.3.1','Mostrar Ejemplo de Solución')`
+`r HideExample('3.3.1','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -566,7 +566,7 @@ Entonces $Y$ sigue una distribución lognormal con parámetros $\ln 1,3 + \mu = 
 **Ejemplo `r chapnum`.3.2. Pregunta de un examen actuarial.**
 Demuestra que la distribución gamma es una distribución escala.
 
-`r HideExample('3.3.2','Mostrar Ejemplo de Solución')`
+`r HideExample('3.3.2','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -607,7 +607,7 @@ $$
 **Ejemplo `r chapnum`.3.3.**
 Se asume que $X$ sigue una distribución exponencial con media $\theta$ y se considera la variable transformada $Y = X^{\tau}$. Demuestra que $Y$ sigue una distribución de Weibull cuando $\tau$ es positiva y determina los parámetros de la distribución de Weibull. 
 
-`r HideExample('3.3.3','Mostrar Ejemplo de Solución')`
+`r HideExample('3.3.3','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -652,7 +652,7 @@ A esta distribución se la conoce como la distribución *lognormal*.
 **Ejemplo `r chapnum`.3.4. Pregunta de examen actuarial.**
 Se asume que $X$ tiene una distribución uniforme en el intervalo $(0,\ c)$ y definimos $Y = e^{X}$. Determina la distribución de $Y$.
 
-`r HideExample('3.3.4','Mostrar Ejemplo de Solución')`
+`r HideExample('3.3.4','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -689,7 +689,7 @@ $$M_{X}(t) = aM_{X_{1}}(t) + \left( 1 - a \right)M_{X_{2}}(t),$$ respectivamente
 **Ejemplo `r chapnum`.3.5. Pregunta del examen actuarial.**
 En un conjunto de pólizas de seguros se distinguen dos tipos. 25% de las pólizas son de Tipo 1 y 75% de Tipo 2. Para una póliza de Tipo 1, la cuantía de pérdida por año sigue una distribución exponencial con media 200, y para las pólizas de Tipo 2, la cuantía de perdidas por año sigue una distribución de Pareto con parámetros $\alpha=3$ y $\theta=200$. Para una póliza seleccionada al azar de la población total que incluye los dos tipos de pólizas, encuentra la probabilidad de que la pérdida anual sea inferior a 100, y determina la perdida media.
 
-`r HideExample('3.3.5','Mostrar Ejemplo de Solución')`
+`r HideExample('3.3.5','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -719,7 +719,7 @@ $Y_{1}$ es una mixtura de $X_{1}$ y $X_{2}$ con ponderaciones de mixtura $a$ y $
 
 Demuestra que $Z$ es una mixtura de $X_{1}$, $X_{2}$, $X_{3}$ y $X_{4}$, y determina las ponderaciones de mixtura.
 
-`r HideExample('3.3.6','Mostrar Ejemplo de Solución')`
+`r HideExample('3.3.6','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 Aplicando la fórmula para una distribución mixta, obtenemos
@@ -778,7 +778,7 @@ $$
 **Ejemplo `r chapnum`.3.7. Pregunta del examen actuarial.**
 $X$ tiene una distribución normal con media $\Lambda$ y varianza 1. $\Lambda$ tiene una distribución normal con media 1 y varianza 1. Determina la media y varianza de $X$.
 
-`r HideExample('3.3.7','Mostrar Ejemplo de Solución')`
+`r HideExample('3.3.7','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -795,7 +795,7 @@ $$
 **Ejemplo `r chapnum`.3.8. Pregunta del examen actuarial.**
 Las cuantías de los siniestros, $X$, son uniformes en el intervalo $\left(\Theta,\Theta+10\right)$ para cada asegurado. $\Theta$ varía según el asegurado de acuerdo a una distribución exponencial con media 5. Determina la `r Gloss('distribución incondicional')`, media y varianza de $X$.
 
-`r HideExample('3.3.8','Mostrar Ejemplo de Solución')`
+`r HideExample('3.3.8','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -921,7 +921,7 @@ respectivamente.
 **Ejemplo `r chapnum`.4.1. Pregunta del examen actuarial.**
 Se asume que la distribución para la severidad de los siniestros es exponencial con media 1000. Una compañía de seguros pagará la cantidad de cada siniestro en exceso de una franquicia de 100. Calcula la varianza de la cantidad pagada por la compañía aseguradora por un siniestro, incluyendo la posibilidad de que la cantidad pagada sea 0.
 
-`r HideExample('3.4.1','Mostrar Ejemplo de Solución')`
+`r HideExample('3.4.1','Mostrar Solución de Ejemplo')`
 
 **Solution.**
 
@@ -964,7 +964,7 @@ Para un seguro:
 </ul>
 Calcula $\mathrm{E}\left( Y^{P} \right)$.
 
-`r HideExample('3.4.2','Mostrar Ejemplo de Solución')`
+`r HideExample('3.4.2','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -994,7 +994,7 @@ Se proporcionan los siguientes datos:
 <li>La franquicia ordinaria para el año siguiente es 4/3 de la franquicia actual.</li></ol>
 Calcula la ratio de eliminación de pérdida para el siguiente año.
 
-`r HideExample('3.4.3','Mostrar Ejemplo de Solución')`
+`r HideExample('3.4.3','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -1070,7 +1070,7 @@ $$f_{X}\left( x \right) = \left\{ \begin{matrix}
 \end{matrix} \right.\ $$
 donde $x$ se mide en millones. Calcula la cantidad total, en millones de dólares, que en términos esperados el asegurador pagará por esta póliza.
 
-`r HideExample('3.4.4','Mostrar Ejemplo de Solución')`
+`r HideExample('3.4.4','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -1123,7 +1123,7 @@ Las fórmulas proporcionadas para los momentos primero y segundo de $Y^{L}$ son 
 **Ejemplo `r chapnum`.4.5. Pregunta del examen actuarial.**
 La variable aleatoria ground up loss para una póliza de seguro de salud en 2006 se modeliza con *X*, una distribución exponencial de media 1000. Una póliza de seguros paga las pérdidas por encima de una franquicia ordinaria de 100, con un máximo pago anual de 500. La variable aleatoria ground up loss se espera que sea 5% mayor en 2007, pero el seguro en 2007 tiene la misma franquícia y máximo pago como en 2006. Encuentra el porcentaje de incremento en el coste esperado por pago desde 2006 a 2007.
 
-`r HideExample('3.4.5','Mostrar Ejemplo de Solución')`
+`r HideExample('3.4.5','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -1176,7 +1176,7 @@ a)	Expresa las variables aleatorias para los pagos del reasegurador y asegurador
 b)	Calcula la cantidad media pagada por el asegurador por un único siniestro. 
 c)	Asumiendo que el límite superior es $u = \infty$, calcula un límite superior para la desviación estándar de la cantidad pagada por un único siniestro por el asegurador (reteniendo el 15% de copago).
 
-`r HideExample('3.4.6','Mostrar Ejemplo de Solución')`
+`r HideExample('3.4.6','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -1327,7 +1327,7 @@ Se presentan algunos ejemplos adicionales para ilustrar cómo los actuarios ajus
 Se considera una muestra aleatoria de cuantías de siniestros: 8.000 10.000 12.000 15.000. Se asume que la cuantía de los siniestros sigue una distribución inversa exponencial, con parámetro $\theta$. Calcula el estimador máximo verosímil de $\theta$.</li>
 
 
-`r HideExample('3.5.2','Mostrar Ejemplo de Solución')`
+`r HideExample('3.5.2','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -1363,7 +1363,7 @@ Evaluando la segunda derivada del logaritmo de la función de verosimilitud en $
 **Ejemplo `r chapnum`.5.3. Pregunta del examen actuarial.**
 Una muestra aleatoria de tamaño 6 proviene de una distribución lognormal con parámetros $\mu$ y $\sigma$. Los valores de la muestra son 200, 3.000, 8.000, 60.000, 60.000, 160.000. Calcula el estimador máximo verosímil de $\mu$ y $\sigma$.</li>
 
-`r HideExample('3.5.3','Mostrar Ejemplo de Solución')`
+`r HideExample('3.5.3','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -1414,7 +1414,7 @@ Dos cuestiones que vendrían a continuación tienen que ver con las propiedades 
 <li>Determina un intervalo de confianza del 95% para $\Pr \left( X \leq 9.000 \right).$</li>
 </ol>
  
-`r HideExample('3.5.2a','Mostrar Ejemplo de Solución')`
+`r HideExample('3.5.2a','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -1452,7 +1452,7 @@ $$0,57 \pm 1,96\sqrt{0,0329} = \left( 0,214,\ 0,926 \right).$$
 <li>Determina un intervalo de confianza aproximado al 95% para la media de la distribución lognormal.</li>
 </ol>
 
-`r HideExample('3.5.3a','Mostrar Ejemplo de Solución')`
+`r HideExample('3.5.3a','Mostrar Solución de Ejemplo')`
 
 
 **a.** Para obtener la matriz de covarianzas del *mle* es necesario encontrar esperanzas de las segundas derivadas. Dado que la variable aleatoria $X$ sigue una distribución lognormal con parámetros $\mu$ y $\sigma$, entonces $\text{lnX}$ se distribuye como una normal con media $\mu$ y varianza $\sigma^{2}$.
@@ -1533,7 +1533,7 @@ Dado que la media de la distribución lognormal no puede ser negativa, se deber�
 El siguiente fragmento de código muestra cómo ajustar un modelo exponencial, gamma, Pareto, lognormal y GB2. Por consistencia, el código emplea el paquete `VGAM` de `R`. El acrónimo viene de *Vector Generalized Linear and Additive Models*; como sugiere el nombre, este paquete puede hacer mucho más que ajustar estos modelos, aunque esto es suficiente para los propósitos requeridos en este caso. La única excepción es la densidad GB2 que no es muy utilizada fuera del mundo asegurador; en cualquier caso, puede programarse esta densidad y calcular los estimadores máximo verosímiles usando el optimizador general `optim`.
 
 
-`r HideExample('3.5.4','Mostrar Ejemplo de Solución')`
+`r HideExample('3.5.4','Mostrar Solución de Ejemplo')`
 
 
 ```{r message = FALSE, warning = FALSE, fig.cap='Comparación de densidades para el fondo de propiedad de Wisconsin', fig.align='center', eval= FALSE}
@@ -1710,7 +1710,7 @@ $$
 
 Calcula la estimación máximo verosímil de $\theta$.
 
-`r HideExample('3.5.5','Mostrar Ejemplo de Solución')`
+`r HideExample('3.5.5','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -1759,7 +1759,7 @@ $$
 Sean 2 y 4 dos valores observados de $X$. Además, otro valor excede 4.
 Calcula el estimador máximo verosímil de $\theta$.
 
-`r HideExample('3.5.6','Mostrar Ejemplo de Solución')`
+`r HideExample('3.5.6','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
@@ -1816,7 +1816,7 @@ Para una distribución de Pareto de un solo parámetro con $\theta = 2$, se apli
 <li>2 límites de pago: 20, 20.</li>
 </ul>
 
-`r HideExample('3.5.7','Mostrar Ejemplo de Solución')`
+`r HideExample('3.5.7','Mostrar Solución de Ejemplo')`
 
 **Solución.**
 
