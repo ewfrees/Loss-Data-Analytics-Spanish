@@ -299,13 +299,13 @@ document.getElementById("defaultOpen").click();
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125587869-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DF6W196L8Q"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-125587869-1');
+  gtag('config', 'G-DF6W196L8Q');
 </script>
 
 
@@ -824,29 +824,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="C:Simulation" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Simulación y remuestreo</h1>
-<p><em>Vista previa del capítulo.</em> La simulación es un método computacionalmente intenso usado para resolver problemas difíciles. En lugar de crear procesos físicos y experimentar con ellos para entender sus características operacionales, un estudio de simulación se basa en una representación computacional – considera varias condiciones hipotéticas como inputs y resume los resultados. Aunque se trata de una simulación, un gran número de condiciones hipotéticas pueden ser rápidamente examinadas con un bajo coste. La sección <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> introduce la simulación, una herramienta computacional maravillosa que es especialmente útil en entornos complejos multivariantes.
-También podemos usar la simulación para realizar extracciones de una distribución empírica – proceso que se llama remuestreo. El remuestreo permite valorar la incertidumbre de las estimaciones en modelos complejos. La sección <a href="C-Simulation.html#S:Bootstrap">6.2</a> introduce el remuestreo en el contexto del bootstrapping para determinar la precisión de los estimadores.
-Las secciones siguientes introducen otros temas del remuestreo. La Sección <a href="C-Simulation.html#S:CrossValidation">6.3</a> sobre la validación cruzada muestra como usarla para la selección y validación de modelos. La sección <a href="C-Simulation.html#S:ImportanceSampling">6.4</a> sobre la importancia del muestreo describe el remuestreo en áreas específicas de interés, como en aplicaciones actuariales con colas largas. La sección <a href="C-Simulation.html#S:MCMC">6.5</a> sobre el método de Monte Carlo basado en cadenas de Markov (MCMC, en sus siglas en inglés) introduce la simulación y el motor del remuestreo que apunta en buena medida el análisis Bayesiano moderno.</p>
+<p><em>Vista previa del capítulo.</em> La simulación es un método computacionalmente intenso usado para resolver problemas difíciles. En lugar de crear procesos físicos y experimentar con ellos para entender sus características operacionales, un estudio de simulación se basa en una representación computacional – considera varias condiciones hipotéticas como inputs y resume los resultados. Aunque se trata de una simulación, un gran número de condiciones hipotéticas pueden ser rápidamente examinadas con un bajo coste. La sección <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> introduce la simulación, una herramienta computacional maravillosa que es especialmente útil en entornos complejos multivariantes.</p>
+<p>También podemos usar la simulación para realizar extracciones de una distribución empírica – proceso que se llama remuestreo. El remuestreo permite valorar la incertidumbre de las estimaciones en modelos complejos. La sección <a href="C-Simulation.html#S:Bootstrap">6.2</a> introduce el remuestreo en el contexto del bootstrapping para determinar la precisión de los estimadores.</p>
+<p>Las secciones siguientes introducen otros temas del remuestreo. La Sección <a href="C-Simulation.html#S:CrossValidation">6.3</a> sobre la validación cruzada muestra como usarla para la selección y validación de modelos. La sección <a href="C-Simulation.html#S:ImportanceSampling">6.4</a> sobre la importancia del muestreo describe el remuestreo en áreas específicas de interés, como en aplicaciones actuariales con colas largas. La sección <a href="C-Simulation.html#S:MCMC">6.5</a> sobre el método de Monte Carlo basado en cadenas de Markov (MCMC, en sus siglas en inglés) introduce la simulación y el motor del remuestreo que apunta en buena medida el análisis Bayesiano moderno.</p>
 <div id="S:SimulationFundamentals" class="section level2">
 <h2><span class="header-section-number">6.1</span> Fundamentos de la simulación</h2>
 <hr />
-<p>En esta sección, se muestra como:
-- Generar realizaciones aproximadamente independientes distribuidas uniformemente
-- Transformar las realizaciones distribuidas uniformemente en observaciones de la distribución de probabilidad de interés
-- Calcular cantidades de interés y determinar la precisión de las cantidades calculadas</p>
+<p>En esta sección, se muestra como:</p>
+<ul>
+<li>Generar realizaciones aproximadamente independientes distribuidas uniformemente</li>
+<li>Transformar las realizaciones distribuidas uniformemente en observaciones de la distribución de probabilidad de interés</li>
+<li>Calcular cantidades de interés y determinar la precisión de las cantidades calculadas</li>
+</ul>
 <hr />
 <!-- ## Fundamentos de simulación -->
 <div id="generación-de-observaciones-uniformes-independientes" class="section level3">
 <h3><span class="header-section-number">6.1.1</span> Generación de observaciones uniformes independientes</h3>
-<p>Las simulaciones que consideramos son generadas por ordenadores. La principal ventaja de este enfoque es que pueden ser replicadas, permitiéndonos realizar comprobaciones y mejorar nuestro trabajo. Naturalmente, esto también significa que no son realmente aleatorias. Sin embargo, se han desarrollado algoritmos para que los resultados se comporten como aleatorios a efectos prácticos. En concreto, pasan test de independencia sofisticados y pueden ser diseñados de modo que provengan de una única distribución – nuestro supuesto iid, idénticamente e independientemente distribuidas, según sus siglas en inglés.
-Para tener una idea de lo que estos algoritmos hacen, consideramos un método de importancia histórica.</p>
+<p>Las simulaciones que consideramos son generadas por ordenadores. La principal ventaja de este enfoque es que pueden ser replicadas, permitiéndonos realizar comprobaciones y mejorar nuestro trabajo. Naturalmente, esto también significa que no son realmente aleatorias. Sin embargo, se han desarrollado algoritmos para que los resultados se comporten como aleatorios a efectos prácticos. En concreto, pasan test de independencia sofisticados y pueden ser diseñados de modo que provengan de una única distribución – nuestro supuesto iid, idénticamente e independientemente distribuidas, según sus siglas en inglés.</p>
+<p>Para tener una idea de lo que estos algoritmos hacen, consideramos un método de importancia histórica.</p>
 <p><strong>Generador Lineal Congruencial.</strong> Para generar una secuencia de números aleatorios, comenzamos con <span class="math inline">\(B_0\)</span>, un valor inicial que es conocido como <em>semilla</em>. Este valor se actualiza utilizando la relación recursiva
 <span class="math display">\[B_{n+1} = a B_n + c  \text{ modulo }m, ~~ n=0, 1, 2, \ldots .\]</span>
-Este algoritmo se denomina generador lineal congruencial . El caso <span class="math inline">\(c=0\)</span> se denomina generador congruencial <em>multiplicativo</em>; es particularmente útil para cálculos realmente rápidos.
-Como valores ilustrativos de <span class="math inline">\(a\)</span> y <span class="math inline">\(m\)</span>, Microsoft’s Visual Basic usa
+Este algoritmo se denomina generador lineal congruencial . El caso <span class="math inline">\(c=0\)</span> se denomina generador congruencial <em>multiplicativo</em>; es particularmente útil para cálculos realmente rápidos.</p>
+<p>Como valores ilustrativos de <span class="math inline">\(a\)</span> y <span class="math inline">\(m\)</span>, Microsoft’s Visual Basic usa
 <span class="math inline">\(m=2^{24}\)</span>, <span class="math inline">\(a=1,140,671,485\)</span>, y <span class="math inline">\(c = 12,820,163\)</span> (ver
-<a href="https://en.wikipedia.org/wiki/Linear_congruential_generator" class="uri">https://en.wikipedia.org/wiki/Linear_congruential_generator</a>). Este es el generador subyacente en la generación de números aleatorios en el programa Microsoft Excel.
-La secuencia usada por el analista se define como <span class="math inline">\(U_n=B_n/m.\)</span> El analista puede interpretar la secuencia
+<a href="https://en.wikipedia.org/wiki/Linear_congruential_generator" class="uri">https://en.wikipedia.org/wiki/Linear_congruential_generator</a>). Este es el generador subyacente en la generación de números aleatorios en el programa Microsoft Excel.</p>
+<p>La secuencia usada por el analista se define como <span class="math inline">\(U_n=B_n/m.\)</span> El analista puede interpretar la secuencia
 {<span class="math inline">\(U_{i}\)</span>} como (aproximadamente) idénticamente e independientemente uniformemente distribuida en el intervalo (0,1). Para ilustrar el algoritmo, se considera lo siguiente.</p>
 <p><strong>Ejemplo 6.1.1. Secuencia ilustrativa.</strong></p>
 <p>Se asume <span class="math inline">\(m=15\)</span>, <span class="math inline">\(a=3\)</span>, <span class="math inline">\(c=2\)</span> y <span class="math inline">\(B_0=1\)</span>. Entonces se tiene:</p>
@@ -919,27 +921,26 @@ i.i.d, puede ser reproducido usando el mismo valor de semilla (y el mismo algori
 </div>
 <div id="S:InverseTransform" class="section level3">
 <h3><span class="header-section-number">6.1.2</span> Método de la transformada inversa</h3>
-<p>Se parte de una secuencia de números aleatorios uniformes, y a continuación se transforma en la distribución de interés, sea <span class="math inline">\(F\)</span>. Una técnica destacada es el método de la transformada inversa, definido como
-<span class="math display">\[
+<p>Se parte de una secuencia de números aleatorios uniformes, y a continuación se transforma en la distribución de interés, sea <span class="math inline">\(F\)</span>. Una técnica destacada es el método de la transformada inversa, definido como</p>
+<p><span class="math display">\[
 X_i=F^{-1}\left( U_i \right) .
 \]</span>
-Aquí, se recuerda que en la Sección 4.1.1 se ha introducido la función de distribución inversa, <span class="math inline">\(F^{-1}\)</span>, también referenciada como función cuantil. En concreto, se define como
-<span class="math display">\[
+Aquí, se recuerda que en la Sección 4.1.1 se ha introducido la función de distribución inversa, <span class="math inline">\(F^{-1}\)</span>, también referenciada como función cuantil. En concreto, se define como</p>
+<p><span class="math display">\[
 F^{-1}(y) = \inf_x ~ \{ F(x) \ge y \} .
 \]</span>
-Se recuerda que <span class="math inline">\(\inf\)</span> representa <em>ínfimo</em> o el máxima cota inferior. Es en esencia el valor más pequeño de <em>x</em> que satisface la desigualdad <span class="math inline">\(\{F(x) \ge y\}\)</span>.
-El resultado es que la secuencia {<span class="math inline">\(X_{i}\)</span>} es aproximadamente <em>iid</em> con función de distribución <span class="math inline">\(F\)</span>.
-El resultado de la transformada inversa puede obtenerse cuando la variable aleatoria es continua, discreta o una combinación híbrida de ambas. Ahora se presenta una serie de ejemplos para ilustrar el alcance de sus aplicaciones.</p>
+Se recuerda que <span class="math inline">\(\inf\)</span> representa <em>ínfimo</em> o el máxima cota inferior. Es en esencia el valor más pequeño de <em>x</em> que satisface la desigualdad <span class="math inline">\(\{F(x) \ge y\}\)</span>. El resultado es que la secuencia {<span class="math inline">\(X_{i}\)</span>} es aproximadamente <em>iid</em> con función de distribución <span class="math inline">\(F\)</span>.</p>
+<p>El resultado de la transformada inversa puede obtenerse cuando la variable aleatoria es continua, discreta o una combinación híbrida de ambas. Ahora se presenta una serie de ejemplos para ilustrar el alcance de sus aplicaciones.</p>
 <p><strong>Ejemplo 6.1.3. Generar valores aleatorios exponenciales.</strong></p>
-<p>Se desea generar observaciones según una distribución exponencial con parámetro de escala <span class="math inline">\(\theta\)</span> de manera que <span class="math inline">\(F(x) = 1 - e^{-x/\theta}\)</span>. Para calcular la transformada inversa, se siguen los siguientes pasos:
-<span class="math display">\[
+<p>Se desea generar observaciones según una distribución exponencial con parámetro de escala <span class="math inline">\(\theta\)</span> de manera que <span class="math inline">\(F(x) = 1 - e^{-x/\theta}\)</span>. Para calcular la transformada inversa, se siguen los siguientes pasos:</p>
+<p><span class="math display">\[
 \begin{aligned}
- y = F(x) &amp;\Leftrightarrow  y = 1-e^{-x/\theta} \\
-  &amp;\Leftrightarrow -\theta \ln(1-y) = x = F^{-1}(y) .
+ y = F(x) &amp;\iff  y = 1-e^{-x/\theta} \\
+  &amp;\iff-\theta \ln(1-y) = x = F^{-1}(y) .
 \end{aligned}
 \]</span>
-Por tanto, si <span class="math inline">\(U\)</span> tiene una distribución uniforme (0,1), entonces <span class="math inline">\(X = -\theta \ln(1-U)\)</span> tiene una distribución exponencial con parámetro <span class="math inline">\(\theta\)</span>.
-El siguiente código de <code>R</code> muestra como se puede comenzar con los mismos tres números aleatorios uniformes del <em>Ejemplo 6.1.2</em> y transformarlos en variables aleatorias exponenciales independientes con media 10. Alternativamente, se puede usar directamente la función <code>rexp</code> de <code>R</code> para generar valores aleatorios según una distribución exponencial. El algoritmo que se construye en esta rutina es diferente por eso incluso con el mismo valor inicial de semilla, las realizaciones individuales pueden ser diferentes.</p>
+Por tanto, si <span class="math inline">\(U\)</span> tiene una distribución uniforme (0,1), entonces <span class="math inline">\(X = -\theta \ln(1-U)\)</span> tiene una distribución exponencial con parámetro <span class="math inline">\(\theta\)</span>.</p>
+<p>El siguiente código de <code>R</code> muestra como se puede comenzar con los mismos tres números aleatorios uniformes del <em>Ejemplo 6.1.2</em> y transformarlos en variables aleatorias exponenciales independientes con media 10. Alternativamente, se puede usar directamente la función <code>rexp</code> de <code>R</code> para generar valores aleatorios según una distribución exponencial. El algoritmo que se construye en esta rutina es diferente por eso incluso con el mismo valor inicial de semilla, las realizaciones individuales pueden ser diferentes.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">set.seed</span>(<span class="dv">2017</span>)</a>
 <a class="sourceLine" id="cb30-2" title="2">U &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb30-3" title="3">X1 &lt;-<span class="st"> </span><span class="dv">-10</span><span class="op">*</span><span class="kw">log</span>(<span class="dv">1</span><span class="op">-</span>U)</a>
@@ -976,8 +977,8 @@ El siguiente código de <code>R</code> muestra como se puede comenzar con los mi
 <hr />
 <p><strong>Ejemplo 6.1.4. Generar valores aleatorios Pareto.</strong></p>
 <p>Se desea generar observaciones según una distribución de Pareto con parámetros <span class="math inline">\(\alpha\)</span> y
-<span class="math inline">\(\theta\)</span> de modo que <span class="math inline">\(F(x) = 1 - \left(\frac{\theta}{x+\theta} \right)^{\alpha}\)</span>. Para calcular la transformada inversa, se pueden seguir los siguientes pasos:
-<span class="math display">\[
+<span class="math inline">\(\theta\)</span> de modo que <span class="math inline">\(F(x) = 1 - \left(\frac{\theta}{x+\theta} \right)^{\alpha}\)</span>. Para calcular la transformada inversa, se pueden seguir los siguientes pasos:</p>
+<p><span class="math display">\[
 \begin{aligned}
  y = F(x) &amp;\Leftrightarrow 1-y = \left(\frac{\theta}{x+\theta} \right)^{\alpha} \\
   &amp;\Leftrightarrow \left(1-y\right)^{-1/\alpha} = \frac{x+\theta}{\theta} = \frac{x}{\theta} +1 \\
@@ -991,8 +992,8 @@ El siguiente código de <code>R</code> muestra como se puede comenzar con los mi
 </h5>
 <div id="ShowTheory.1" style="display: none">
 <hr />
-<p>Esto es fácil de establecer en el caso continuo. Dado que <span class="math inline">\(U\)</span> es una variable aleatoria uniforme en (0,1), se sabe que <span class="math inline">\(\Pr(U \le y) = y\)</span>, para <span class="math inline">\(0 \le y \le 1\)</span>. Entonces,
-<span class="math display">\[
+<p>Esto es fácil de establecer en el caso continuo. Dado que <span class="math inline">\(U\)</span> es una variable aleatoria uniforme en (0,1), se sabe que <span class="math inline">\(\Pr(U \le y) = y\)</span>, para <span class="math inline">\(0 \le y \le 1\)</span>. Entonces,</p>
+<p><span class="math display">\[
 \begin{aligned}
 \Pr(X \le x) &amp;= \Pr(F^{-1}(U) \le x) \\
  &amp;= \Pr(F(F^{-1}(U)) \le F(x)) \\
@@ -1011,8 +1012,8 @@ Tal y como es requerido. El paso clave es que <span class="math inline">\(F(F^{-
 Figure 6.1: Función de distribución de una variable aleatoria binaria
 </p>
 </div>
-<p>El gráfico de la función de distribución de la Figura <a href="C-Simulation.html#fig:BinaryDF">6.1</a> muestra que la función cuantil puede expresarse como
-<span class="math display">\[
+<p>El gráfico de la función de distribución de la Figura <a href="C-Simulation.html#fig:BinaryDF">6.1</a> muestra que la función cuantil puede expresarse como</p>
+<p><span class="math display">\[
 \begin{aligned}
 F^{-1}(y) = \left\{ \begin{array}{cc}
               0 &amp; 0&lt;y \leq 0.85 \\
@@ -1020,8 +1021,8 @@ F^{-1}(y) = \left\{ \begin{array}{cc}
             \end{array} \right.
 \end{aligned}
 \]</span>
-Por tanto, con la transformada inversa se puede definir
-<span class="math display">\[
+Por tanto, con la transformada inversa se puede definir</p>
+<p><span class="math display">\[
 \begin{aligned}
 X = \left\{ \begin{array}{cc}
               0 &amp; 0&lt;U \leq 0.85  \\
@@ -1106,8 +1107,8 @@ A modo ilustrativo, se generan tres números aleatorios para obtener</p>
 Figure 6.2: Función de Distribución de una Variable Aleatoria Discreta
 </p>
 </div>
-<p>Usando el gráfico de la función de distribución en la Figura <a href="C-Simulation.html#fig:DiscreteDF">6.2</a>, con la transformada inversa se define
-<span class="math display">\[
+<p>Usando el gráfico de la función de distribución en la Figura <a href="C-Simulation.html#fig:DiscreteDF">6.2</a>, con la transformada inversa se define</p>
+<p><span class="math display">\[
 \small{
 \begin{aligned}
 X = \left\{ \begin{array}{cc}
@@ -1135,8 +1136,8 @@ X = \left\{ \begin{array}{cc}
 \end{aligned}
 }
 \]</span></p>
-<p>Otro analista puede usar un procedimiento alternativo como este:
-<span class="math display">\[
+<p>Otro analista puede usar un procedimiento alternativo como este:</p>
+<p><span class="math display">\[
 {\small
 \begin{aligned}
 X = \left\{ \begin{array}{cc}
@@ -1153,8 +1154,8 @@ X = \left\{ \begin{array}{cc}
 <p><strong>Ejemplo 6.1.7. Generar valores aleatorios de una distribución híbrida.</strong></p>
 <p>Se considera una variable aleatoria que es 0
 con probabilidad 70% y tiene distribución exponencial con parámetro
-<span class="math inline">\(\theta= 10,000\)</span> con probabilidad 30%. En una aplicación actuarial, esto podría corresponder a un 70% de probabilidad de no tener un siniestro y un 30% de probabilidades de tenerlo – si un siniestro ocurre, tiene una distribución exponencial. La función de distribución, representada en la Figura <a href="C-Simulation.html#fig:MixedDF">6.3</a>, viene dada por
-<span class="math display">\[
+<span class="math inline">\(\theta= 10,000\)</span> con probabilidad 30%. En una aplicación actuarial, esto podría corresponder a un 70% de probabilidad de no tener un siniestro y un 30% de probabilidades de tenerlo – si un siniestro ocurre, tiene una distribución exponencial. La función de distribución, representada en la Figura <a href="C-Simulation.html#fig:MixedDF">6.3</a>, viene dada por</p>
+<p><span class="math display">\[
 \begin{aligned}
 F(y) = \left\{ \begin{array}{cc}
               0 &amp;  x&lt;0  \\
@@ -1168,8 +1169,8 @@ F(y) = \left\{ \begin{array}{cc}
 Figure 6.3: Función de distribución de una variable aleatoria híbrida
 </p>
 </div>
-<p>En la Figura <a href="C-Simulation.html#fig:MixedDF">6.3</a>, se puede ver que la transformada inversa para generar variables aleatorias con esta función de distribución es
-<span class="math display">\[
+<p>En la Figura <a href="C-Simulation.html#fig:MixedDF">6.3</a>, se puede ver que la transformada inversa para generar variables aleatorias con esta función de distribución es</p>
+<p><span class="math display">\[
 \begin{aligned}
 X = F^{-1}(U) = \left\{ \begin{array}{cc}
               0 &amp;  0&lt; U  \leq  0.7  \\
@@ -1183,26 +1184,28 @@ Para variables aleatorias discretas e híbridas, la clave es dibujar el gráfico
 </div>
 <div id="precisión-de-la-simulación" class="section level3">
 <h3><span class="header-section-number">6.1.3</span> Precisión de la simulación</h3>
-<p>De las subsecciones anteriores, se sabe cómo simular valores independientes de una distribución de interés. Con estas realizaciones, se puede construir una distribución empírica y aproximar la distribución subyacente con la precisión necesaria. A medida que se introduzcan más aplicaciones actuariales en este libro, se verá que la simulación puede ser aplicada en una gran variedad de contextos.
-Muchas de estas aplicaciones pueden reducirse a un problema de aproximar <span class="math inline">\(\mathrm{E~}h(X)\)</span>, donde <span class="math inline">\(h(\cdot)\)</span> es una función conocida. En base a <span class="math inline">\(R\)</span> simulaciones (réplicas), se obtiene <span class="math inline">\(X_1,\ldots,X_R\)</span>. A partir de esta muestra simulada, se puede calcular la media
-<span class="math display">\[
+<p>De las subsecciones anteriores, se sabe cómo simular valores independientes de una distribución de interés. Con estas realizaciones, se puede construir una distribución empírica y aproximar la distribución subyacente con la precisión necesaria. A medida que se introduzcan más aplicaciones actuariales en este libro, se verá que la simulación puede ser aplicada en una gran variedad de contextos.</p>
+<p>Muchas de estas aplicaciones pueden reducirse a un problema de aproximar <span class="math inline">\(\mathrm{E~}h(X)\)</span>, donde <span class="math inline">\(h(\cdot)\)</span> es una función conocida. En base a <span class="math inline">\(R\)</span> simulaciones (réplicas), se obtiene <span class="math inline">\(X_1,\ldots,X_R\)</span>. A partir de esta muestra simulada, se puede calcular la media</p>
+<p><span class="math display">\[
 \overline{h}_R=\frac{1}{R}\sum_{i=1}^{R} h(X_i)
 \]</span>
-que se usa como la aproximación simulada (estimación) de <span class="math inline">\(\mathrm{E~}h(X)\)</span>. Para estimar la precisión de esta aproximación se usa la varianza de la simulación
-<span class="math display">\[
+que se usa como la aproximación simulada (estimación) de <span class="math inline">\(\mathrm{E~}h(X)\)</span>. Para estimar la precisión de esta aproximación se usa la varianza de la simulación</p>
+<p><span class="math display">\[
 s_{h,R}^2 = \frac{1}{R-1} \sum_{i=1}^{R}\left( h(X_i) -\overline{h}_R
 \right) ^2.
 \]</span>
 A partir del supuesto de independencia, el error estándar de la estimación es <span class="math inline">\(s_{h,R}/\sqrt{R}\)</span>. Esto se puede hacer tan pequeño como se desee incrementando el número de réplicas <span class="math inline">\(R\)</span>.</p>
 <p><strong>Ejemplo. 6.1.8. Gestión de carteras.</strong></p>
-<p>En la Sección 3.4, se explicó como calcular el valor esperado de pólizas con franquicias. Como ejemplo de algo que no puede hacerse con expresiones cerradas, se consideran ahora dos riesgos. Esta es una variación de un ejemplo más complejo que será presentado como <em>Ejemplo 10.3.6</em>.
-Se consideran dos riesgos patrimoniales de una empresa de telecomunicaciones:
-- <span class="math inline">\(X_1\)</span> - edificios, modelizado usando una distribución gamma con media 200 y parámetro de escala 100.
-- <span class="math inline">\(X_2\)</span> - vehículos de motor, modelizado con una distribución gamma con media 400 y parámetro de escala 200.
-El riesgo total se denota como <span class="math inline">\(X = X_1 + X_2.\)</span> Por simplicidad, se asume que los riesgos son independientes.
-Para gestionar el riesgo, se busca la protección de un seguro. Se desea gestionar internamente cuantías pequeñas asociadas a edificios y vehículos de motor, hasta <span class="math inline">\(M\)</span>. El riesgo retenido es <span class="math inline">\(Y_{retenido}=\)</span> <span class="math inline">\(\min(X_1 + X_2,M)\)</span>. La porción del asegurador es <span class="math inline">\(Y_{asegurador} = X- Y_{retenido}\)</span>.
-Para ser más concretos, se usa <span class="math inline">\(M=\)</span> 400 así como <span class="math inline">\(R=\)</span> 1000000 simulaciones.
-<strong>a.</strong> Con las especificaciones, se desea determinar la cuantía esperada de siniestros y la desviación estándar asociada de (i) lo retenido, (ii) lo aceptado por el asegurador, y (iii) la cuantía total.</p>
+<p>En la Sección 3.4, se explicó como calcular el valor esperado de pólizas con franquicias. Como ejemplo de algo que no puede hacerse con expresiones cerradas, se consideran ahora dos riesgos. Esta es una variación de un ejemplo más complejo que será presentado como <em>Ejemplo 10.3.6</em>.</p>
+<p>Se consideran dos riesgos patrimoniales de una empresa de telecomunicaciones:</p>
+<ul>
+<li><span class="math inline">\(X_1\)</span> - edificios, modelizado usando una distribución gamma con media 200 y parámetro de escala 100.</li>
+<li><span class="math inline">\(X_2\)</span> - vehículos de motor, modelizado con una distribución gamma con media 400 y parámetro de escala 200.</li>
+</ul>
+<p>El riesgo total se denota como <span class="math inline">\(X = X_1 + X_2.\)</span> Por simplicidad, se asume que los riesgos son independientes.</p>
+<p>Para gestionar el riesgo, se busca la protección de un seguro. Se desea gestionar internamente cuantías pequeñas asociadas a edificios y vehículos de motor, hasta <span class="math inline">\(M\)</span>. El riesgo retenido es <span class="math inline">\(Y_{retenido}=\)</span> <span class="math inline">\(\min(X_1 + X_2,M)\)</span>. La porción del asegurador es <span class="math inline">\(Y_{asegurador} = X- Y_{retenido}\)</span>.</p>
+<p>Para ser más concretos, se usa <span class="math inline">\(M=\)</span> 400 así como <span class="math inline">\(R=\)</span> 1000000 simulaciones.</p>
+<p><strong>a.</strong> Con las especificaciones, se desea determinar la cuantía esperada de siniestros y la desviación estándar asociada de (i) lo retenido, (ii) lo aceptado por el asegurador, y (iii) la cuantía total.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.PortMgt1.8.1" href="javascript:togglecode('toggleCode.PortMgt1.8.1','displayCode.PortMgt1.8.1');"><i><strong>Se muestra el código R para la definición de los riesgos</strong></i></a>
 </h5>
@@ -1270,32 +1273,32 @@ Figure 6.4: Estimación del número de siniestros esperados por el asegurador ve
 </p>
 </div>
 <hr />
-<p><strong>Determinación del número de simulaciones</strong>
-¿Cuántos valores simulados se recomiendan? ¿100? ¿1,000,000? Se puede usar el teorema central del límite para responder a esta cuestión.
-Como criterio para la confianza en el resultado, se supone que se desea estar dentro del 1% de la media con 95% de certeza. Es decir, se desea <span class="math inline">\(\Pr \left( |\overline{h}_R - \mathrm{E~}h(X)| \le 0.01 \mathrm{E~}h(X) \right) \le 0.95\)</span>. De acuerdo con el teorema central del límite, la estimación debe tener distribución aproximadamente normal, por lo que se desea que <span class="math inline">\(R\)</span> sea suficientemente grande para satisfacer <span class="math inline">\(0.01 \mathrm{E~}h(X)/\sqrt{\mathrm{Var~}h(X)/R}) \ge 1.96\)</span>. (Se recuerda que 1.96 es el percentil 97.5 de una distribución normal estándar.) Reemplazando <span class="math inline">\(\mathrm{E~}h(X)\)</span> y <span class="math inline">\(\mathrm{Var~}h(X)\)</span> con sus estimaciones, se continúa la simulación hasta
-<span class="math display">\[
+<p><strong>Determinación del número de simulaciones</strong></p>
+<p>¿Cuántos valores simulados se recomiendan? ¿100? ¿1,000,000? Se puede usar el teorema central del límite para responder a esta cuestión.</p>
+<p>Como criterio para la confianza en el resultado, se supone que se desea estar dentro del 1% de la media con 95% de certeza. Es decir, se desea <span class="math inline">\(\Pr \left( |\overline{h}_R - \mathrm{E~}h(X)| \le 0.01 \mathrm{E~}h(X) \right) \le 0.95\)</span>. De acuerdo con el teorema central del límite, la estimación debe tener distribución aproximadamente normal, por lo que se desea que <span class="math inline">\(R\)</span> sea suficientemente grande para satisfacer <span class="math inline">\(0.01 \mathrm{E~}h(X)/\sqrt{\mathrm{Var~}h(X)/R}) \ge 1.96\)</span>. (Se recuerda que 1.96 es el percentil 97.5 de una distribución normal estándar.) Reemplazando <span class="math inline">\(\mathrm{E~}h(X)\)</span> y <span class="math inline">\(\mathrm{Var~}h(X)\)</span> con sus estimaciones, se continúa la simulación hasta</p>
+<p><span class="math display">\[
 \frac{.01\overline{h}_R}{s_{h,R}/\sqrt{R}}\geq 1.96
 \]</span>
-o equivalentemente
-<span class="math display" id="eq:NumSimulations">\[\begin{equation}
+o equivalentemente</p>
+<p><span class="math display" id="eq:NumSimulations">\[\begin{equation}
 R \geq 38,416\frac{s_{h,R}^2}{\overline{h}_R^2}.
 \tag{6.1}
-\end{equation}\]</span>
-Este criterio es una aplicación directa de la aproximación a la normal. Nótese que <span class="math inline">\(\overline{h}_R\)</span> y <span class="math inline">\(s_{h,R}\)</span> no son conocidos de antemano, por lo que se tendrán que hacer estimaciones, bien haciendo un pequeño estudio piloto de antemano o interrumpiendo el procedimiento intermitentemente para ver si el criterio se satisface.</p>
+\end{equation}\]</span></p>
+<p>Este criterio es una aplicación directa de la aproximación a la normal. Nótese que <span class="math inline">\(\overline{h}_R\)</span> y <span class="math inline">\(s_{h,R}\)</span> no son conocidos de antemano, por lo que se tendrán que hacer estimaciones, bien haciendo un pequeño estudio piloto de antemano o interrumpiendo el procedimiento intermitentemente para ver si el criterio se satisface.</p>
 <p><strong>Ejemplo. 6.1.8. Gestión de carteras - continuación</strong></p>
 <p>En este ejemplo, el número medio de siniestros es 235.011 y la correspondiente desviación estándar es 280.862. Usando la ecuación <a href="C-Simulation.html#eq:NumSimulations">(6.1)</a>, para estar dentro del 10% de la media, se requerirán al menos 54.87 miles de simulaciones. Sin embargo, para estar dentro del 1% se necesitarán al menos 5.49 millones de simulaciones.</p>
 <hr />
 <p><strong>Ejemplo. 6.1.9. Elección de la aproximación.</strong></p>
-<p>Una importante aplicación de la simulación es la aproximación de <span class="math inline">\(\mathrm{E~}h(X)\)</span>. En este ejemplo, se muestra que la elección de la función <span class="math inline">\(h(\cdot)\)</span> y de la distribución de <span class="math inline">\(X\)</span> pueden jugar un papel importante.
-Se considera la siguiente pregunta: ¿cuál es <span class="math inline">\(\Pr[X&gt;2]\)</span> cuando <span class="math inline">\(X\)</span> tiene una distribución de Cauchy, con densidad <span class="math inline">\(f(x) =\left(\pi(1+x^2)\right)^{-1}\)</span>, en la recta real? El valor real es
-<span class="math display">\[
+<p>Una importante aplicación de la simulación es la aproximación de <span class="math inline">\(\mathrm{E~}h(X)\)</span>. En este ejemplo, se muestra que la elección de la función <span class="math inline">\(h(\cdot)\)</span> y de la distribución de <span class="math inline">\(X\)</span> pueden jugar un papel importante.</p>
+<p>Se considera la siguiente pregunta: ¿cuál es <span class="math inline">\(\Pr[X&gt;2]\)</span> cuando <span class="math inline">\(X\)</span> tiene una distribución de Cauchy, con densidad <span class="math inline">\(f(x) =\left(\pi(1+x^2)\right)^{-1}\)</span>, en la recta real? El valor real es</p>
+<p><span class="math display">\[
 \Pr\left[X&gt;2\right] = \int_2^\infty \frac{dx}{\pi(1+x^2)} .
 \]</span>
 Se puede usar una función de integración numérica en <code>R</code> (que funciona normalmente bien con integrales impropias)</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1">true_value &lt;-<span class="st"> </span><span class="kw">integrate</span>(<span class="cf">function</span>(x) <span class="dv">1</span><span class="op">/</span>(pi<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>x<span class="op">^</span><span class="dv">2</span>)),<span class="dt">lower=</span><span class="dv">2</span>,<span class="dt">upper=</span><span class="ot">Inf</span>)<span class="op">$</span>value</a></code></pre></div>
-<p>que es igual a 0.14758.
-Alternativamente, se pueden usar técnicas de simulación para aproximar la cantidad. Usando el cálculo, se puede comprobar que la función cuantil de una distribución de Cauchy es <span class="math inline">\(F^{-1}(y) = \tan \left( \pi(y-0.5) \right)\)</span>. Entonces, con variables uniformes (0,1) simuladas, <span class="math inline">\(U_1, \ldots, U_R\)</span>, se puede construir el estimador
-<span class="math display">\[
+<p>que es igual a 0.14758.</p>
+<p>Alternativamente, se pueden usar técnicas de simulación para aproximar la cantidad. Usando el cálculo, se puede comprobar que la función cuantil de una distribución de Cauchy es <span class="math inline">\(F^{-1}(y) = \tan \left( \pi(y-0.5) \right)\)</span>. Entonces, con variables uniformes (0,1) simuladas, <span class="math inline">\(U_1, \ldots, U_R\)</span>, se puede construir el estimador</p>
+<p><span class="math display">\[
 p_1 = \frac{1}{R}\sum_{i=1}^R \mathrm{I}(F^{-1}(U_i)&gt;2) = \frac{1}{R}\sum_{i=1}^R \mathrm{I}(\tan \left( \pi(U_i-0.5) \right)&gt;2) .
 \]</span></p>
 <h5 style="text-align: center;">
@@ -1314,35 +1317,32 @@ p_1 = \frac{1}{R}\sum_{i=1}^R \mathrm{I}(F^{-1}(U_i)&gt;2) = \frac{1}{R}\sum_{i=
 <pre><code>[1] 0.0003545432</code></pre>
 </div>
 <p>Con un millón de simulaciones, se obtiene una estimación de 0.14744 con error estándar 0.355 (dividido por 1000). Se puede demostrar que la varianza de <span class="math inline">\(p_1\)</span> es de orden <span class="math inline">\(0.127/R\)</span>.</p>
-<p>&lt;!—Se puede visualizar abajo –&gt;</p>
-<p>Con otras elecciones de <span class="math inline">\(h(\cdot)\)</span> y <span class="math inline">\(F(\cdot)\)</span>, es en realidad posible reducir la incertidumbre incluso usando el mismo número de simulaciones en <code>R</code>. Para empezar, se puede usar la simetría de la distribución de Cauchy para determinar que <span class="math inline">\(\Pr[X&gt;2]=0.5\cdot\Pr[|X|&gt;2]\)</span>. Con ello, se puede construir un nuevo estimador
-<span class="math display">\[
+<p>Con otras elecciones de <span class="math inline">\(h(\cdot)\)</span> y <span class="math inline">\(F(\cdot)\)</span>, es en realidad posible reducir la incertidumbre incluso usando el mismo número de simulaciones en <code>R</code>. Para empezar, se puede usar la simetría de la distribución de Cauchy para determinar que <span class="math inline">\(\Pr[X&gt;2]=0.5\cdot\Pr[|X|&gt;2]\)</span>. Con ello, se puede construir un nuevo estimador</p>
+<p><span class="math display">\[
 p_2 = \frac{1}{2R}\sum_{i=1}^R \mathrm{I}(|F^{-1}(U_i)|&gt;2) .
 \]</span></p>
 <p>Con un millón de simulaciones, se obtiene una estimación de 0.14748 con error estándar 0.228 (dividido por 1000). Se puede demostrar que la varianza de <span class="math inline">\(p_2\)</span> es de orden <span class="math inline">\(0.052/R\)</span>.</p>
 <p>&lt;!—Esto puede visualizarse abajo –&gt;</p>
-<p>Pero se puede ir un paso más adelante. La integral impropia puede expresarse como una integral definida por su simple propiedad de simetría (dado que la función es simétrica y la integral en la recta real es igual a <span class="math inline">\(1\)</span>)
-<span class="math display">\[
+<p>Pero se puede ir un paso más adelante. La integral impropia puede expresarse como una integral definida por su simple propiedad de simetría (dado que la función es simétrica y la integral en la recta real es igual a <span class="math inline">\(1\)</span>)</p>
+<p><span class="math display">\[
 \int_2^\infty \frac{dx}{\pi(1+x^2)}=\frac{1}{2}-\int_0^2\frac{dx}{\pi(1+x^2)} .
 \]</span>
-De esta expresión, una aproximación natural sería
-<span class="math display">\[
+De esta expresión, una aproximación natural sería</p>
+<p><span class="math display">\[
 p_3 = \frac{1}{2}-\frac{1}{R}\sum_{i=1}^R h_3(2U_i), ~~~~~~\text{where}~h_3(x)=\frac{2}{\pi(1+x^2)} .
 \]</span></p>
 <p>Con un millón de simulaciones, se obtiene una estimación de 0.14756
 con error estándar 0.169 (divido por 1000). Se puede probar que la varianza de <span class="math inline">\(p_3\)</span> es del orden <span class="math inline">\(0.0285/R\)</span>.</p>
-<p>&lt;!—Se puede visualizar abajo –&gt;</p>
-<p>Finalmente, también se puede considerar algún cambio de variable en la integral
-<span class="math display">\[
+<p>Finalmente, también se puede considerar algún cambio de variable en la integral</p>
+<p><span class="math display">\[
 \int_2^\infty \frac{dx}{\pi(1+x^2)}=\int_0^{1/2}\frac{y^{-2}dy}{\pi(1-y^{-2})} .
 \]</span>
-De esta expresión, una aproximación natural sería
-<span class="math display">\[
+De esta expresión, una aproximación natural sería</p>
+<p><span class="math display">\[
 p_4 = \frac{1}{R}\sum_{i=1}^R h_4(U_i/2),~~~~~\text{where}~h_4(x)=\frac{1}{2\pi(1+x^2)} .
 \]</span>
 La expresión parece bastante similar a la anterior,</p>
 <p>Con un millón de simulaciones, se obtiene una estimación de 0.14759 con error estándar 0.01 (dividido por 1000). Se puede probar que la varianza de <span class="math inline">\(p_4\)</span> es de orden <span class="math inline">\(0.00009/R\)</span>, que es mucho menor que los valores obtenidos hasta ahora!</p>
-<p>&lt;!—Se puede visualizar abajo –&gt;</p>
 <p><a href="#tab:61">Tabla 6.1</a> resume las cuatro elecciones de <span class="math inline">\(h(\cdot)\)</span> y <span class="math inline">\(F(\cdot)\)</span> para aproximar <span class="math inline">\(\Pr[X&gt;2] =\)</span> 0.14758. El error estándar varía notablemente. Por tanto, si se desea un determinado grado de precisión, entonces el <em>número de simulaciones</em> depende mucho de cómo se escriban las integrales que se desean aproximar.</p>
 <a id=tab:61></a>
 <div align="center">
@@ -1447,9 +1447,9 @@ Error estándar
 <div id="S:SimulationStatInference" class="section level3">
 <h3><span class="header-section-number">6.1.4</span> Simulación e inferencia estadística</h3>
 <p>Las simulaciones no solo ayudan a aproximar valores esperados, sino que también son útiles para calcular otros aspectos de las funciones de distribución. En particular, son muy útiles cuando las distribuciones de los estadísticos de prueba son muy complicadas de derivar; en este caso, se pueden usar simulaciones para aproximar la distribución de referencia. Se ilustra esto con el test de Kolmogorov-Smirnov que se presenta en la Sección 4.1.2.2.</p>
-<p><strong>Ejemplo. 6.1.10. Distribución del test de Kolmogorov-Smirnov.</strong></p>
-<p>Se tiene disponible <span class="math inline">\(n=100\)</span> observaciones <span class="math inline">\(\{x_1,\cdots,x_n\}\)</span> que, sin que lo sepa el analista, han sido generadas por una distribución gamma de parámetros <span class="math inline">\(\alpha = 6\)</span> y <span class="math inline">\(\theta=2\)</span>. El analista cree que los datos provienen de una distribución lognormal con parámetros 1 y 0.4 y desearía comprobar esta hipótesis.
-El primer paso es visualizar los datos.</p>
+<p><strong>Ejemplo. 6.1.10. Distribución del test de Kolmogorov-Smirnov.</strong>
+Se tiene disponible <span class="math inline">\(n=100\)</span> observaciones <span class="math inline">\(\{x_1,\cdots,x_n\}\)</span> que, sin que lo sepa el analista, han sido generadas por una distribución gamma de parámetros <span class="math inline">\(\alpha = 6\)</span> y <span class="math inline">\(\theta=2\)</span>. El analista cree que los datos provienen de una distribución lognormal con parámetros 1 y 0.4 y desearía comprobar esta hipótesis.</p>
+<p>El primer paso es visualizar los datos.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.KSTest.1.10.1" href="javascript:togglecode('toggleCode.KSTest.1.10.1','displayCode.KSTest.1.10.1');"><i><strong>Se muestra el código R para establecer la visualización</strong></i></a>
 </h5>
@@ -1498,7 +1498,7 @@ Figure 6.5: Histograma y función de distribución empírica de los datos usados
 data:  x
 D = 0.097037, p-value = 0.3031
 alternative hypothesis: two-sided</code></pre>
-<p>Sim embargo, para muchas distribuciones de interés actuarial, no se dispone de programas pre-construidos. Se puede usar la simulación para comprobar la relevancia de un estadístico de prueba. En concreto, para calcular el <span class="math inline">\(p\)</span>-valor, se generan miles de muestras aleatorias de una distribución <span class="math inline">\(LN(1,0.4)\)</span> (con el mismo tamaño), y se calcula empíricamente la distribución del estadístico,</p>
+<p>Sin embargo, para muchas distribuciones de interés actuarial, no se dispone de programas pre-construidos. Se puede usar la simulación para comprobar la relevancia de un estadístico de prueba. En concreto, para calcular el <span class="math inline">\(p\)</span>-valor, se generan miles de muestras aleatorias de una distribución <span class="math inline">\(LN(1,0.4)\)</span> (con el mismo tamaño), y se calcula empíricamente la distribución del estadístico,</p>
 <h5 style="text-align: center;">
 <a id="displayCode.KSTest.1.10.3" href="javascript:togglecode('toggleCode.KSTest.1.10.3','displayCode.KSTest.1.10.3');"><i><strong>Se muestra el código R para la distribución simulada del estadístico KS</strong></i></a>
 </h5>
@@ -1519,30 +1519,34 @@ alternative hypothesis: two-sided</code></pre>
 Figure 6.6: Distribución simulada del estadístico de prueba de Kolmogorov-Smirnov. La línea roja discontinua vertical marca el estadístico de prueba para una muestra de 100.
 </p>
 </div>
-<p>La distribución simulada basada en 10,000 muestras aleatorias se resume en la Figura <a href="C-Simulation.html#fig:KSSimulatedDistribution">6.6</a>. Aquí, el estadístico excede el valor empírico (0.09704) en 28.43% de los escenarios, mientras que el <span class="math inline">\(p\)</span>-valor <em>teórico</em> es 0.3031. Tanto para la simulación como para los <span class="math inline">\(p\)</span>-valores teóricos, las conclusiones son las mismas; los datos no proporcionan evidencia suficiente para rechazar la hipótesis de la distribución lognormal.
-Aunque se trate solo de una aproximación, el enfoque basado en la simulación funciona en una gran variedad de distribuciones y estadísticos de prueba sin necesitar desarrollar los detalles de la teoría de base en cada situación. Se puede resumir el procedimiento para desarrollar distribuciones simuladas y <em>p</em>-valores como sigue:
-1. Obtén una muestra de tamaño <em>n</em>, es decir, <span class="math inline">\(X_1, \ldots, X_n\)</span>, de una función de distribución conocida <span class="math inline">\(F\)</span>. Calcula el estadístico de interés, denotado por <span class="math inline">\(\hat{\theta}(X_1, \ldots, X_n)\)</span>. Se le llama <span class="math inline">\(\hat{\theta}^r\)</span> para la réplica <em>r</em>ésima.
-2. Se repite <span class="math inline">\(r=1, \ldots, R\)</span> veces para obtener una muestra de estadísticos, <span class="math inline">\(\hat{\theta}^1, \ldots,\hat{\theta}^R\)</span>.
-3. De la muestra de estadísticos en el paso 2, <span class="math inline">\(\{\hat{\theta}^1, \ldots,\hat{\theta}^R\}\)</span>, se calcula una medida de resumen de interés, como el <em>p</em>-valor.</p>
+<p>La distribución simulada basada en 10,000 muestras aleatorias se resume en la Figura <a href="C-Simulation.html#fig:KSSimulatedDistribution">6.6</a>. Aquí, el estadístico excede el valor empírico (0.09704) en 28.43% de los escenarios, mientras que el <span class="math inline">\(p\)</span>-valor <em>teórico</em> es 0.3031. Tanto para la simulación como para los <span class="math inline">\(p\)</span>-valores teóricos, las conclusiones son las mismas; los datos no proporcionan evidencia suficiente para rechazar la hipótesis de la distribución lognormal.</p>
+<p>Aunque se trate solo de una aproximación, el enfoque basado en la simulación funciona en una gran variedad de distribuciones y estadísticos de prueba sin necesitar desarrollar los detalles de la teoría de base en cada situación. Se puede resumir el procedimiento para desarrollar distribuciones simuladas y <em>p</em>-valores como sigue:</p>
+<ol style="list-style-type: decimal">
+<li>Obtén una muestra de tamaño <em>n</em>, es decir, <span class="math inline">\(X_1, \ldots, X_n\)</span>, de una función de distribución conocida <span class="math inline">\(F\)</span>. Calcula el estadístico de interés, denotado por <span class="math inline">\(\hat{\theta}(X_1, \ldots, X_n)\)</span>. Se le llama <span class="math inline">\(\hat{\theta}^r\)</span> para la réplica <em>r</em>ésima.</li>
+<li>Se repite <span class="math inline">\(r=1, \ldots, R\)</span> veces para obtener una muestra de estadísticos, <span class="math inline">\(\hat{\theta}^1, \ldots,\hat{\theta}^R\)</span>.</li>
+<li>De la muestra de estadísticos en el paso 2, <span class="math inline">\(\{\hat{\theta}^1, \ldots,\hat{\theta}^R\}\)</span>, se calcula una medida de resumen de interés, como el <em>p</em>-valor.</li>
+</ol>
 </div>
 </div>
 <div id="S:Bootstrap" class="section level2">
 <h2><span class="header-section-number">6.2</span> Bootstrapping y remuestreo</h2>
 <hr />
-<p>En esta sección, se muestra como:
-- Generar una distribución no paramétrica bootstrap para un estadístico de interés
-- Usar la distribución bootstrap para generar estimaciones de la precisión del estadístico de interés, incluyendo sesgo, desviaciones estándar, e intervalos de confianza
-- Realizar análisis bootstrap para distribuciones paramétricas</p>
+<p>En esta sección, se muestra como:</p>
+<ul>
+<li>Generar una distribución no paramétrica bootstrap para un estadístico de interés</li>
+<li>Usar la distribución bootstrap para generar estimaciones de la precisión del estadístico de interés, incluyendo sesgo, desviaciones estándar, e intervalos de confianza</li>
+<li>Realizar análisis bootstrap para distribuciones paramétricas</li>
+</ul>
 <hr />
 <!--  Bootstrap -->
 <div id="fundamentos-del-bootstrap" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Fundamentos del Bootstrap</h3>
-<p>La simulación presentada hasta ahora se basa en un muestreo a partir de una distribución <strong>conocida</strong>. La Sección <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> mostró como usar técnicas de simulación para obtener muestras y calcular cantidades de estas distribuciones conocidas. Sin embargo, la ciencia estadística se dedica a proporcionar inferencias sobre distribuciones que son <em>desconocidas</em>. Se recopilan estadísticos de resumen basados en esta distribución desconocida de una población. Pero, ¿cómo se puede realizar un muestreo de una distribución desconocida?
-Naturalmente, no se pueden simular valores de una distribución desconocida pero sí que se pueden obtener valores de una muestra de observaciones. Si la muestra es una buena representación de una población, entonces nuestras extracciones simuladas de una muestra se aproximan bien a las extracciones simuladas de una población. El proceso de obtener una muestra de una muestra se llama <em>remuestreo</em> o <em>bootstrapping</em>.</p>
-<p>El término bootstrap proviene de la frase (en inglés) “pulling oneself up by one’s bootstraps” (Efron, 1979). En el remuestreo, la muestra original juega el papel de la población y las estimaciones obtenidas a partir de la muestra juegan el papel de los verdaderos parámetros de la población.
-El algoritmo de remuestreo es el mismo que el introducido en la Sección <a href="C-Simulation.html#S:SimulationStatInference">6.1.4</a> excepto que ahora usa extracciones simuladas de la muestra. Es común usar <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span> para denotar la muestra original y <span class="math inline">\(\{X_1^*, \ldots, X_n^*\}\)</span> para los valores simulados. Las extracciones se realizan con reemplazamiento para que los valores simulados sean independientes entre ellos, la misma suposición que para la muestra original. Para cada muestra, también se realizan <em>n</em> extracciones simuladas, el mismo valor que el tamaño muestral. Para distinguir este proceso de la simulación, es común usar <em>B</em> (de bootstrap) para representar el número de muestras simuladas. También se puede escribir <span class="math inline">\(\{X_1^{(b)}, \ldots, X_n^{(b)}\}\)</span>, <span class="math inline">\(b=1,\ldots, B\)</span> lo cual resulta más claro.
-Hay dos métodos básicos de remuestreo, <em>model-free</em> y <em>model-based</em> (tomando sus nombres en inglés), que son, respectivamente, <em>no paramétrico</em> y <em>paramétrico</em>. En el enfoque no paramétrico, no se hace ninguna suposición sobre la distribución de la población de origen. Las extracciones simuladas provienen de la función de distribución empírica <span class="math inline">\(F_n(\cdot)\)</span>, por lo que cada extracción proviene de <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span> con probabilidad 1/<em>n</em>.
-Por contra, para el enfoque paramétrico, se asume que se tiene conocimiento de la familia de la distribución <em>F</em>. La muestra original <span class="math inline">\(X_1, \ldots, X_n\)</span> se usa para estimar los parámetros de esa familia, es decir, <span class="math inline">\(\hat{\theta}\)</span>. Entonces, las extracciones simuladas se toman de <span class="math inline">\(F(\hat{\theta})\)</span>. En la Sección <a href="C-Simulation.html#S:ParametricBootStrap">6.2.4</a> se comenta este enfoque con más detalle.</p>
+<p>La simulación presentada hasta ahora se basa en un muestreo a partir de una distribución <strong>conocida</strong>. La Sección <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> mostró como usar técnicas de simulación para obtener muestras y calcular cantidades de estas distribuciones conocidas. Sin embargo, la ciencia estadística se dedica a proporcionar inferencias sobre distribuciones que son <em>desconocidas</em>. Se recopilan estadísticos de resumen basados en esta distribución desconocida de una población. Pero, ¿cómo se puede realizar un muestreo de una distribución desconocida?</p>
+<p>Naturalmente, no se pueden simular valores de una distribución desconocida pero sí que se pueden obtener valores de una muestra de observaciones. Si la muestra es una buena representación de una población, entonces nuestras extracciones simuladas de una muestra se aproximan bien a las extracciones simuladas de una población. El proceso de obtener una muestra de una muestra se llama <em>remuestreo</em> o <em>bootstrapping</em>.</p>
+<p>El término bootstrap proviene de la frase (en inglés) “pulling oneself up by one’s bootstraps” (Efron, 1979). En el remuestreo, la muestra original juega el papel de la población y las estimaciones obtenidas a partir de la muestra juegan el papel de los verdaderos parámetros de la población.</p>
+<p>El algoritmo de remuestreo es el mismo que el introducido en la Sección <a href="C-Simulation.html#S:SimulationStatInference">6.1.4</a> excepto que ahora usa extracciones simuladas de la muestra. Es común usar <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span> para denotar la muestra original y <span class="math inline">\(\{X_1^*, \ldots, X_n^*\}\)</span> para los valores simulados. Las extracciones se realizan con reemplazamiento para que los valores simulados sean independientes entre ellos, la misma suposición que para la muestra original. Para cada muestra, también se realizan <em>n</em> extracciones simuladas, el mismo valor que el tamaño muestral. Para distinguir este proceso de la simulación, es común usar <em>B</em> (de bootstrap) para representar el número de muestras simuladas. También se puede escribir <span class="math inline">\(\{X_1^{(b)}, \ldots, X_n^{(b)}\}\)</span>, <span class="math inline">\(b=1,\ldots, B\)</span> lo cual resulta más claro.
+Hay dos métodos básicos de remuestreo, <em>model-free</em> y <em>model-based</em> (tomando sus nombres en inglés), que son, respectivamente, <em>no paramétrico</em> y <em>paramétrico</em>. En el enfoque no paramétrico, no se hace ninguna suposición sobre la distribución de la población de origen. Las extracciones simuladas provienen de la función de distribución empírica <span class="math inline">\(F_n(\cdot)\)</span>, por lo que cada extracción proviene de <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span> con probabilidad 1/<em>n</em>.</p>
+<p>Por contra, para el enfoque paramétrico, se asume que se tiene conocimiento de la familia de la distribución <em>F</em>. La muestra original <span class="math inline">\(X_1, \ldots, X_n\)</span> se usa para estimar los parámetros de esa familia, es decir, <span class="math inline">\(\hat{\theta}\)</span>. Entonces, las extracciones simuladas se toman de <span class="math inline">\(F(\hat{\theta})\)</span>. En la Sección <a href="C-Simulation.html#S:ParametricBootStrap">6.2.4</a> se comenta este enfoque con más detalle.</p>
 <div id="bootstrap-no-paramétrico" class="section level4 unnumbered">
 <h4>Bootstrap no paramétrico</h4>
 <p>La idea del bootstrap no paramétrico es usar el método inverso en <span class="math inline">\(F_n\)</span>, la función de distribución empírica acumulada, representada en la Figura <a href="C-Simulation.html#fig:InverseDFboot">6.7</a>.</p>
@@ -1580,14 +1584,15 @@ Figure 6.8: Inversa de la función de distribución empírica
 </div>
 <div id="precisión-del-bootstrap-sesgo-desviación-estándar-y-mse-error-cuadrático-medio-en-sus-siglas-en-inglés" class="section level3">
 <h3><span class="header-section-number">6.2.2</span> Precisión del bootstrap: Sesgo, desviación estándar, y MSE (error cuadrático medio, en sus siglas en inglés)</h3>
-<p>Se resume el procedimiento para el bootstrap no paramétrico como sigue:
-1. Para la muestra <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span>, se extrae una muestra de tamaño <em>n</em> (con reemplazamiento), es decir, <span class="math inline">\(X_1^*, \ldots, X_n^*\)</span>. De las extracciones simuladas se calcula el estadístico de interés, denotado como <span class="math inline">\(\hat{\theta}(X_1^*, \ldots, X_n^*)\)</span>. Se denomina <span class="math inline">\(\hat{\theta}_b^*\)</span> para la réplica <em>b</em>ésima.
-2. Se repite esto <span class="math inline">\(b=1, \ldots, B\)</span> veces para obtener una muestra de estadísticos, <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span>.
-3. Para la muestra de estadísticos en el paso 2, <span class="math inline">\(\{\hat{\theta}_1^*, \ldots, \hat{\theta}_B^*\}\)</span>, se calcula una medida de resumen de interés.</p>
-<p>En esta sección, se centra el interés en tres medidas de resumen, el sesgo, la desviación estándar, y el error cuadrático medio (<em>MSE</em>). [Tabla 6.2] resume estas tres medidas. Aquí, <span class="math inline">\(\overline{\hat{\theta^*}}\)</span> es el promedio de <span class="math inline">\(\{\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\}\)</span>.
-[Tabla 6.2]:#tab:62
-<a id=tab:62></a>
-<span class="math display">\[
+<p>Se resume el procedimiento para el bootstrap no paramétrico como sigue:</p>
+<ol style="list-style-type: decimal">
+<li>Para la muestra <span class="math inline">\(\{X_1, \ldots, X_n\}\)</span>, se extrae una muestra de tamaño <em>n</em> (con reemplazamiento), es decir, <span class="math inline">\(X_1^*, \ldots, X_n^*\)</span>. De las extracciones simuladas se calcula el estadístico de interés, denotado como <span class="math inline">\(\hat{\theta}(X_1^*, \ldots, X_n^*)\)</span>. Se denomina <span class="math inline">\(\hat{\theta}_b^*\)</span> para la réplica <em>b</em>ésima.</li>
+<li>Se repite esto <span class="math inline">\(b=1, \ldots, B\)</span> veces para obtener una muestra de estadísticos, <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span>.</li>
+<li>Para la muestra de estadísticos en el paso 2, <span class="math inline">\(\{\hat{\theta}_1^*, \ldots, \hat{\theta}_B^*\}\)</span>, se calcula una medida de resumen de interés.</li>
+</ol>
+<p>En esta sección, se centra el interés en tres medidas de resumen, el sesgo, la desviación estándar, y el error cuadrático medio (<em>MSE</em>). <a href="#tab:62">Tabla 6.2</a> resume estas tres medidas. Aquí, <span class="math inline">\(\overline{\hat{\theta^*}}\)</span> es el promedio de <span class="math inline">\(\{\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\}\)</span>.</p>
+<p><a id=tab:62></a></p>
+<p><span class="math display">\[
 {\small
 \begin{matrix}
 \text{Tabla 6.2. Medidas de resumen bootstrap}\\
@@ -1605,8 +1610,8 @@ Figure 6.8: Inversa de la función de distribución empírica
 }
 \]</span></p>
 <hr />
-<p><strong>Ejemplo 6.2.1. Siniestros con daños corporales y ratio de eliminación de pérdida.</strong> Para mostrar cómo el bootstrap puede usarse para cuantificar la precisión de los estimadores, se retoma el Ejemplo 4.1.11 sobre los datos de siniestros con daños corporales donde se introdujo el estimador no paramétrico de la ratio de eliminación de pérdidas.
-<a href="#tab:63">Tabla 6.3</a> resume los resultados de la estimación bootstrap. Por ejemplo, para <span class="math inline">\(d=14000\)</span>, se vió en el Ejemplo 4.1.11 que la estimación no paramétrica de <em>LER</em> es 0.97678. Este valor tiene un sesgo estimado de 0.00018 con una desviación estándar de 0.00701. Para algunas aplicaciones, se puede desear aplicar el sesgo estimado a la estimación original para obtener un estimador corregido por el sesgo. En ello se centra el próximo ejemplo. Para esta ilustración, el sesgo es pequeño por lo que dicha corrección no es relevante.</p>
+<p><strong>Ejemplo 6.2.1. Siniestros con daños corporales y ratio de eliminación de pérdida.</strong> Para mostrar cómo el bootstrap puede usarse para cuantificar la precisión de los estimadores, se retoma el Ejemplo 4.1.11 sobre los datos de siniestros con daños corporales donde se introdujo el estimador no paramétrico de la ratio de eliminación de pérdidas.</p>
+<p><a href="#tab:63">Tabla 6.3</a> resume los resultados de la estimación bootstrap. Por ejemplo, para <span class="math inline">\(d=14000\)</span>, se vió en el Ejemplo 4.1.11 que la estimación no paramétrica de <em>LER</em> es 0.97678. Este valor tiene un sesgo estimado de 0.00018 con una desviación estándar de 0.00701. Para algunas aplicaciones, se puede desear aplicar el sesgo estimado a la estimación original para obtener un estimador corregido por el sesgo. En ello se centra el próximo ejemplo. Para esta ilustración, el sesgo es pequeño por lo que dicha corrección no es relevante.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.LER6.2.1" href="javascript:togglecode('toggleCode.LER6.2.1','displayCode.LER6.2.1');"><i><strong>Muestra el código R para la estimaciones bootstrap de LER</strong></i></a>
 </h5>
@@ -1721,28 +1726,28 @@ Figure 6.8: Inversa de la función de distribución empírica
 <p>Se supone que la cantidad de interés es <span class="math inline">\(\theta=\exp(\mu)\)</span>. Un estimador natural sería <span class="math inline">\(\widehat{\theta}_1=\exp(\overline{x})\)</span>. Este estimador tiene sesgo (debido a la desigualdad Jensen) pero es asintóticamente insesgado. Para nuestra muestra, la estimación es como se muestra a continuación.</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1">(theta_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">mean</span>(sample_x)))</a></code></pre></div>
 <pre><code>[1] 19.13463</code></pre>
-<p>Se puede usar el teorema central del límite para obtener una corrección usando
-<span class="math display">\[
+<p>Se puede usar el teorema central del límite para obtener una corrección usando</p>
+<p><span class="math display">\[
 \overline{X}\approx\mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right)\text{ where }\sigma^2=\text{Var}[X_i] ,
 \]</span>
-De modo que, con la función generatriz de momentos normal, se tiene
-<span class="math display">\[
+De modo que, con la función generatriz de momentos normal, se tiene</p>
+<p><span class="math display">\[
 \mathrm{E}~\exp[\overline{X}] \approx \exp\left(\mu+\frac{\sigma^2}{2n}\right) .
 \]</span>
-Por tanto, se puede considerar
-<span class="math display">\[
+Por tanto, se puede considerar</p>
+<p><span class="math display">\[
 \widehat{\theta}_2=\exp\left(\overline{x}-\frac{\widehat{\sigma}^2}{2n}\right) .
 \]</span>
 Para nuestros datos, resulta lo siguiente.</p>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1">n &lt;-<span class="st"> </span><span class="kw">length</span>(sample_x)</a>
 <a class="sourceLine" id="cb59-2" title="2">(theta_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">exp</span>(<span class="kw">mean</span>(sample_x)<span class="op">-</span><span class="kw">var</span>(sample_x)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>n)))</a></code></pre></div>
 <pre><code>[1] 18.73334</code></pre>
-<p>Otra estrategia (que no vamos a desarrollar aquí) sería usar una aproximación de Taylor para obtener un estimador más preciso (como en el método delta),
-<span class="math display">\[
+<p>Otra estrategia (que no vamos a desarrollar aquí) sería usar una aproximación de Taylor para obtener un estimador más preciso (como en el método delta),</p>
+<p><span class="math display">\[
 g(\overline{x})=g(\mu)+(\overline{x}-\mu)g&#39;(\mu)+(\overline{x}-\mu)^2\frac{g&#39;&#39;(\mu)}{2}+\cdots
 \]</span>
-La alternativa que se explora es usar una estrategia bootstrap: dada una muestra bootstrap, <span class="math inline">\(\mathbf{x}^{\ast}_{b}\)</span>, sea <span class="math inline">\(\overline{x}^{\ast}_{b}\)</span> dsu media, y se establece
-<span class="math display">\[
+La alternativa que se explora es usar una estrategia bootstrap: dada una muestra bootstrap, <span class="math inline">\(\mathbf{x}^{\ast}_{b}\)</span>, sea <span class="math inline">\(\overline{x}^{\ast}_{b}\)</span> dsu media, y se establece</p>
+<p><span class="math display">\[
 \widehat{\theta}_3=\frac{1}{B}\sum_{b=1}^B\exp(\overline{x}^{\ast}_{b}) .
 \]</span>
 Para implementarlo, se proporciona el siguiente código.</p>
@@ -1817,25 +1822,25 @@ Figure 6.10: Comparación de estimaciones. El verdadero valor del parámetro vie
 </div>
 <div id="intervalos-de-confianza" class="section level3">
 <h3><span class="header-section-number">6.2.3</span> Intervalos de confianza</h3>
-<p>El procedimiento bootstrap genera <em>B</em> réplicas <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span> del estimador <span class="math inline">\(\hat{\theta}\)</span>. En el <em>Ejemplo 6.2.1,</em> se mostró cómo usar las aproximaciones a la normal estándar para crear intervalos de confianza de los parámetros de interés. Sin embargo, dado que el interés se centra en usar el bootstrap para evitar confiar en supuestos de aproximación a la normal, no sorprende que haya disponibilidad de intervalos de confianza alternativos.
-Para un estimador <span class="math inline">\(\hat{\theta}\)</span>, el intervalo de confianza <em>básico</em> bootstrap es
-<span class="math display" id="eq:basicBootCI">\[\begin{equation} 
+<p>El procedimiento bootstrap genera <em>B</em> réplicas <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span> del estimador <span class="math inline">\(\hat{\theta}\)</span>. En el <em>Ejemplo 6.2.1,</em> se mostró cómo usar las aproximaciones a la normal estándar para crear intervalos de confianza de los parámetros de interés. Sin embargo, dado que el interés se centra en usar el bootstrap para evitar confiar en supuestos de aproximación a la normal, no sorprende que haya disponibilidad de intervalos de confianza alternativos.</p>
+<p>Para un estimador <span class="math inline">\(\hat{\theta}\)</span>, el intervalo de confianza <em>básico</em> bootstrap es</p>
+<p><span class="math display" id="eq:basicBootCI">\[\begin{equation} 
   \left(2 \hat{\theta} - q_U, 2 \hat{\theta} - q_L \right) ,
   \tag{6.2}
-\end{equation}\]</span>
-donde <span class="math inline">\(q_L\)</span> y <span class="math inline">\(q_U\)</span> son los cuantiles al 2.5% inferior y superior de la muestra bootstrap <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span>.
-Para ver de dónde viene esto, se toma como punto de partida la idea de que <span class="math inline">\((q_L, q_U)\)</span> proporciona un intervalo al 95% para <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span>. Por tanto, para un <span class="math inline">\(\hat{\theta}_b^*\)</span> aleatorio, hay un 95% de probabilidades de que <span class="math inline">\(q_L \le \hat{\theta}_b^* \le q_U\)</span>. Revirtiendo las desigualdades y añadiendo <span class="math inline">\(\hat{\theta}\)</span> a cada lado se obtiene un intervalo al 95%
-<span class="math display">\[
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(q_L\)</span> y <span class="math inline">\(q_U\)</span> son los cuantiles al 2.5% inferior y superior de la muestra bootstrap <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span>.
+Para ver de dónde viene esto, se toma como punto de partida la idea de que <span class="math inline">\((q_L, q_U)\)</span> proporciona un intervalo al 95% para <span class="math inline">\(\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\)</span>. Por tanto, para un <span class="math inline">\(\hat{\theta}_b^*\)</span> aleatorio, hay un 95% de probabilidades de que <span class="math inline">\(q_L \le \hat{\theta}_b^* \le q_U\)</span>. Revirtiendo las desigualdades y añadiendo <span class="math inline">\(\hat{\theta}\)</span> a cada lado se obtiene un intervalo al 95%</p>
+<p><span class="math display">\[
 \hat{\theta} -q_U \le \hat{\theta} - \hat{\theta}_b^* \le  \hat{\theta} -q_L .
 \]</span>
-Por tanto, <span class="math inline">\(\left( \hat{\theta}-q_U, \hat{\theta} -q_L\right)\)</span> es un intervalo al 95% para <span class="math inline">\(\hat{\theta} - \hat{\theta}_b^*\)</span>. La idea de la aproximación bootstrap indica que ello es también un intervalo al 95% para <span class="math inline">\(\theta - \hat{\theta}\)</span>. Añadiendo <span class="math inline">\(\hat{\theta}\)</span> a cada lado da un intervalo al 95% en la ecuación <a href="C-Simulation.html#eq:basicBootCI">(6.2)</a>.
-Hay muchos intervalos bootstrap alternativos. El más sencillo de explicar es el intervalo basado en los percentiles bootstrap que se define como <span class="math inline">\(\left(q_L, q_U\right)\)</span>. No obstante, presenta la desventaja de tener un comportamiento potencialmente pobre en las colas, lo cual puede ser un inconveniente en algunos problemas actuariales de interés.</p>
+Por tanto, <span class="math inline">\(\left( \hat{\theta}-q_U, \hat{\theta} -q_L\right)\)</span> es un intervalo al 95% para <span class="math inline">\(\hat{\theta} - \hat{\theta}_b^*\)</span>. La idea de la aproximación bootstrap indica que ello es también un intervalo al 95% para <span class="math inline">\(\theta - \hat{\theta}\)</span>. Añadiendo <span class="math inline">\(\hat{\theta}\)</span> a cada lado da un intervalo al 95% en la ecuación <a href="C-Simulation.html#eq:basicBootCI">(6.2)</a>.</p>
+<p>Hay muchos intervalos bootstrap alternativos. El más sencillo de explicar es el intervalo basado en los percentiles bootstrap que se define como <span class="math inline">\(\left(q_L, q_U\right)\)</span>. No obstante, presenta la desventaja de tener un comportamiento potencialmente pobre en las colas, lo cual puede ser un inconveniente en algunos problemas actuariales de interés.</p>
 <p><strong>Ejemplo 6.2.3. Siniestros con daños corporales y medidas de riesgo.</strong> Para ver cómo funcionan los intervalos de confianza bootstrap, se retoma los datos sobre siniestros del automóvil con daños corporales considerados en el Ejemplo 6.2.1. En lugar de la ratio de eliminación de pérdida, se desea estimar el percentil al 95% <span class="math inline">\(F^{-1}(0.95)\)</span> y una medida definida como
 <span class="math display">\[
 TVaR_{0.95)}[X] = \mathrm{E}[X | X &gt; F^{-1}(0.95)] .
 \]</span>
-Esta medida se llama tail value-at-risk; es el valor esperado de <span class="math inline">\(X\)</span> condicionado a que <span class="math inline">\(X\)</span> exceda el percentil al 95%. En la Sección 10.2 se explica como los cuantiles y el tail value-at-risk son los dos ejemplos más importantes de las llamadas <em>medidas de riesgo</em>. Por el momento, se considerarán simplemente como medidas que se quieren estimar. Para el percentil, se usa el estimador no paramétrico <span class="math inline">\(F^{-1}_n(0.95)\)</span> definido en la Sección 4.1.1.3. Para el tail value-at-risk, se usa el principio plug-in para definir el estimador no paramétrico
-<span class="math display">\[
+Esta medida se llama tail value-at-risk; es el valor esperado de <span class="math inline">\(X\)</span> condicionado a que <span class="math inline">\(X\)</span> exceda el percentil al 95%. En la Sección 10.2 se explica como los cuantiles y el tail value-at-risk son los dos ejemplos más importantes de las llamadas <em>medidas de riesgo</em>. Por el momento, se considerarán simplemente como medidas que se quieren estimar. Para el percentil, se usa el estimador no paramétrico <span class="math inline">\(F^{-1}_n(0.95)\)</span> definido en la Sección 4.1.1.3. Para el tail value-at-risk, se usa el principio plug-in para definir el estimador no paramétrico</p>
+<p><span class="math display">\[
 TVaR_{n,0.95}[X] = \frac{\sum_{i=1}^n X_i I(X_i &gt; F^{-1}_n(0.95))}{\sum_{i=1}^n I(X_i &gt; F^{-1}_n(0.95))} ~.
 \]</span>
 En esta expresión, el denominador cuenta el número de observaciones que exceden el percentil al 95% <span class="math inline">\(F^{-1}_n(0.95)\)</span>. El numerador suma las pérdidas para aquellas observaciones que exceden <span class="math inline">\(F^{-1}_n(0.95)\)</span>. <a href="#tab:64">Tabla 6.4</a> resume el estimador para para fracciones seleccionadas.</p>
@@ -1967,8 +1972,8 @@ En esta expresión, el denominador cuenta el número de observaciones que excede
 </tbody>
 </table>
 <p>Por ejemplo, cuando la fracción es 0.50, se observa que los cuantiles al 2.5th por abajo y por arriba de las simulaciones bootstrap son <span class="math inline">\(q_L=\)</span> 6000 y <span class="math inline">\(q_u=\)</span> 6700, respectivamente. Ello forma el intervalo de confianza percentil bootstrap. Con el estimador no paramétrico 6500, se obtienen los límites inferiores y superiores de los intervalos de confianza básicos 6300
-y 7000, respectivamente. La <a href="#tab:64">Tabla 6.4</a> también muestra las estimaciones bootstrap del sesgo, desviación estándar, y el intervalo de confianza normal, conceptos introducidos en la sección anterior. La
-<a href="#tab:65">Tabla 6.5</a> muestra cálculos similares para el tail value-at-risk. En cada caso, se observa que la desviación estándar bootstrap aumenta a medida que la fracción aumenta. Ello es un reflejo de que cada vez hay menos observaciones disponibles para estimar los cuantiles a medida que la fracción aumenta, y por lo tanto hay una mayor imprecisión. La amplitud de los intervalos de confianza también aumenta. Resulta interesante ver que no parece haber el mismo patrón en las estimaciones del sesgo.</p>
+y 7000, respectivamente. La <a href="#tab:64">Tabla 6.4</a> también muestra las estimaciones bootstrap del sesgo, desviación estándar, y el intervalo de confianza normal, conceptos introducidos en la sección anterior.</p>
+<p>La <a href="#tab:65">Tabla 6.5</a> muestra cálculos similares para el tail value-at-risk. En cada caso, se observa que la desviación estándar bootstrap aumenta a medida que la fracción aumenta. Ello es un reflejo de que cada vez hay menos observaciones disponibles para estimar los cuantiles a medida que la fracción aumenta, y por lo tanto hay una mayor imprecisión. La amplitud de los intervalos de confianza también aumenta. Resulta interesante ver que no parece haber el mismo patrón en las estimaciones del sesgo.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.bootstrapquantiles.2" href="javascript:togglecode('toggleCode.bootstrapquantiles.2','displayCode.bootstrapquantiles.2');"><i><strong>Se muestra el código R para crear muestras basadas en el TVar Bootstrap</strong></i></a>
 </h5>
@@ -2140,8 +2145,8 @@ Figure 6.11: Comparación de las distribuciones Bootstrap no paramétrico y para
 </p>
 </div>
 <hr />
-<p><strong>Ejemplo 6.2.5. Bootstrap de observaciones censuradas.</strong> El bootstrap paramétrico extrae realizaciones simuladas de una estimación paramétrica de una función de distribución. Del mismo modo, se pueden extraer realizaciones simuladas de la estimación de una función de distribución. A modo de ejemplo, se pueden realizar extracciones de estimaciones suavizadas de una función de distribución según lo introducido en la Sección 4.1.1.4. Otro caso especial, considerado aquí, es extraer una estimación del estimador de Kaplan-Meier introducido en la Sección 4.3.2.2. De esta forma, se pueden manejar observaciones que están censuradas.
-Concretamente, se consideran nuevamente los datos sobre daños corporales de los Ejemplos 6.2.1 y 6.2.3 pero ahora se incluyen 17 siniestros que están censurados por límites en la póliza. En el Ejemplo 4.3.6, se usó esta base de datos completa para estimar el estimador de Kaplan-Meier de la función de supervivencia introducida en la Sección 4.3.2.2. La <a href="#tab:66">Tabla 6.6</a> presenta las estimaciones bootstrap de los cuantiles obtenidos de la estimación de la función de supervivencia Kaplan-Meier. Incluye las estimaciones de la precisión bootstrap, sesgo y desviación estándar, así como el intervalo de confianza básico al 95%.</p>
+<p><strong>Ejemplo 6.2.5. Bootstrap de observaciones censuradas.</strong> El bootstrap paramétrico extrae realizaciones simuladas de una estimación paramétrica de una función de distribución. Del mismo modo, se pueden extraer realizaciones simuladas de la estimación de una función de distribución. A modo de ejemplo, se pueden realizar extracciones de estimaciones suavizadas de una función de distribución según lo introducido en la Sección 4.1.1.4. Otro caso especial, considerado aquí, es extraer una estimación del estimador de Kaplan-Meier introducido en la Sección 4.3.2.2. De esta forma, se pueden manejar observaciones que están censuradas.</p>
+<p>Concretamente, se consideran nuevamente los datos sobre daños corporales de los Ejemplos 6.2.1 y 6.2.3 pero ahora se incluyen 17 siniestros que están censurados por límites en la póliza. En el Ejemplo 4.3.6, se usó esta base de datos completa para estimar el estimador de Kaplan-Meier de la función de supervivencia introducida en la Sección 4.3.2.2. La <a href="#tab:66">Tabla 6.6</a> presenta las estimaciones bootstrap de los cuantiles obtenidos de la estimación de la función de supervivencia Kaplan-Meier. Incluye las estimaciones de la precisión bootstrap, sesgo y desviación estándar, así como el intervalo de confianza básico al 95%.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.KMCode.1" href="javascript:togglecode('toggleCode.KMCode.1','displayCode.KMCode.1');"><i><strong>Muestra el código R para las estimaciones Bootstrap Kaplan-Meier</strong></i></a>
 </h5>
@@ -2241,17 +2246,22 @@ Concretamente, se consideran nuevamente los datos sobre daños corporales de los
 </div>
 <div id="S:CrossValidation" class="section level2">
 <h2><span class="header-section-number">6.3</span> Validación cruzada</h2>
-<p>En esta sección, se muestra como:
-- Comparar y contrastar la validación cruzada a las técnicas de simulación y los métodos bootstrap.
-- Usar técnicas de validación cruzada para la selección de modelos
-- Explicar el método jackknife como caso especial de validación cruzada y calcular las estimaciones jackknife del sesgo y de los errores estándar</p>
+<p>En esta sección, se muestra como:</p>
+<ul>
+<li>Comparar y contrastar la validación cruzada a las técnicas de simulación y los métodos bootstrap.</li>
+<li>Usar técnicas de validación cruzada para la selección de modelos</li>
+<li>Explicar el método jackknife como caso especial de validación cruzada y calcular las estimaciones jackknife del sesgo y de los errores estándar</li>
+</ul>
 <hr />
 <!-- ## Validación cruzada -->
-<p>La validación cruzada, brevemente introducida en la Sección 4.2.4, es una técnica basada en simular resultados y por ello es conveniente pensar en su propósito en comparación con otras técnicas de simulación ya introducidas en este capítulo.
-- La simulación, o Monte-Carlo, introducida en la Sección <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a>, permite calcular valores esperados o otras medidas de resumen de distribuciones estadísticas, como <span class="math inline">\(p\)</span>-valores, fácilmente.
-- El bootstrap, y otros métodos de remuestreo introducidos en la Sección <a href="C-Simulation.html#S:Bootstrap">6.2</a>, proporciona estimadores de la precisión, o variabilidad, de los estadísticos.
-- La validación cruzada es importante para valorar con qué precisión un modelo predictivo funcionará en la práctica.
-Existe superposición, pero sin embargo es útil pensar acerca del objetivo general asociado con cada uno de los métodos. Para presentar la validación cruzada, es conveniente recordar de la Sección 4.2 algunas de las ideas clave de la validación de modelos. Cuando se valora, o valida, un modelo, se mide el funcionamiento o desempeño del modelo en datos <em>nuevos</em>, o al menos no aquéllos que hayan sido usados para ajustar el modelo. Un enfoque clásico, descrito en la Sección 4.2.3, es dividir la muestra en dos partes: una parte (la base de datos de <em>entrenamiento</em>) se usa para ajustar el modelo y la otra (la base de datos de <em>prueba</em>) se usa para validar. Sin embargo, una limitación de este enfoque es que los resultados dependen de la partición; aunque la muestra general sea fija, la partición entre submuestras de entrenamiento y prueba varía aleatoriamente. Una muestra de entrenamiento diferente implica una estimación para los parámetros diferente. Unos parámetros diferentes para el modelo y una muestra de prueba diferente implican unos estadísticos de validación diferentes. Dos analistas pueden usar los mismos datos y los mismos modelos y pueden llegar a conclusiones diferentes sobre la viabilidad de un modelo (basado en diferentes particiones aleatorias), una situación frustrante.</p>
+<p>La validación cruzada, brevemente introducida en la Sección 4.2.4, es una técnica basada en simular resultados y por ello es conveniente pensar en su propósito en comparación con otras técnicas de simulación ya introducidas en este capítulo.</p>
+<ul>
+<li>La simulación, o Monte-Carlo, introducida en la Sección <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a>, permite calcular valores esperados o otras medidas de resumen de distribuciones estadísticas, como <span class="math inline">\(p\)</span>-valores, fácilmente.</li>
+<li>El bootstrap, y otros métodos de remuestreo introducidos en la Sección <a href="C-Simulation.html#S:Bootstrap">6.2</a>, proporciona estimadores de la precisión, o variabilidad, de los estadísticos.</li>
+<li>La validación cruzada es importante para valorar con qué precisión un modelo predictivo funcionará en la práctica.</li>
+</ul>
+<p>Existe superposición, pero sin embargo es útil pensar acerca del objetivo general asociado con cada uno de los métodos.</p>
+<p>Para presentar la validación cruzada, es conveniente recordar de la Sección 4.2 algunas de las ideas clave de la validación de modelos. Cuando se valora, o valida, un modelo, se mide el funcionamiento o desempeño del modelo en datos <em>nuevos</em>, o al menos no aquéllos que hayan sido usados para ajustar el modelo. Un enfoque clásico, descrito en la Sección 4.2.3, es dividir la muestra en dos partes: una parte (la base de datos de <em>entrenamiento</em>) se usa para ajustar el modelo y la otra (la base de datos de <em>prueba</em>) se usa para validar. Sin embargo, una limitación de este enfoque es que los resultados dependen de la partición; aunque la muestra general sea fija, la partición entre submuestras de entrenamiento y prueba varía aleatoriamente. Una muestra de entrenamiento diferente implica una estimación para los parámetros diferente. Unos parámetros diferentes para el modelo y una muestra de prueba diferente implican unos estadísticos de validación diferentes. Dos analistas pueden usar los mismos datos y los mismos modelos y pueden llegar a conclusiones diferentes sobre la viabilidad de un modelo (basado en diferentes particiones aleatorias), una situación frustrante.</p>
 <!-- 
 Las técnicas de validación cruzada se usan para evitar la partición básica entre dos partes. Hay que tener en cuenta que aquí se mencionarán dos técnicas: un enfoque exhaustivo, en el que todas las observaciones serán usadas (una vez, y solo una) como una observación de prueba y uno no exhaustivo, basado en técnicas de bootstrap. Ver [Arlot & Celisse (2010)](https://projecteuclid.org/euclid.ssu/1268143839) a modo de resumen.
  -->
@@ -2259,8 +2269,8 @@ Las técnicas de validación cruzada se usan para evitar la partición básica e
 <h3><span class="header-section-number">6.3.1</span> Validación cruzada k-fold</h3>
 <p>Para mitigar esta dificultad, es común usar un enfoque de validación cruzada como el introducido en la Sección 4.2.4. La idea clave es emular el enfoque básico de entrenamiento/validación para la validación del modelo repitiéndolo muchas veces y tomando medias a partir de las diferentes particiones de los datos. Una ventaja clave es que el estadístico de validación no está ligado a un modelo paramétrico (o no paramétrico) específico – se puede usar un estadístico no paramétrico o un estadístico que tiene una interpretación económica – y puede ser usado para comparar modelos que no están anidados (diferente a como ocurre con los procedimientos de la ratio de verosimilitud).</p>
 <p><strong>Ejemplo 6.3.1. Fondo de propiedad de Wisconsin.</strong> Para los datos del fondo de propiedad de 2010 introducido en la Sección 1.3, se ajustan una gamma y una Pareto a los 1,377 datos de siniestros. Para ver en detalle la bondad de ajuste asociada se puede consultar el Apéndice Sección 15.4.4. Ahora se considera el estadístico de Kolmogorov-Smirnov introducido en la Sección 4.1.2.2. Cuando se realiza el ajuste sobre la totalidad de los datos, el estadístico de bondad del ajuste de Kolmogorov-Smirnov para la distribución gamma resulta ser
-0.0478 y para la distribución de Pareto es 0.2639. El valor más bajo para la distribución de Pareto indica que esta distribución tiene mejor ajuste que la gamma.
-Para ver cómo funciona la validación cruzada k-fold, se divide aleatoriamente los datos en <span class="math inline">\(k=8\)</span> grupos, o folds (en inglés), cada uno con <span class="math inline">\(1377/8 \approx 172\)</span> observaciones. Entonces, se ajustan una gamma y un modelo de Pareto a la base de datos con los primeros siete folds (sobre <span class="math inline">\(172*7 = 1204\)</span> observaciones), se determinan los parámetros estimados, y entonces se usan estos modelos ajustados con los datos restantes para determinar el estadístico de Kolmogorov-Smirnov.</p>
+0.0478 y para la distribución de Pareto es 0.2639. El valor más bajo para la distribución de Pareto indica que esta distribución tiene mejor ajuste que la gamma.</p>
+<p>Para ver cómo funciona la validación cruzada k-fold, se divide aleatoriamente los datos en <span class="math inline">\(k=8\)</span> grupos, o folds (en inglés), cada uno con <span class="math inline">\(1377/8 \approx 172\)</span> observaciones. Entonces, se ajustan una gamma y un modelo de Pareto a la base de datos con los primeros siete folds (sobre <span class="math inline">\(172*7 = 1204\)</span> observaciones), se determinan los parámetros estimados, y entonces se usan estos modelos ajustados con los datos restantes para determinar el estadístico de Kolmogorov-Smirnov.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.KFoldCV.1" href="javascript:togglecode('toggleCode.KFoldCV.1','displayCode.KFoldCV.1');"><i><strong>Muestra el código R para la validación cruzada Kolmogorov-Smirnov</strong></i></a>
 </h5>
@@ -2302,18 +2312,18 @@ Figure 6.12: Estadísticos de Kolmogorov-Smirnov (KS) con validación cruzada pa
 </div>
 <div id="validación-cruzada-dejando-uno-fuera" class="section level3">
 <h3><span class="header-section-number">6.3.2</span> Validación cruzada dejando uno fuera</h3>
-<p>El caso especial donde <span class="math inline">\(k=n\)</span> es conocido como validación cruzada dejando uno fuera. Este caso tiene importancia históricamente y está muy relacionado con los estadísticos jackknife, un precursor de la técnica bootstrap.
-A pesar de que se presenta como un caso especial de validación cruzada, es conveniente dar una definición explícita. Se considera un estadístico genérico <span class="math inline">\(\widehat{\theta}=t(\boldsymbol{x})\)</span> que es un estimador del parámetro de interés <span class="math inline">\(\theta\)</span>. La idea de jackknife es calcular <span class="math inline">\(n\)</span> valores <span class="math inline">\(\widehat{\theta}_{-i}=t(\boldsymbol{x}_{-i})\)</span>, donde <span class="math inline">\(\boldsymbol{x}_{-i}\)</span> es una submuestra de <span class="math inline">\(\boldsymbol{x}\)</span> con el <span class="math inline">\(i\)</span>-ésimo valor eliminado. La media de esos valores se denota como
-<span class="math display">\[
+<p>El caso especial donde <span class="math inline">\(k=n\)</span> es conocido como validación cruzada dejando uno fuera. Este caso tiene importancia históricamente y está muy relacionado con los estadísticos jackknife, un precursor de la técnica bootstrap.</p>
+<p>A pesar de que se presenta como un caso especial de validación cruzada, es conveniente dar una definición explícita. Se considera un estadístico genérico <span class="math inline">\(\widehat{\theta}=t(\boldsymbol{x})\)</span> que es un estimador del parámetro de interés <span class="math inline">\(\theta\)</span>. La idea de jackknife es calcular <span class="math inline">\(n\)</span> valores <span class="math inline">\(\widehat{\theta}_{-i}=t(\boldsymbol{x}_{-i})\)</span>, donde <span class="math inline">\(\boldsymbol{x}_{-i}\)</span> es una submuestra de <span class="math inline">\(\boldsymbol{x}\)</span> con el <span class="math inline">\(i\)</span>-ésimo valor eliminado. La media de esos valores se denota como</p>
+<p><span class="math display">\[
 \overline{\widehat{\theta}}_{(\cdot)}=\frac{1}{n}\sum_{i=1}^n \widehat{\theta}_{-i} .
 \]</span>
-Esos valores pueden usarse para crear estimaciones del sesgo del estadístico <span class="math inline">\(\widehat{\theta}\)</span>
-<span class="math display" id="eq:Biasjack">\[\begin{equation}
+Esos valores pueden usarse para crear estimaciones del sesgo del estadístico <span class="math inline">\(\widehat{\theta}\)</span></p>
+<p><span class="math display" id="eq:Biasjack">\[\begin{equation}
 Bias_{jack} = (n-1) \left(\overline{\widehat{\theta}}_{(\cdot)} - \widehat{\theta}\right)
 \tag{6.3}
-\end{equation}\]</span>
-así como de una estimación de la desviación estándar
-<span class="math display" id="eq:sdjack">\[\begin{equation}
+\end{equation}\]</span></p>
+<p>así como de una estimación de la desviación estándar</p>
+<p><span class="math display" id="eq:sdjack">\[\begin{equation}
 s_{jack} =\sqrt{\frac{n-1}{n}\sum_{i=1}^n \left(\widehat{\theta}_{-i} -\overline{\widehat{\theta}}_{(\cdot)}\right)^2} ~.
 \tag{6.4}
 \end{equation}\]</span></p>
@@ -2461,16 +2471,18 @@ s_{jack} =\sqrt{\frac{n-1}{n}\sum_{i=1}^n \left(\widehat{\theta}_{-i} -\overline
 </tbody>
 </table>
 <hr />
-<p><strong>Discusión.</strong> Una de las cosas más interesantes sobre el caso especial de validación cruzada dejando uno fuera es la habilidad de replicar estimaciones de manera exacta. Es decir, cuando el tamaño del grupo o fold es solo uno, entonces no hay incertidumbre adicional inducida por la validación cruzada. Esto significa que los analistas pueden replicar de manera exacta el trabajo de otro, lo cual es una importante consideración.
-Los estadísticos Jackknife fueron desarrollados para entender la precisión de estimadores, produciendo estimadores de sesgo y desviación estándar en las ecuaciones <a href="C-Simulation.html#eq:Biasjack">(6.3)</a> y <a href="C-Simulation.html#eq:sdjack">(6.4)</a>. Esto tiene que ver con algunas metas que se han asociado con las técnicas de bootstrap, no con métodos de validación cruzada. Esto demuestra como las técnicas estadísticas pueden usarse para alcanzar diferentes metas.</p>
+<p><strong>Discusión.</strong> Una de las cosas más interesantes sobre el caso especial de validación cruzada dejando uno fuera es la habilidad de replicar estimaciones de manera exacta. Es decir, cuando el tamaño del grupo o fold es solo uno, entonces no hay incertidumbre adicional inducida por la validación cruzada. Esto significa que los analistas pueden replicar de manera exacta el trabajo de otro, lo cual es una importante consideración.</p>
+<p>Los estadísticos Jackknife fueron desarrollados para entender la precisión de estimadores, produciendo estimadores de sesgo y desviación estándar en las ecuaciones <a href="C-Simulation.html#eq:Biasjack">(6.3)</a> y <a href="C-Simulation.html#eq:sdjack">(6.4)</a>. Esto tiene que ver con algunas metas que se han asociado con las técnicas de bootstrap, no con métodos de validación cruzada. Esto demuestra como las técnicas estadísticas pueden usarse para alcanzar diferentes metas.</p>
 </div>
 </div>
 <div id="validación-cruzada-y-bootstrap" class="section level3">
 <h3><span class="header-section-number">6.3.3</span> Validación cruzada y Bootstrap</h3>
-<p>El bootstrap es útil para proporcionar estimadores de la precisión, o variabilidad, de los estadísticos. También puede ser útil para la validación de modelos. El enfoque bootstrap para la validación de modelos es similar al enfoque dejando uno fuera y los procedimientos de validación <em>k</em> fold:
-- Se crea una muestra de bootstrap a través del remuestreo (con reemplazamiento) <span class="math inline">\(n\)</span> índices en <span class="math inline">\(\{1,\cdots,n\}\)</span>. Esta será la <em>muestra de entrenamiento</em>. Se estima el modelo considerado en base a esta muestra.
-- La muestra de <em>prueba</em>, o <em>muestra de validación</em>, consiste en esas observaciones no seleccionadas para en entrenamiento. Se evalúa el modelo ajustado (basado en los datos de entrenamiento) usando los datos de prueba.
-Este proceso se repite muchas (digamos <span class="math inline">\(B\)</span>) veces. Se toma la media de los resultados y se selecciona al modelo basado en el estadístico de evaluación promedio.</p>
+<p>El bootstrap es útil para proporcionar estimadores de la precisión, o variabilidad, de los estadísticos. También puede ser útil para la validación de modelos. El enfoque bootstrap para la validación de modelos es similar al enfoque dejando uno fuera y los procedimientos de validación <em>k</em> fold:</p>
+<ul>
+<li>Se crea una muestra de bootstrap a través del remuestreo (con reemplazamiento) <span class="math inline">\(n\)</span> índices en <span class="math inline">\(\{1,\cdots,n\}\)</span>. Esta será la <em>muestra de entrenamiento</em>. Se estima el modelo considerado en base a esta muestra.</li>
+<li>La muestra de <em>prueba</em>, o <em>muestra de validación</em>, consiste en esas observaciones no seleccionadas para en entrenamiento. Se evalúa el modelo ajustado (basado en los datos de entrenamiento) usando los datos de prueba.</li>
+</ul>
+<p>Este proceso se repite muchas (digamos <span class="math inline">\(B\)</span>) veces. Se toma la media de los resultados y se selecciona al modelo basado en el estadístico de evaluación promedio.</p>
 <p><strong>Ejemplo 6.3.4. Fondo de propiedad de Wisconsin.</strong> Se vuelve a considerar el ejemplo 6.3.1 donde se investiga el ajuste de unas distribuciones gamma y Pareto a los datos del fondo de propiedad. Nuevamente se compara el desempeño predictivo usando el estadístico de Kolmogorov-Smirnov pero esta vez usando el procedimiento bootstrap para partir los datos entre muestra de entrenamiento y prueba. A continuación, se muestra el código ilustrativo.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.BootstrapValidation.1" href="javascript:togglecode('toggleCode.BootstrapValidation.1','displayCode.BootstrapValidation.1');"><i><strong>Muestra el código R para procedimientos de validación Bootstrap</strong></i></a>
@@ -2512,13 +2524,15 @@ Este proceso se repite muchas (digamos <span class="math inline">\(B\)</span>) v
 <div id="S:ImportanceSampling" class="section level2">
 <h2><span class="header-section-number">6.4</span> Importance Sampling</h2>
 <!-- ## Importancia del muestreo -->
-<p>En la Sección <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> se introducen las técnicas de Monte Carlo usando la técnica de la inversa: generar una variable aleatoria <span class="math inline">\(X\)</span> con distribución <span class="math inline">\(F\)</span>, aplicar <span class="math inline">\(F^{-1}\)</span> para llamar a un generador aleatorio (uniforme en el intervalo unitario). ¿Qué pasa si queremos realizar extracciones de acuerdo con <span class="math inline">\(X\)</span>, condicionado a <span class="math inline">\(X\in[a,b]\)</span> ?
-Se puede usar un mecanismo de aceptación-rechazo : extraer <span class="math inline">\(x\)</span> de la distribución <span class="math inline">\(F\)</span>
-- si <span class="math inline">\(x\in[a,b]\)</span> : se mantiene (“<em>aceptación</em>”)
-- si <span class="math inline">\(x\notin[a,b]\)</span> : se extrae otro (“<em>rechazo</em>”)
-Se observa que de <span class="math inline">\(n\)</span> valores inicialmente generados, se mantienen sólo <span class="math inline">\([F(b)-F(a)]\cdot n\)</span> extracciones, en promedio.</p>
-<p><strong>Ejemplo 6.4.1. Extracciones de una distribución Normal.</strong></p>
-<p>Supongamos que se realizan extracciones de una distribución normal con media 2.5 y varianza 1, <span class="math inline">\(N(2.5,1)\)</span>, pero sólo se tiene interés en extracciones en extracciones mayores que <span class="math inline">\(a \ge 2\)</span> y menores que <span class="math inline">\(b \le 4\)</span>. Es decir, se puede usar sólo una proporción de extracciones igual a <span class="math inline">\(F(4)-F(2) = \Phi(4-2.5)-\Phi(2-2.5)\)</span> = 0.9332 - 0.3085 = 0.6247. La Figura <a href="C-Simulation.html#fig:sampleani1">6.13</a> demuestra que algunas extracciones caen en el intervalo <span class="math inline">\((2,4)\)</span> y otras están fuera.</p>
+<p>En la Sección <a href="C-Simulation.html#S:SimulationFundamentals">6.1</a> se introducen las técnicas de Monte Carlo usando la técnica de la inversa: generar una variable aleatoria <span class="math inline">\(X\)</span> con distribución <span class="math inline">\(F\)</span>, aplicar <span class="math inline">\(F^{-1}\)</span> para llamar a un generador aleatorio (uniforme en el intervalo unitario). ¿Qué pasa si queremos realizar extracciones de acuerdo con <span class="math inline">\(X\)</span>, condicionado a <span class="math inline">\(X\in[a,b]\)</span> ?</p>
+<p>Se puede usar un mecanismo de aceptación-rechazo : extraer <span class="math inline">\(x\)</span> de la distribución <span class="math inline">\(F\)</span></p>
+<ul>
+<li>si <span class="math inline">\(x\in[a,b]\)</span> : se mantiene (“<em>aceptación</em>”)</li>
+<li>si <span class="math inline">\(x\notin[a,b]\)</span> : se extrae otro (“<em>rechazo</em>”)</li>
+</ul>
+<p>Se observa que de <span class="math inline">\(n\)</span> valores inicialmente generados, se mantienen sólo <span class="math inline">\([F(b)-F(a)]\cdot n\)</span> extracciones, en promedio.</p>
+<p><strong>Ejemplo 6.4.1. Extracciones de una distribución Normal.</strong><br />
+Supongamos que se realizan extracciones de una distribución normal con media 2.5 y varianza 1, <span class="math inline">\(N(2.5,1)\)</span>, pero sólo se tiene interés en extracciones en extracciones mayores que <span class="math inline">\(a \ge 2\)</span> y menores que <span class="math inline">\(b \le 4\)</span>. Es decir, se puede usar sólo una proporción de extracciones igual a <span class="math inline">\(F(4)-F(2) = \Phi(4-2.5)-\Phi(2-2.5)\)</span> = 0.9332 - 0.3085 = 0.6247. La Figura <a href="C-Simulation.html#fig:sampleani1">6.13</a> demuestra que algunas extracciones caen en el intervalo <span class="math inline">\((2,4)\)</span> y otras están fuera.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.ImportanceSampling.1" href="javascript:togglecode('toggleCode.ImportanceSampling.1','displayCode.ImportanceSampling.1');"><i><strong>Muestra el código R para el mecanismo de aceptación-rechazo</strong></i></a>
 </h5>
@@ -2551,20 +2565,20 @@ Figure 6.13: Demostración animada de extracciones dentro y fuera de (2,4)
 </p>
 </div>
 <hr />
-<p>En su lugar, se pueden realizar extracciones de acuerdo con la distribución condicional <span class="math inline">\(F^{\star}\)</span> definida como
-<span class="math display">\[
+<p>En su lugar, se pueden realizar extracciones de acuerdo con la distribución condicional <span class="math inline">\(F^{\star}\)</span> definida como</p>
+<p><span class="math display">\[
 F^{\star}(x) = \Pr(X \le x | a &lt; X \le b) =\frac{F(x)-F(a)}{F(b)-F(a)}, \ \  \ \text{for } a &lt; x \le b .
 \]</span>
-Usando el método de la transformada inversa de la Sección <a href="C-Simulation.html#S:InverseTransform">6.1.2</a>, se tiene que la extracción
-<span class="math display">\[
+Usando el método de la transformada inversa de la Sección <a href="C-Simulation.html#S:InverseTransform">6.1.2</a>, se tiene que la extracción</p>
+<p><span class="math display">\[
 X^\star=F^{\star-1}\left( U \right) = F^{-1}\left(F(a)+U\cdot[F(b)-F(a)]\right)
 \]</span>
-tiene distribución <span class="math inline">\(F^{\star}\)</span>. Expresado de otra forma, se define
-<span class="math display">\[
+tiene distribución <span class="math inline">\(F^{\star}\)</span>. Expresado de otra forma, se define</p>
+<p><span class="math display">\[
 \tilde{U} = (1-U)\cdot F(a)+U\cdot F(b)
 \]</span>
-y entonces se usa <span class="math inline">\(F^{-1}(\tilde{U})\)</span>. Con este enfoque, cada extracción cuenta.
-Esto puede estar relacionado con la importancia del mecanismo de muestreo : se realizan extracciones más frecuentemente en regiones donde se espera tener cantidades que tienen algún interés. Esta transformación puede ser considerada como “un cambio de medida.”</p>
+y entonces se usa <span class="math inline">\(F^{-1}(\tilde{U})\)</span>. Con este enfoque, cada extracción cuenta.</p>
+<p>Esto puede estar relacionado con la importancia del mecanismo de muestreo : se realizan extracciones más frecuentemente en regiones donde se espera tener cantidades que tienen algún interés. Esta transformación puede ser considerada como “un cambio de medida.”</p>
 <h5 style="text-align: center;">
 <a id="displayCode.ImportanceSampling.2" href="javascript:togglecode('toggleCode.ImportanceSampling.2','displayCode.ImportanceSampling.2');"><i><strong>Muestra el código R para la importancia del muestreo por el método de la transformada inversa</strong></i></a>
 </h5>
@@ -2618,29 +2632,31 @@ Esto puede estar relacionado con la importancia del mecanismo de muestreo : se r
 <p><strong>Esta sección se está escribiendo y no está complete ni editada. El contenido que se muestra es para haceros una idea de lo que contendrá la versión final.</strong></p>
 <hr />
 <!-- ## MCMC -->
-<p>La idea de las técnicas de Monte Carlo se basa en la ley de los grandes números (que asegura la convergencia de la media hacia la integral) y el teorema central del límite (que se usa para cuantificar la incertidumbre en los cálculos). Es necesario recordar que si <span class="math inline">\((X_i)\)</span> es una secuencia i.id. de variables aleatorias con distribución <span class="math inline">\(F\)</span>, entonces
-<span class="math display">\[
+<p>La idea de las técnicas de Monte Carlo se basa en la ley de los grandes números (que asegura la convergencia de la media hacia la integral) y el teorema central del límite (que se usa para cuantificar la incertidumbre en los cálculos). Es necesario recordar que si <span class="math inline">\((X_i)\)</span> es una secuencia i.id. de variables aleatorias con distribución <span class="math inline">\(F\)</span>, entonces</p>
+<p><span class="math display">\[
 \frac{1}{\sqrt{n}}\left(\sum_{i=1}^n h(X_i)-\int h(x)dF(x)\right)\overset{\mathcal{L}}{\rightarrow }\mathcal{N}(0,\sigma^2),\text{ as }n\rightarrow\infty.
 \]</span>
-para alguna varianza <span class="math inline">\(\sigma^2&gt;0\)</span>. Pero de hecho, el teorema ergódico se puede usar para rebajar el resultado anterior, dado que no es neceario tener independencia de las variables. Más concretamente, si <span class="math inline">\((X_i)\)</span> es un proceso de Markov con medida invariante <span class="math inline">\(\mu\)</span>, bajo algunos supuestos técnicos adicionales, se puede obtener que
-<span class="math display">\[
+para alguna varianza <span class="math inline">\(\sigma^2&gt;0\)</span>. Pero de hecho, el teorema ergódico se puede usar para rebajar el resultado anterior, dado que no es neceario tener independencia de las variables. Más concretamente, si <span class="math inline">\((X_i)\)</span> es un proceso de Markov con medida invariante <span class="math inline">\(\mu\)</span>, bajo algunos supuestos técnicos adicionales, se puede obtener que</p>
+<p><span class="math display">\[
 \frac{1}{\sqrt{n}}\left(\sum_{i=1}^n h(X_i)-\int h(x)d\mu(x)\right)\overset{\mathcal{L}}{\rightarrow }\mathcal{N}(0,\sigma_\star^2),\text{ as }n\rightarrow\infty.
 \]</span>
-para alguna varianza <span class="math inline">\(\sigma_\star^2&gt;0\)</span>.
-Por lo tanto, de esta propiedad, se puede ver que es posible no necesariamente generar valores independientes a partir de <span class="math inline">\(F\)</span>, sino también generar un proceso de markov con medida invariante <span class="math inline">\(F\)</span>, y considerar medias sobre el proceso (no necesariamente independiente).
+para alguna varianza <span class="math inline">\(\sigma_\star^2&gt;0\)</span>.</p>
+<p>Por lo tanto, de esta propiedad, se puede ver que es posible no necesariamente generar valores independientes a partir de <span class="math inline">\(F\)</span>, sino también generar un proceso de markov con medida invariante <span class="math inline">\(F\)</span>, y considerar medias sobre el proceso (no necesariamente independiente).
 Se considera el caso de un vector Gausiano restringido: se desean generar parejas aleatorias de un vector aleatorio <span class="math inline">\(\boldsymbol{X}\)</span>, pero sólo interesa el caso en que la suma de los (‘composants’)` es suficientemente grande, lo que puede expresarse como <span class="math inline">\(\boldsymbol{X}^T\boldsymbol{1}&gt; m\)</span> para algún valor real <span class="math inline">\(m\)</span>. Por supuesto, es posible usar el algoritmo <em>aceptación-rechazo</em>, pero se ha vito que puede ser bastante ineficiente. Se puede usar el Hastings Metropolis y el muestreo de Gibbs para generar un proceso de Markov con esta medida invariante.</p>
 <div id="hastings-metropolis" class="section level3">
 <h3><span class="header-section-number">6.5.1</span> Hastings Metropolis</h3>
 <p>El algoritmo es bastante simple de generar a partir de <span class="math inline">\(f\)</span>: se comienza con un valor factible <span class="math inline">\(x_1\)</span>. Entonces, en el paso <span class="math inline">\(t\)</span>, se necesita especificar una transición núcleo: dado <span class="math inline">\(x_t\)</span>, se necesita la distribución condicional de <span class="math inline">\(X_{t+1}\)</span> dado <span class="math inline">\(x_t\)</span>. El algoritmo funcionará bien si la distribución condicional se puede simular fácilmente. Sea <span class="math inline">\(\pi(\cdot|x_t)\)</span> esta probabilidad.
-Se obtiene un valor potencial <span class="math inline">\(x_{t+1}^\star\)</span>, y <span class="math inline">\(u\)</span>, de una distribución uniforme. Se calcula
-<span class="math display">\[
+Se obtiene un valor potencial <span class="math inline">\(x_{t+1}^\star\)</span>, y <span class="math inline">\(u\)</span>, de una distribución uniforme. Se calcula</p>
+<p><span class="math display">\[
 R=  \frac{f(x_{t+1}^\star)}{f(x_t)}
 \]</span>
-y
-- si <span class="math inline">\(u &lt; r\)</span>, entonces <span class="math inline">\(x_{t+1}=x_t^\star\)</span>
-- si <span class="math inline">\(u\leq r\)</span>, entonces <span class="math inline">\(x_{t+1}=x_t\)</span>
-Aquí <span class="math inline">\(r\)</span> se denomina ratio-<em>aceptación</em>: se acepta el nuevo valor con probabilidad <span class="math inline">\(r\)</span> (o en realidad el menor entre <span class="math inline">\(1\)</span> y <span class="math inline">\(r\)</span> dado que <span class="math inline">\(r\)</span> puede exceder <span class="math inline">\(1\)</span>).
-Por ejemplo, se asume que <span class="math inline">\(f(\cdot|x_t)\)</span> es uniforme en <span class="math inline">\([x_t-\varepsilon,x_t+\varepsilon]\)</span> para algún <span class="math inline">\(\varepsilon&gt;0\)</span>, y donde <span class="math inline">\(f\)</span> (la distribución objetivo) es la <span class="math inline">\(\mathcal{N}(0,1)\)</span>. Nunca se realizarán <em>extracciones</em> de <span class="math inline">\(f\)</span>, pero se usará para calcular la ratio de aceptación en cada paso.</p>
+y</p>
+<ul>
+<li>si <span class="math inline">\(u &lt; r\)</span>, entonces <span class="math inline">\(x_{t+1}=x_t^\star\)</span></li>
+<li>si <span class="math inline">\(u\leq r\)</span>, entonces <span class="math inline">\(x_{t+1}=x_t\)</span></li>
+</ul>
+<p>Aquí <span class="math inline">\(r\)</span> se denomina ratio-<em>aceptación</em>: se acepta el nuevo valor con probabilidad <span class="math inline">\(r\)</span> (o en realidad el menor entre <span class="math inline">\(1\)</span> y <span class="math inline">\(r\)</span> dado que <span class="math inline">\(r\)</span> puede exceder <span class="math inline">\(1\)</span>).</p>
+<p>Por ejemplo, se asume que <span class="math inline">\(f(\cdot|x_t)\)</span> es uniforme en <span class="math inline">\([x_t-\varepsilon,x_t+\varepsilon]\)</span> para algún <span class="math inline">\(\varepsilon&gt;0\)</span>, y donde <span class="math inline">\(f\)</span> (la distribución objetivo) es la <span class="math inline">\(\mathcal{N}(0,1)\)</span>. Nunca se realizarán <em>extracciones</em> de <span class="math inline">\(f\)</span>, pero se usará para calcular la ratio de aceptación en cada paso.</p>
 <h5 style="text-align: center;">
 <a id="displayCode.MCMC.1" href="javascript:togglecode('toggleCode.MCMC.1','displayCode.MCMC.1');"><i><strong>Se muestra el código R</strong></i></a>
 </h5>
@@ -2698,11 +2714,14 @@ Por ejemplo, se asume que <span class="math inline">\(f(\cdot|x_t)\)</span> es u
 </div>
 <div id="muestreo-de-gibbs" class="section level3">
 <h3><span class="header-section-number">6.5.2</span> Muestreo de Gibbs</h3>
-Se considera algún vector <span class="math inline">\(\boldsymbol{X}=(X_1,\cdots,X_d)\)</span> con components independientes, <span class="math inline">\(X_i\sim\mathcal{E}(\lambda_i)\)</span>. Se realiza un muestro para muestrear de <span class="math inline">\(\boldsymbol{X}\)</span> dado <span class="math inline">\(\boldsymbol{X}^T\boldsymbol{1}&gt;s\)</span> para algún umbral <span class="math inline">\(s&gt;0\)</span>.
-- se comienza con algún valor inicial <span class="math inline">\(\boldsymbol{x}_0\)</span> tal que
-- se elige (aleatoriamente) <span class="math inline">\(i\in\{1,\cdots,d\}\)</span>
-- <span class="math inline">\(X_i\)</span> dado que <span class="math inline">\(X_i &gt; s-\boldsymbol{x}_{(-i)}^T\boldsymbol{1}\)</span> tiene una distribucion Exponencial <span class="math inline">\(\mathcal{E}(\lambda_i)\)</span>
-- se extrae <span class="math inline">\(Y\sim \mathcal{E}(\lambda_i)\)</span> y se establece <span class="math inline">\(x_i=y +(s-\boldsymbol{x}_{(-i)}^T\boldsymbol{1})_+\)</span> hasta que <span class="math inline">\(\boldsymbol{x}_{(-i)}^T\boldsymbol{1}+x_i&gt;s\)</span>
+<p>Se considera algún vector <span class="math inline">\(\boldsymbol{X}=(X_1,\cdots,X_d)\)</span> con components independientes, <span class="math inline">\(X_i\sim\mathcal{E}(\lambda_i)\)</span>. Se realiza un muestro para muestrear de <span class="math inline">\(\boldsymbol{X}\)</span> dado <span class="math inline">\(\boldsymbol{X}^T\boldsymbol{1}&gt;s\)</span> para algún umbral <span class="math inline">\(s&gt;0\)</span>.</p>
+<ul>
+<li>se comienza con algún valor inicial <span class="math inline">\(\boldsymbol{x}_0\)</span> tal que</li>
+<li>se elige (aleatoriamente) <span class="math inline">\(i\in\{1,\cdots,d\}\)</span></li>
+<li><span class="math inline">\(X_i\)</span> dado que <span class="math inline">\(X_i &gt; s-\boldsymbol{x}_{(-i)}^T\boldsymbol{1}\)</span> tiene una distribucion Exponencial <span class="math inline">\(\mathcal{E}(\lambda_i)\)</span></li>
+<li>se extrae <span class="math inline">\(Y\sim \mathcal{E}(\lambda_i)\)</span> y se establece <span class="math inline">\(x_i=y +(s-\boldsymbol{x}_{(-i)}^T\boldsymbol{1})_+\)</span> hasta que
+<span class="math inline">\(\boldsymbol{x}_{(-i)}^T\boldsymbol{1}+x_i&gt;s\)</span></li>
+</ul>
 <h5 style="text-align: center;">
 <a id="displayCode.Gibbs.1" href="javascript:togglecode('toggleCode.Gibbs.1','displayCode.Gibbs.1');"><i><strong>Se muestra el Código R</strong></i></a>
 </h5>
