@@ -3,11 +3,14 @@
 ### Fundamentos del Bootstrap 
 
 La simulación presentada hasta ahora se basa en un muestreo a partir de una distribución **conocida**. La Sección \@ref(S:SimulationFundamentals) mostró como usar técnicas de simulación para obtener muestras y calcular cantidades de estas distribuciones conocidas. Sin embargo, la ciencia estadística se dedica a proporcionar inferencias sobre distribuciones que son *desconocidas*. Se recopilan estadísticos de resumen basados en esta distribución desconocida de una población. Pero, ¿cómo se puede realizar un muestreo de una distribución desconocida? 
+
 Naturalmente, no se pueden simular valores de una distribución desconocida pero sí que se pueden obtener valores de una muestra de observaciones. Si la muestra es una buena representación de una población, entonces nuestras extracciones simuladas de una muestra se aproximan bien a las extracciones simuladas de una población. El proceso de obtener una muestra de una muestra se llama *remuestreo* o *bootstrapping*. 
 
 El término `r Gloss('bootstrap')` proviene de la frase (en inglés) "pulling oneself up by one's bootstraps" (Efron, 1979). En el remuestreo, la muestra original juega el papel de la población y las estimaciones obtenidas a partir de la muestra juegan el papel de los verdaderos parámetros de la población.
+
 El algoritmo de remuestreo es el mismo que el introducido en la Sección \@ref(S:SimulationStatInference) excepto que ahora usa extracciones simuladas de la muestra. Es común usar $\{X_1, \ldots, X_n\}$ para denotar la muestra original y $\{X_1^*, \ldots, X_n^*\}$ para los valores simulados. Las extracciones se realizan con reemplazamiento para que los valores simulados sean independientes entre ellos, la misma suposición que para la muestra original. Para cada muestra, también se realizan *n* extracciones simuladas, el mismo valor que el tamaño muestral. Para distinguir este proceso de la simulación, es común usar *B* (de bootstrap) para representar el número de muestras simuladas. También se puede escribir $\{X_1^{(b)}, \ldots, X_n^{(b)}\}$, $b=1,\ldots, B$ lo cual resulta más claro.
 Hay dos métodos básicos de remuestreo, *model-free* y *model-based* (tomando sus nombres en inglés), que son, respectivamente, *no paramétrico* y *paramétrico*. En el `r Gloss('enfoque no paramétrico')`, no se hace ninguna suposición sobre la distribución de la población de origen. Las extracciones simuladas provienen de la función de distribución empírica $F_n(\cdot)$, por lo que cada extracción proviene de $\{X_1, \ldots, X_n\}$ con probabilidad 1/*n*. 
+
 Por contra, para el `r Gloss('enfoque paramétrico')`, se asume que se tiene conocimiento de la familia de la distribución *F*. La muestra original $X_1, \ldots, X_n$ se usa para estimar los parámetros de esa familia, es decir, $\hat{\theta}$. Entonces, las extracciones simuladas se toman de $F(\hat{\theta})$. En la Sección \@ref(S:ParametricBootStrap) se comenta este enfoque con más detalle.
 
 #### Bootstrap no paramétrico {-}
@@ -83,13 +86,17 @@ Se observa que el valor `r round(x[4],digits=4)` se ha obtenido tres veces.
 ### Precisión del bootstrap: Sesgo, desviación estándar, y MSE (error cuadrático medio, en sus siglas en inglés)
 
 Se resume el procedimiento para el bootstrap no paramétrico como sigue:
+
 1. Para la muestra $\{X_1, \ldots, X_n\}$, se extrae una muestra de tamaño *n* (con reemplazamiento), es decir, $X_1^*, \ldots, X_n^*$. De las extracciones simuladas se calcula el estadístico de interés, denotado como $\hat{\theta}(X_1^*, \ldots, X_n^*)$. Se denomina $\hat{\theta}_b^*$ para la réplica *b*ésima.
 2. Se repite esto $b=1, \ldots, B$ veces para obtener una muestra de estadísticos, $\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*$.
 3. Para la muestra de estadísticos en el paso 2, $\{\hat{\theta}_1^*, \ldots, \hat{\theta}_B^*\}$, se calcula una medida de resumen de interés.
  
 En esta sección, se centra el interés en tres medidas de resumen, el `r Gloss('sesgo')`, la desviación estándar, y el error cuadrático medio (*MSE*). [Tabla 6.2] resume estas tres medidas. Aquí, $\overline{\hat{\theta^*}}$ es el promedio de $\{\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*\}$.
+
 [Tabla 6.2]:\#tab:62
+
 <a id=tab:62></a>
+
 $$
 {\small
 \begin{matrix}
@@ -111,6 +118,7 @@ $$
 ***
 
 **Ejemplo `r chapnum`.2.1. Siniestros con daños corporales y ratio de eliminación de pérdida.** Para mostrar cómo el bootstrap puede usarse para cuantificar la precisión de los estimadores, se retoma el Ejemplo 4.1.11 sobre los datos de siniestros con daños corporales donde se introdujo el estimador no paramétrico de la ratio de eliminación de pérdidas.
+
 [Tabla 6.3] resume los resultados de la estimación bootstrap. Por ejemplo, para $d=14000$, se vió en el Ejemplo 4.1.11 que la estimación no paramétrica de *LER* es 0.97678. Este valor tiene un sesgo estimado de 0.00018 con una desviación estándar de 0.00701. Para algunas aplicaciones, se puede desear aplicar el sesgo estimado a la estimación original para obtener un `r Gloss('estimador corregido por el sesgo')`. En ello se centra el próximo ejemplo. Para esta ilustración, el sesgo es pequeño por lo que dicha corrección no es relevante.
 
 `r HideRCode('LER6.2.1','Muestra el código R para la estimaciones bootstrap de LER')`
@@ -148,6 +156,7 @@ OutBoot[i,6] <- temp$normal[3]
 </div>
 
 [Tabla 6.3]:\#tab:63
+
 <a id=tab:63></a>
 
 ##### Tabla 6.3. Estimaciones bootstrap para el LER en franquicias seleccionadas {-}
@@ -176,14 +185,17 @@ Se supone que la cantidad de interés es $\theta=\exp(\mu)$. Un estimador natura
 ```
 
 Se puede usar el teorema central del límite para obtener una corrección usando
+
 $$
 \overline{X}\approx\mathcal{N}\left(\mu,\frac{\sigma^2}{n}\right)\text{ where }\sigma^2=\text{Var}[X_i] ,
 $$
 De modo que, con la función generatriz de momentos normal, se tiene
+
 $$
 \mathrm{E}~\exp[\overline{X}] \approx \exp\left(\mu+\frac{\sigma^2}{2n}\right) .
 $$
 Por tanto, se puede considerar
+
 $$
 \widehat{\theta}_2=\exp\left(\overline{x}-\frac{\widehat{\sigma}^2}{2n}\right) .
 $$
@@ -195,10 +207,12 @@ n <- length(sample_x)
 ```
 
 Otra estrategia (que no vamos a desarrollar aquí) sería usar una aproximación de Taylor para obtener un estimador más preciso (como en el método delta),
+
 $$
 g(\overline{x})=g(\mu)+(\overline{x}-\mu)g'(\mu)+(\overline{x}-\mu)^2\frac{g''(\mu)}{2}+\cdots
 $$
 La alternativa que se explora es usar una estrategia bootstrap: dada una muestra bootstrap, $\mathbf{x}^{\ast}_{b}$, sea $\overline{x}^{\ast}_{b}$ dsu media, y se establece
+
 $$
 \widehat{\theta}_3=\frac{1}{B}\sum_{b=1}^B\exp(\overline{x}^{\ast}_{b}) .
 $$
@@ -265,17 +279,22 @@ legend("topleft", c("estimador bruto", "corrección de segundo orden", "bootstra
 ### Intervalos de confianza
 
 El procedimiento bootstrap genera *B* réplicas $\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*$ del estimador $\hat{\theta}$. En el *Ejemplo `r chapnum`.2.1,* se mostró cómo usar las aproximaciones a la normal estándar para crear intervalos de confianza de los parámetros de interés. Sin embargo, dado que el interés se centra en usar el bootstrap para evitar confiar en supuestos de aproximación a la normal, no sorprende que haya disponibilidad de intervalos de confianza alternativos.
+
 Para un estimador $\hat{\theta}$, el intervalo de confianza *básico* bootstrap es
+
 \begin{equation} 
   \left(2 \hat{\theta} - q_U, 2 \hat{\theta} - q_L \right) ,
   (\#eq:basicBootCI)
 \end{equation}
+
 donde $q_L$ y $q_U$ son los cuantiles al 2.5% inferior y superior de la muestra bootstrap $\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*$.
 Para ver de dónde viene esto, se toma como punto de partida la idea de que $(q_L, q_U)$ proporciona un intervalo al 95% para $\hat{\theta}_1^*, \ldots,\hat{\theta}_B^*$. Por tanto, para un $\hat{\theta}_b^*$ aleatorio, hay un 95% de probabilidades de que $q_L \le \hat{\theta}_b^* \le q_U$. Revirtiendo las desigualdades y añadiendo $\hat{\theta}$ a cada lado se obtiene un intervalo al 95% 
+
 $$
 \hat{\theta} -q_U \le \hat{\theta} - \hat{\theta}_b^* \le  \hat{\theta} -q_L .
 $$
 Por tanto, $\left( \hat{\theta}-q_U,  \hat{\theta} -q_L\right)$ es un intervalo al 95% para $\hat{\theta} - \hat{\theta}_b^*$. La idea de la aproximación bootstrap indica que ello es también un intervalo al 95% para $\theta - \hat{\theta}$. Añadiendo $\hat{\theta}$ a cada lado da un intervalo al 95% en la ecuación \@ref(eq:basicBootCI). 
+
 Hay muchos intervalos bootstrap alternativos. El más sencillo de explicar es el `r Gloss('intervalo basado en los percentiles bootstrap')` que se define como $\left(q_L, q_U\right)$. No obstante, presenta la desventaja de tener un comportamiento potencialmente pobre en las colas, lo cual puede ser un inconveniente en algunos problemas actuariales de interés.
 
 **Ejemplo `r chapnum`.2.3. Siniestros con daños corporales y medidas de riesgo.** Para ver cómo funcionan los intervalos de confianza bootstrap, se retoma los datos sobre siniestros del automóvil con daños corporales considerados en el Ejemplo 6.2.1. En lugar de la ratio de eliminación de pérdida, se desea estimar el percentil al 95% $F^{-1}(0.95)$ y una medida definida como
@@ -283,6 +302,7 @@ $$
 TVaR_{0.95)}[X] = \mathrm{E}[X | X > F^{-1}(0.95)] .
 $$
 Esta medida se llama `r Gloss('tail value-at-risk')`; es el valor esperado de $X$ condicionado a que $X$ exceda el percentil al 95%. En la Sección 10.2 se explica como los cuantiles y el tail value-at-risk son los dos ejemplos más importantes de las llamadas *medidas de riesgo*. Por el momento, se considerarán simplemente como medidas que se quieren estimar. Para el percentil, se usa el estimador no paramétrico $F^{-1}_n(0.95)$ definido en la Sección 4.1.1.3. Para el tail value-at-risk, se usa el principio plug-in para definir el estimador no paramétrico
+
 $$
 TVaR_{n,0.95}[X] = \frac{\sum_{i=1}^n X_i I(X_i > F^{-1}_n(0.95))}{\sum_{i=1}^n I(X_i > F^{-1}_n(0.95))} ~.
 $$
@@ -325,6 +345,7 @@ OutBoot1[i,10] <- temp$percent[5]
 </div>
 
 [Tabla 6.4]:\#tab:64
+
 <a id=tab:64></a>
 
 ##### Tabla 6.4. Estimaciones bootstrap de cuantiles en fracciones seleccionadas {-}
@@ -334,8 +355,9 @@ knitr::kable(OutBoot1,digits=2)
 ```
 
 Por ejemplo, cuando la fracción es 0.50, se observa que los cuantiles al 2.5th por abajo y por arriba de las simulaciones bootstrap son $q_L=$ `r quantile(bootreal,.025, type=6)` y $q_u=$ `r quantile(bootreal,.975, type=6)`, respectivamente. Ello forma el intervalo de confianza percentil bootstrap. Con el estimador no paramétrico `r quantile(BIDataUncensored$AmountPaid,.5)`, se obtienen los límites inferiores y superiores de los intervalos de confianza básicos `r 2*quantile(BIDataUncensored$AmountPaid,.5)-quantile(bootreal,.975, type=6)`
-y `r 2*quantile(BIDataUncensored$AmountPaid,.5)-quantile(bootreal,.025, type=6)`, respectivamente. La [Tabla 6.4] también muestra las estimaciones bootstrap del sesgo, desviación estándar, y el intervalo de confianza normal, conceptos introducidos en la sección anterior. La 
-[Tabla 6.5] muestra cálculos similares para el tail value-at-risk. En cada caso, se observa que la desviación estándar bootstrap aumenta a medida que la fracción aumenta. Ello es un reflejo de que cada vez hay menos observaciones disponibles para estimar los cuantiles a medida que la fracción aumenta, y por lo tanto hay una mayor imprecisión. La amplitud de los intervalos de confianza también aumenta. Resulta interesante ver que no parece haber el mismo patrón en las estimaciones del sesgo.
+y `r 2*quantile(BIDataUncensored$AmountPaid,.5)-quantile(bootreal,.025, type=6)`, respectivamente. La [Tabla 6.4] también muestra las estimaciones bootstrap del sesgo, desviación estándar, y el intervalo de confianza normal, conceptos introducidos en la sección anterior.
+
+La [Tabla 6.5] muestra cálculos similares para el tail value-at-risk. En cada caso, se observa que la desviación estándar bootstrap aumenta a medida que la fracción aumenta. Ello es un reflejo de que cada vez hay menos observaciones disponibles para estimar los cuantiles a medida que la fracción aumenta, y por lo tanto hay una mayor imprecisión. La amplitud de los intervalos de confianza también aumenta. Resulta interesante ver que no parece haber el mismo patrón en las estimaciones del sesgo.
 
 `r HideRCode('bootstrapquantiles.2','Se muestra el código R para crear muestras basadas en el TVar Bootstrap')`
 
@@ -373,6 +395,7 @@ OutBoot1[i,10] <- temp$percent[5]
 </div>
 
 [Tabla 6.5]:\#tab:65
+
 <a id=tab:65></a>
 
 ##### Tabla 6.5. Estimación bootstrap del TVaR en niveles de riesgo seleccionados {-}
@@ -439,6 +462,7 @@ legend("topright",c("nonparametric","parametric(LN)"),
 ***	
 
 **Ejemplo `r chapnum`.2.5. Bootstrap de observaciones censuradas.** El bootstrap paramétrico extrae realizaciones simuladas de una estimación paramétrica de una función de distribución. Del mismo modo, se pueden extraer realizaciones simuladas de la estimación de una función de distribución. A modo de ejemplo, se pueden realizar extracciones de estimaciones suavizadas de una función de distribución según lo introducido en la Sección 4.1.1.4. Otro caso especial, considerado aquí, es extraer una estimación del estimador de Kaplan-Meier introducido en la Sección 4.3.2.2. De esta forma, se pueden manejar observaciones que están censuradas.
+
 Concretamente, se consideran nuevamente los datos sobre daños corporales de los Ejemplos 6.2.1 y 6.2.3 pero ahora se incluyen `r sum(BIData$Censored)` siniestros que están censurados por límites en la póliza. En el Ejemplo 4.3.6, se usó esta base de datos completa para estimar el estimador de Kaplan-Meier de la función de supervivencia introducida en la Sección 4.3.2.2. La [Tabla 6.6] presenta las estimaciones bootstrap de los cuantiles obtenidos de la estimación de la función de supervivencia Kaplan-Meier. Incluye las estimaciones de la precisión bootstrap, sesgo y desviación estándar, así como el intervalo de confianza básico al 95%.
 
 `r HideRCode('KMCode.1','Muestra el código R para las estimaciones Bootstrap Kaplan-Meier')`
@@ -472,6 +496,7 @@ OutBoot1[i,6] <- 2*OutBoot1[i,2]-quantile(results,.025, type=6)
 </div>
 
 [Tabla 6.6]:\#tab:66
+
 <a id=tab:66></a>
 
 ##### Tabla 6.6. Estimaciones Bootstrap Kaplan-Meier de cuantiles en fracciones seleccionadas {-}

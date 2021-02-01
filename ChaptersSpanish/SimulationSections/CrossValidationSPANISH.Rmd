@@ -1,10 +1,14 @@
 <!-- ## Validación cruzada -->
 
 La validación cruzada, brevemente introducida en la Sección 4.2.4, es una técnica basada en simular resultados y por ello es conveniente pensar en su propósito en comparación con otras técnicas de simulación ya introducidas en este capítulo.
+
 - La simulación, o Monte-Carlo, introducida en la Sección \@ref(S:SimulationFundamentals), permite calcular valores esperados o otras medidas de resumen de distribuciones estadísticas, como $p$-valores, fácilmente.
 - El bootstrap, y otros métodos de remuestreo introducidos en la Sección \@ref(S:Bootstrap), proporciona estimadores de la precisión, o variabilidad, de los estadísticos.
 - La validación cruzada es importante para valorar con qué precisión un modelo predictivo funcionará en la práctica.
-Existe superposición, pero sin embargo es útil pensar acerca del objetivo general asociado con cada uno de los métodos. Para presentar la validación cruzada, es conveniente recordar de la Sección 4.2 algunas de las ideas clave de la validación de modelos. Cuando se valora, o valida, un modelo, se mide el funcionamiento o desempeño del modelo en datos *nuevos*, o al menos no aquéllos que hayan sido usados para ajustar el modelo. Un enfoque clásico, descrito en la Sección 4.2.3, es dividir la muestra en dos partes: una parte (la base de datos de *entrenamiento*) se usa para ajustar el modelo y la otra (la base de datos de *prueba*) se usa para validar. Sin embargo, una limitación de este enfoque es que los resultados dependen de la partición; aunque la muestra general sea fija, la partición entre submuestras de entrenamiento y prueba varía aleatoriamente. Una muestra de entrenamiento diferente implica una estimación para los parámetros diferente. Unos parámetros diferentes para el modelo y una muestra de prueba diferente implican unos estadísticos de validación diferentes. Dos analistas pueden usar los mismos datos y los mismos modelos y pueden llegar a conclusiones diferentes sobre la viabilidad de un modelo (basado en diferentes particiones aleatorias), una situación frustrante.
+
+Existe superposición, pero sin embargo es útil pensar acerca del objetivo general asociado con cada uno de los métodos. 
+
+Para presentar la validación cruzada, es conveniente recordar de la Sección 4.2 algunas de las ideas clave de la validación de modelos. Cuando se valora, o valida, un modelo, se mide el funcionamiento o desempeño del modelo en datos *nuevos*, o al menos no aquéllos que hayan sido usados para ajustar el modelo. Un enfoque clásico, descrito en la Sección 4.2.3, es dividir la muestra en dos partes: una parte (la base de datos de *entrenamiento*) se usa para ajustar el modelo y la otra (la base de datos de *prueba*) se usa para validar. Sin embargo, una limitación de este enfoque es que los resultados dependen de la partición; aunque la muestra general sea fija, la partición entre submuestras de entrenamiento y prueba varía aleatoriamente. Una muestra de entrenamiento diferente implica una estimación para los parámetros diferente. Unos parámetros diferentes para el modelo y una muestra de prueba diferente implican unos estadísticos de validación diferentes. Dos analistas pueden usar los mismos datos y los mismos modelos y pueden llegar a conclusiones diferentes sobre la viabilidad de un modelo (basado en diferentes particiones aleatorias), una situación frustrante.
 
 <!-- 
 Las técnicas de validación cruzada se usan para evitar la partición básica entre dos partes. Hay que tener en cuenta que aquí se mencionarán dos técnicas: un enfoque exhaustivo, en el que todas las observaciones serán usadas (una vez, y solo una) como una observación de prueba y uno no exhaustivo, basado en técnicas de bootstrap. Ver [Arlot & Celisse (2010)](https://projecteuclid.org/euclid.ssu/1268143839) a modo de resumen.
@@ -35,6 +39,7 @@ ksResultGamma <- ks.test(claim_data$Claim, "pgamma", shape = alpha, scale = gamm
 
 **Ejemplo `r chapnum`.3.1. Fondo de propiedad de Wisconsin.** Para los datos del fondo de propiedad de 2010 introducido en la Sección 1.3, se ajustan una gamma y una Pareto a los 1,377 datos de siniestros. Para ver en detalle la bondad de ajuste asociada se puede consultar el Apéndice Sección 15.4.4. Ahora se considera el estadístico de Kolmogorov-Smirnov introducido en la Sección 4.1.2.2. Cuando se realiza el ajuste sobre la totalidad de los datos, el estadístico de bondad del ajuste de Kolmogorov-Smirnov para la distribución gamma resulta ser 
 `r round(ksResultPareto$statistic,digits=4)` y para la distribución de Pareto es `r round(ksResultGamma$statistic,digits=4)`. El valor más bajo para la distribución de Pareto indica que esta distribución tiene mejor ajuste que la gamma.
+
 Para ver cómo funciona la `r Gloss('validación cruzada k-fold')`, se divide aleatoriamente los datos en $k=8$ grupos, o folds (en inglés), cada uno con $1377/8 \approx 172$ observaciones. Entonces, se ajustan una gamma y un modelo de Pareto a la base de datos con los primeros siete folds (sobre $172*7 = 1204$ observaciones), se determinan los parámetros estimados, y entonces se usan estos modelos ajustados con los datos restantes para determinar el estadístico de Kolmogorov-Smirnov. 
 
 `r HideRCode('KFoldCV.1','Muestra el código R para la validación cruzada Kolmogorov-Smirnov')`
@@ -78,16 +83,21 @@ legend("left", c("Pareto", "Gamma"), col=c(1,3),lty=1:2, bty="n")
 ### Validación cruzada dejando uno fuera 
 
 El caso especial donde $k=n$ es conocido como `r Gloss('validación cruzada dejando uno fuera')`. Este caso tiene importancia históricamente y está muy relacionado con los `r Gloss('estadísticos jackknife')`, un precursor de la técnica bootstrap. 
+
 A pesar de que se presenta como un caso especial de validación cruzada, es conveniente dar una definición explícita. Se considera un estadístico genérico $\widehat{\theta}=t(\boldsymbol{x})$ que es un estimador del parámetro de interés $\theta$. La idea de jackknife es calcular $n$ valores $\widehat{\theta}_{-i}=t(\boldsymbol{x}_{-i})$, donde $\boldsymbol{x}_{-i}$ es una submuestra de $\boldsymbol{x}$ con el $i$-ésimo valor eliminado. La media de esos valores se denota como
+
 $$
 \overline{\widehat{\theta}}_{(\cdot)}=\frac{1}{n}\sum_{i=1}^n \widehat{\theta}_{-i} .
 $$
 Esos valores pueden usarse para crear estimaciones del sesgo del estadístico $\widehat{\theta}$
+
 \begin{equation}
 Bias_{jack} = (n-1) \left(\overline{\widehat{\theta}}_{(\cdot)} - \widehat{\theta}\right)
 (\#eq:Biasjack)
 \end{equation}
+
 así como de una estimación de la desviación estándar
+
 \begin{equation}
 s_{jack} =\sqrt{\frac{n-1}{n}\sum_{i=1}^n \left(\widehat{\theta}_{-i} -\overline{\widehat{\theta}}_{(\cdot)}\right)^2} ~.
 (\#eq:sdjack)
@@ -181,13 +191,16 @@ knitr::kable(OutJack, digits=5)
 ***
 
 **Discusión.** Una de las cosas más interesantes sobre el caso especial de validación cruzada dejando uno fuera es la habilidad de replicar estimaciones de manera exacta. Es decir, cuando el tamaño del grupo o fold es solo uno, entonces no hay incertidumbre adicional inducida por la validación cruzada. Esto significa que los analistas pueden replicar de manera exacta el trabajo de otro, lo cual es una importante consideración.
+
 Los estadísticos Jackknife fueron desarrollados para entender la precisión de estimadores, produciendo estimadores de sesgo y desviación estándar en las ecuaciones \@ref(eq:Biasjack) y \@ref(eq:sdjack). Esto tiene que ver con algunas metas que se han asociado con las técnicas de bootstrap, no con métodos de validación cruzada. Esto demuestra como las técnicas estadísticas pueden usarse para alcanzar diferentes metas.
 
 ### Validación cruzada y Bootstrap
 
 El bootstrap es útil para proporcionar estimadores de la precisión, o  variabilidad, de los estadísticos. También puede ser útil para la validación de modelos. El enfoque bootstrap para la validación de modelos es similar al enfoque dejando uno fuera y los procedimientos de validación *k* fold:
+
 - Se crea una muestra de bootstrap a través del remuestreo (con reemplazamiento) $n$ índices en $\{1,\cdots,n\}$. Esta será la *muestra de entrenamiento*. Se estima el modelo considerado en base a esta muestra.
 - La muestra de *prueba*, o *muestra de validación*, consiste en esas observaciones no seleccionadas para en entrenamiento. Se evalúa el modelo ajustado (basado en los datos de entrenamiento) usando los datos de prueba.
+
 Este proceso se repite muchas (digamos $B$) veces. Se toma la media de los resultados y se selecciona al modelo basado en el estadístico de evaluación promedio.
 
 **Ejemplo `r chapnum`.3.4. Fondo de propiedad de Wisconsin.**  Se vuelve  a considerar el ejemplo `r chapnum`.3.1 donde se investiga el ajuste de unas distribuciones gamma y Pareto a los datos del fondo de propiedad. Nuevamente se compara el desempeño predictivo usando el estadístico de Kolmogorov-Smirnov pero esta vez usando el procedimiento bootstrap para partir los datos entre muestra de entrenamiento y prueba. A continuación, se muestra el código ilustrativo.

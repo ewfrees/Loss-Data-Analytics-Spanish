@@ -2,14 +2,17 @@
 <!-- ## MCMC -->
 
 La idea de las técnicas de Monte Carlo se basa en la ley de los grandes números (que asegura la convergencia de la media hacia la integral) y el teorema central del límite (que se usa para cuantificar la incertidumbre en los cálculos). Es necesario recordar que si $(X_i)$ es una secuencia i.id. de variables aleatorias con distribución $F$, entonces
+
 $$
 \frac{1}{\sqrt{n}}\left(\sum_{i=1}^n h(X_i)-\int h(x)dF(x)\right)\overset{\mathcal{L}}{\rightarrow }\mathcal{N}(0,\sigma^2),\text{ as }n\rightarrow\infty.
 $$
 para alguna varianza $\sigma^2>0$. Pero de hecho, el `r Gloss('teorema ergódico')` se puede usar para rebajar el resultado anterior, dado que no es neceario tener independencia de las variables. Más concretamente, si $(X_i)$ es un `r Gloss('proceso de Markov')` con `r Gloss('medida invariante')` $\mu$, bajo algunos supuestos técnicos adicionales, se puede obtener que
+
 $$
 \frac{1}{\sqrt{n}}\left(\sum_{i=1}^n h(X_i)-\int h(x)d\mu(x)\right)\overset{\mathcal{L}}{\rightarrow }\mathcal{N}(0,\sigma_\star^2),\text{ as }n\rightarrow\infty.
 $$
 para alguna varianza $\sigma_\star^2>0$.
+
 Por lo tanto, de esta propiedad, se puede ver que es posible no necesariamente generar valores independientes a partir de $F$, sino también generar un proceso de markov con medida invariante $F$, y considerar medias sobre el proceso (no necesariamente independiente).
 Se considera el caso de un vector Gausiano restringido: se desean generar parejas aleatorias de un vector aleatorio $\boldsymbol{X}$, pero sólo interesa el caso en que la suma de los ('composants')` es suficientemente grande, lo que puede expresarse como $\boldsymbol{X}^T\boldsymbol{1}> m$ para algún valor real $m$. Por supuesto, es posible usar el algoritmo *aceptación-rechazo*, pero se ha vito que puede ser bastante ineficiente. Se puede usar el `r Gloss('Hastings Metropolis')` y el `r Gloss('muestreo de Gibbs')` para generar un proceso de Markov con esta medida invariante.
 
@@ -17,13 +20,17 @@ Se considera el caso de un vector Gausiano restringido: se desean generar pareja
 
 El algoritmo es bastante simple de generar a partir de $f$: se comienza con un valor factible $x_1$. Entonces, en el paso $t$, se necesita especificar una transición núcleo: dado $x_t$, se necesita la distribución condicional de $X_{t+1}$ dado $x_t$. El algoritmo funcionará bien si la distribución condicional se puede simular fácilmente. Sea $\pi(\cdot|x_t)$ esta probabilidad.
 Se obtiene un valor potencial $x_{t+1}^\star$, y $u$, de una distribución uniforme. Se calcula 
+
 $$
 R=  \frac{f(x_{t+1}^\star)}{f(x_t)}
 $$
 y 
+
 - si $u < r$, entonces $x_{t+1}=x_t^\star$
 - si $u\leq r$, entonces $x_{t+1}=x_t$
+
 Aquí $r$ se denomina ratio-*aceptación*: se acepta el nuevo valor con probabilidad $r$ (o en realidad el menor entre $1$ y $r$ dado que $r$ puede exceder $1$).
+
 Por ejemplo, se asume que $f(\cdot|x_t)$ es uniforme en $[x_t-\varepsilon,x_t+\varepsilon]$ para algún $\varepsilon>0$, y donde $f$ (la distribución objetivo) es la $\mathcal{N}(0,1)$. Nunca se realizarán *extracciones* de $f$, pero se usará para calcular la ratio de aceptación en cada paso.
 
 `r HideRCode('MCMC.1','Se muestra el código R')`
@@ -93,11 +100,15 @@ acf(simx,lag=100,lwd=2,col="light blue")
 ### Muestreo de Gibbs
 
 Se considera algún vector $\boldsymbol{X}=(X_1,\cdots,X_d)$ con components independientes, $X_i\sim\mathcal{E}(\lambda_i)$. Se realiza un muestro para muestrear de $\boldsymbol{X}$ dado $\boldsymbol{X}^T\boldsymbol{1}>s$ para algún umbral $s>0$.
+
 - se comienza con algún valor inicial $\boldsymbol{x}_0$ tal que 
 - se elige (aleatoriamente) $i\in\{1,\cdots,d\}$
 - $X_i$ dado que $X_i > s-\boldsymbol{x}_{(-i)}^T\boldsymbol{1}$ tiene una distribucion Exponencial $\mathcal{E}(\lambda_i)$
-- se extrae $Y\sim \mathcal{E}(\lambda_i)$ y se establece $x_i=y +(s-\boldsymbol{x}_{(-i)}^T\boldsymbol{1})_+$ hasta que $\boldsymbol{x}_{(-i)}^T\boldsymbol{1}+x_i>s$
+- se extrae $Y\sim \mathcal{E}(\lambda_i)$ y se establece $x_i=y +(s-\boldsymbol{x}_{(-i)}^T\boldsymbol{1})_+$ hasta que 
+$\boldsymbol{x}_{(-i)}^T\boldsymbol{1}+x_i>s$
+
 `r HideRCode('Gibbs.1','Se muestra el Código R')`
+
 ```{r echo=SHOW_PDF}
 sim <- NULL
  lambda <- c(1,2)

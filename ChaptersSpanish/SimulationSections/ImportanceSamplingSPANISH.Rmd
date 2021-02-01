@@ -1,13 +1,15 @@
 <!-- ## Importancia del muestreo -->
 
 En la Sección \@ref(S:SimulationFundamentals) se introducen las técnicas de Monte Carlo usando la técnica de la inversa: generar una variable aleatoria $X$ con distribución $F$, aplicar $F^{-1}$ para llamar a un generador aleatorio (uniforme en el intervalo unitario). ¿Qué pasa si queremos realizar extracciones de acuerdo con $X$, condicionado a $X\in[a,b]$ ?
+
 Se puede usar un `r Gloss('mecanismo de aceptación-rechazo')` : extraer $x$ de la distribución $F$
+
 - si $x\in[a,b]$ : se mantiene ("*aceptación*")
 - si $x\notin[a,b]$ : se extrae otro ("*rechazo*")
+
 Se observa que de $n$ valores inicialmente generados, se mantienen sólo $[F(b)-F(a)]\cdot n$ extracciones, en promedio.
 
-**Ejemplo `r chapnum`.4.1. Extracciones de una distribución Normal.** 
-
+**Ejemplo `r chapnum`.4.1. Extracciones de una distribución Normal.**  
 Supongamos que se realizan extracciones de una distribución normal con media 2.5 y varianza 1, $N(2.5,1)$, pero sólo se tiene interés en extracciones en extracciones mayores que $a \ge 2$ y menores que $b \le 4$. Es decir, se puede usar sólo una proporción de extracciones igual a $F(4)-F(2) = \Phi(4-2.5)-\Phi(2-2.5)$ = `r round(pnorm(4,2.5,1),digits=4)` - `r round(pnorm(2,2.5,1),digits=4)` = `r round(pnorm(4,2.5,1)-pnorm(2,2.5,1),digits=4)`. La Figura \@ref(fig:sampleani1) demuestra que algunas extracciones caen en el intervalo $(2,4)$ y otras están fuera.
 
 `r HideRCode('ImportanceSampling.1','Muestra el código R para el mecanismo de aceptación-rechazo')`
@@ -43,18 +45,22 @@ for (i in 1:numAnimation) {pic_ani()}
 ***
 
 En su lugar, se pueden realizar extracciones de acuerdo con la distribución condicional $F^{\star}$ definida como
+
 $$
 F^{\star}(x) = \Pr(X \le x | a < X \le b) =\frac{F(x)-F(a)}{F(b)-F(a)}, \ \  \ \text{for } a < x \le b .
 $$
 Usando el método de la transformada inversa de la Sección \@ref(S:InverseTransform), se tiene que la extracción
+
 $$
 X^\star=F^{\star-1}\left( U \right) = F^{-1}\left(F(a)+U\cdot[F(b)-F(a)]\right)
 $$
 tiene distribución $F^{\star}$. Expresado de otra forma, se define
+
 $$
 \tilde{U} = (1-U)\cdot F(a)+U\cdot F(b)
 $$
 y entonces se usa $F^{-1}(\tilde{U})$. Con este enfoque, cada extracción cuenta.
+
 Esto puede estar relacionado con la `r Gloss('importancia del mecanismo de muestreo')` : se realizan extracciones más frecuentemente en regiones donde se espera tener cantidades que tienen algún interés. Esta transformación puede ser considerada como "un cambio de medida."
 
 `r HideRCode('ImportanceSampling.2','Muestra el código R para la importancia del muestreo por el método de la transformada inversa')`

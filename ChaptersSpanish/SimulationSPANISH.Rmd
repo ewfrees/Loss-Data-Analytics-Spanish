@@ -5,7 +5,9 @@ chapnum = 6
 # Simulación y remuestreo {#C:Simulation}
 
 *Vista previa del capítulo.* La simulación es un método computacionalmente intenso usado para resolver problemas difíciles. En lugar de crear procesos físicos y experimentar con ellos para entender sus características operacionales, un estudio de simulación se basa en una representación computacional – considera varias condiciones hipotéticas como inputs y resume los resultados. Aunque se trata de una simulación, un gran número de condiciones hipotéticas pueden ser rápidamente examinadas con un bajo coste. La sección \@ref(S:SimulationFundamentals) introduce la simulación, una herramienta computacional maravillosa que es especialmente útil en entornos complejos multivariantes.
+
 También podemos usar la simulación para realizar extracciones de una distribución empírica – proceso que se llama remuestreo. El remuestreo permite valorar la incertidumbre de las estimaciones en modelos complejos. La sección \@ref(S:Bootstrap) introduce el remuestreo en el contexto del bootstrapping para determinar la precisión de los estimadores.
+
 Las secciones siguientes introducen otros temas del remuestreo. La Sección \@ref(S:CrossValidation) sobre la validación cruzada muestra como usarla para la selección y validación de modelos. La sección \@ref(S:ImportanceSampling) sobre la importancia del muestreo describe el remuestreo en áreas específicas de interés, como en aplicaciones actuariales con colas largas. La sección \@ref(S:MCMC) sobre el método de Monte Carlo basado en cadenas de Markov (MCMC, en sus siglas en inglés) introduce la simulación y el motor del remuestreo que apunta en buena medida el análisis Bayesiano moderno.
 
 ## Fundamentos de la simulación {#S:SimulationFundamentals}
@@ -13,6 +15,7 @@ Las secciones siguientes introducen otros temas del remuestreo. La Sección \@re
 ***
 
 En esta sección, se muestra como:
+
 -   Generar realizaciones aproximadamente independientes distribuidas uniformemente
 -   Transformar las realizaciones distribuidas uniformemente en observaciones de la distribución de probabilidad de interés
 -   Calcular cantidades de interés y determinar la precisión de las cantidades calculadas
@@ -27,6 +30,7 @@ En esta sección, se muestra como:
 ***
 
 En esta sección, se muestra como:
+
 -   Generar una distribución no paramétrica bootstrap para un estadístico de interés
 -   Usar la distribución bootstrap para generar estimaciones de la precisión del estadístico de interés, incluyendo sesgo, desviaciones estándar, e intervalos de confianza
 -   Realizar análisis bootstrap para distribuciones paramétricas
@@ -39,6 +43,7 @@ En esta sección, se muestra como:
 ## Validación cruzada {#S:CrossValidation}
 
 En esta sección, se muestra como:
+
 -  Comparar y contrastar la validación cruzada a las técnicas de simulación y los métodos bootstrap.
 -  Usar técnicas de validación cruzada para la selección de modelos
 -  Explicar el método jackknife como caso especial de validación cruzada y calcular las estimaciones jackknife del sesgo y de los errores estándar
