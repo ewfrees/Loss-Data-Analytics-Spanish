@@ -1,6 +1,6 @@
 `r chapnum = 4`
 
-# Selección del modelo y estimación {#C:ModelSelection}
+# Selección del Modelo y Estimación {#C:ModelSelection}
 
 *Vista Previa del Capítulo*. En los Capítulos \@ref(C:Frequency-Modeling) y \@ref(C:Severity) se han descrito cómo ajustar los modelos paramétricos a datos que miden, respectivamente, la frecuencia y la severidad de los eventos analizados. Este capítulo se centra en la selección de los modelos. Inicialmente, para comparar modelos paramétricos alternativos, es útil describir los datos sin referencia a una distribución paramétrica específica. La Sección \@ref(S:MS:NonParInf) describe en que consiste la estimación no paramétrica, cómo podemos usarla para comparar modelos paramétricos alternativos y cómo, a partir de la misma, pueden obtenerse valores iniciales que permitan implementar procedimientos paramétricos. El proceso de selección del modelo se resume en la Sección \@ref(S:MS:ModelSelection). Aunque la descripción se centra en el análisis de datos continuos, el mismo procedimiento puede usarse para datos discretos o datos que provienen de una combinación híbrida de datos discretos y continuos.
 

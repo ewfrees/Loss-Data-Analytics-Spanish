@@ -1,6 +1,6 @@
 `r chapnum = 5`
 
-# Modelos de pérdidas agregadas {#C:AggLossModels}
+# Modelos de Pérdidas Agregadas {#C:AggLossModels}
 
 
 *Vista previa del capítulo*. Este capítulo presenta modelos de probabilidad para describir la siniestralidad agregada (siniestros totales) de una cartera de pólizas de seguro. Se presentan dos enfoques de modelización tradicionales, el modelo de riesgo individual y el modelo de riesgo colectivo. Además, se analizan estrategias para calcular la distribución de la siniestralidad agregada, entre los que se incluyen métodos exactos en casos específicos, recursión y simulación. Finalmente, se examinan los efectos de las modificaciones individuales en las pólizas, tales como deducibles, coaseguros e inflación, sobre las distribuciones de frecuencia y severidad y, por lo tanto, sobre la distribución de pérdidas agregadas.
@@ -32,7 +32,7 @@ Aquí, uno piensa en un número aleatorio de siniestros $N$ que puede representa
 
 
 
-## Modelo de riesgo individual
+## Modelo de Riesgo Individual
 
 Como se menciona previamente, en el *modelo de riesgo individual*, $X_i$ se considera la pérdida del $i$-ésimo contrato y se interpreta
 
@@ -363,7 +363,7 @@ $$\begin{aligned}
 </div>
 
 *** 
-## Modelo de riesgo colectivo
+## Modelo de Riesgo Colectivo
 
 ### Momentos y distribución
 
@@ -954,7 +954,7 @@ $${\rm E} (S_N)=\mu~~~~{\rm y}~~~~{\rm Var} (S_N)=\phi\mu^{p}.$$
 Lo anterior permite utilizar la distribución Tweedie para modelizar los siniestros en los modelos lineales generalizados. Cabe mencionar los dos casos límite del modelo Tweedie: $p\rightarrow 1$ conduce a la distribución Poisson y $p\rightarrow 2$ conduce a la distribución gamma. De este modo, el modelo Tweedie se sitúa entre las distribuciones gamma y Poisson, lo que intuitivamente tiene sentido ya que es la suma de Poisson de variables aleatorias gamma. 
 
 
-## Cálculo de la distribución de pérdidas agregadas
+## Cálculo de la Distribución de Pérdidas Agregadas
 
 El cálculo de la distribución de pérdidas agregadas es un problema difícil e importante. Como se ha visto, tanto para el modelo de riesgo individual como para el modelo de riesgo colectivo, el cálculo de la distribución frecuentemente implica la evaluación de una convolución de orden $n$. Para hacer manejable el problema, una posible estrategia es considerar una distribución que sea fácil de evaluar para aproximar la distribución de pérdidas agregadas. Por ejemplo, la distribución normal es una elección natural basada en el teorema central del límite, en el que los parámetros de la distribución normal pueden estimarse calculando los momentos. Este enfoque tiene ventajas y limitaciones. La principal ventaja es la facilidad de cálculo. La desventaja es: primero, el tamaño y la dirección del error de aproximación son desconocidos; segundo, la aproximación puede fallar en capturar algunas características especiales de la pérdida agregada tales como la masa en el punto cero.
 
@@ -1094,7 +1094,7 @@ Las pérdidas simuladas son ligeramente más asimétricas a la derecha que la di
 
 *** 
 
-## Efectos de la modificación de las coberturas
+## Efectos de la Modificación de las Coberturas
 
 ### Impacto de la exposición en la frecuencia
 
@@ -1523,7 +1523,7 @@ $$\mathrm{E}(S) = \mathrm{E} (X^P)~ \mathrm{E} (N^P)= 200(9,7) = 1.941$$
 
 ***  
 
-## Otros recursos y colaboradores {#AL-further-reading-and-resources}
+## Otros Recursos y Colaboradores {#AL-further-reading-and-resources}
 
 
 #### Ejercicios 

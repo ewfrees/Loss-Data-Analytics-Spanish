@@ -2,7 +2,7 @@
 ```{r include = FALSE}
 chapnum = 6
 ```
-# Simulación y remuestreo {#C:Simulation}
+# Simulación y Remuestreo {#C:Simulation}
 
 *Vista previa del capítulo.* La simulación es un método computacionalmente intenso usado para resolver problemas difíciles. En lugar de crear procesos físicos y experimentar con ellos para entender sus características operacionales, un estudio de simulación se basa en una representación computacional – considera varias condiciones hipotéticas como inputs y resume los resultados. Aunque se trata de una simulación, un gran número de condiciones hipotéticas pueden ser rápidamente examinadas con un bajo coste. La sección \@ref(S:SimulationFundamentals) introduce la simulación, una herramienta computacional maravillosa que es especialmente útil en entornos complejos multivariantes.
 
@@ -10,7 +10,7 @@ También podemos usar la simulación para realizar extracciones de una distribuc
 
 Las secciones siguientes introducen otros temas del remuestreo. La Sección \@ref(S:CrossValidation) sobre la validación cruzada muestra como usarla para la selección y validación de modelos. La sección \@ref(S:ImportanceSampling) sobre la importancia del muestreo describe el remuestreo en áreas específicas de interés, como en aplicaciones actuariales con colas largas. La sección \@ref(S:MCMC) sobre el método de Monte Carlo basado en cadenas de Markov (MCMC, en sus siglas en inglés) introduce la simulación y el motor del remuestreo que apunta en buena medida el análisis Bayesiano moderno.
 
-## Fundamentos de la simulación {#S:SimulationFundamentals}
+## Fundamentos de la Simulación {#S:SimulationFundamentals}
 
 ***
 
@@ -25,7 +25,7 @@ En esta sección, se muestra como:
 ```{r eval =  TRUE, child = './ChaptersSpanish/SimulationSections/SimulationFundamentalsSPANISH.Rmd'}
 ```
 
-## Bootstrapping y remuestreo {#S:Bootstrap}
+## Bootstrapping y Remuestreo {#S:Bootstrap}
 
 ***
 
@@ -40,7 +40,7 @@ En esta sección, se muestra como:
 ```{r eval = TRUE, child = 'ChaptersSpanish/SimulationSections/BootstrapSPANISH.Rmd'}
 ```
 
-## Validación cruzada {#S:CrossValidation}
+## Validación Cruzada {#S:CrossValidation}
 
 En esta sección, se muestra como:
 
@@ -69,7 +69,7 @@ En esta sección, se muestra como:
 ```{r eval = TRUE, child = './ChaptersSpanish/SimulationSections/MCMCSPANISH.Rmd'}
 ```
 
-## Recursos adicionales y colaboradores {#Simulation:further-reading-and-resources}
+## Recursos Adicionales y Colaboradores {#Simulation:further-reading-and-resources}
 
 -  Include historical references for jackknife (Quenouille, Tukey, Efron)
 -  Aquí se muestran algunos links para aprender más sobre [reproducibilidad y aleatoriedad](https://freakonometrics.hypotheses.org/6470) y cómo ir

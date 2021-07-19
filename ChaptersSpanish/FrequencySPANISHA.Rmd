@@ -1,14 +1,14 @@
 
 `r chapnum = 2`
 
-# Modelización de la frecuencia {#C:Frequency-Modeling}
+# Modelización de la Frecuencia {#C:Frequency-Modeling}
 
 *Resumen del capítulo.* Uno de los objetivos primordiales de las aseguradoras es estimar la magnitud de las pérdidas agregadas que debe soportar en virtud de sus contratos de seguro. `r Gloss('Las pérdidas agregadas')` se ven afectadas tanto por la frecuencia de los eventos asegurados como por la cuantía del evento asegurado. Descomponer las pérdidas agregadas en estos dos componentes, cada uno de los cuales requiere una gran atención, es fundamental para el análisis y tarificación. En este capítulo se examinan las distribuciones de frecuencia, las medidas resumen y las técnicas de estimación de los parámetros. 
 
 En la Sección \@ref(S:frequency-distributions), presentamos la terminología y discutimos las razones por las que estudiamos la frecuencia y la cuantía por separado. Los fundamentos de las distribuciones y medidas de frecuencia se presentan en la Sección \@ref(S:basic-frequency-distributions) junto con tres de las principales distribuciones: binomial, Poisson, y binomial negativa. Estas tres distribuciones son miembros de lo que se conoce como la clase de distribuciones (a,b,0), una característica distintiva e identificadora que permite un cálculo eficiente de las probabilidades, que se discute con más detalle en la Sección \@ref(S:the-a-b-0-class). Cuando se ajusta una distribución a un conjunto de datos, es necesario estimar los valores de los parámetros y en la Sección \@ref(S:estimating-frequency-distributions), se explica el procedimiento para la estimación por máxima verosimilitud. En el caso de los datos de seguros, la observación de 0, que indica la ocurrencia de cero de un evento concreto, es frecuente y puede merecer una atención adicional. Según el tipo de datos, y explicado con más detalle en la Sección \@ref(S:other-frequency-distributions), puede ser imposible tener un cero del suceso estudiado, o la probabilidad de cero puede ser de tal magnitud que el ajuste directo llevaría a estimaciones inadecuadas. Las técnicas de truncamiento o modificación del cero permiten un mejor ajuste de la distribución. Cabe señalar que nuestra cartera de seguros podría estar compuesta por diferentes subgrupos, cada uno con su propio conjunto de características individuales, la Sección \@ref(S:mixture-distributions) introduce las distribuciones mixtas y la metodología para permitir esta heterogeneidad dentro de una cartera. La Sección \@ref(S:goodness-of-fit) describe la bondad de ajuste que mide la razonabilidad de las estimaciones de los parámetros. Los ejercicios se presentan en la Sección \@ref(S:exercises) and la Sección \@ref(S:rcode) concluye el capítulo con el código `R` para los gráficos mostrados en la Sección \@ref(S:estimating-frequency-distributions).
 
 
-## Distribuciones de frecuencias {#S:frequency-distributions}
+## Distribuciones de Frecuencias {#S:frequency-distributions}
 
 ***
 En esta sección se aprende a analizar la importancia de la modelización de las frecuencias en términos 
@@ -55,7 +55,7 @@ Las aseguradoras y otros interesados, incluidas las organizaciones gubernamental
 * **Regulación y Administración.**  El seguro es una industria altamente regulada y supervisada, dada su importancia en la provisión de seguridad financiera a los individuos y empresas que se enfrentan a los riesgos. Como parte de sus obligaciones los reguladores exigen habitualmente que se informe sobre el número de reclamaciones y las cantidades. Esto puede deberse a que puede haber definiciones alternativas de "cuantía", por ejemplo, lo pagado frente a lo incurrido, y hay menos posibilidades de error al informar del número de reclamaciones. Esta vigilancia continua ayuda a garantizar la estabilidad financiera de estas compañías de seguros.
 
 
-## Distribuciones de frecuencias elementales {#S:basic-frequency-distributions}
+## Distribuciones de Frecuencias Elementales {#S:basic-frequency-distributions}
 
 ***
 
@@ -331,7 +331,7 @@ con el lado derecho de la ecuación anterior siendo la *mgf* de la distribución
 
 [^4]: Para la base teórica que subyace de la expresión anterior, ver [@billingsley]. 
 
-## La clase (a, b, 0) {#S:the-a-b-0-class}
+## La Clase (a, b, 0) {#S:the-a-b-0-class}
 
 ***
 En esta sección, se aprende a:
@@ -414,7 +414,7 @@ Por último, dado que la media de la binomial negativa es $r\beta$, tenemos que 
 
 *** 
 
-## Estimación de las distribuciones de frecuencias {#S:estimating-frequency-distributions}
+## Estimación de las Distribuciones de Frecuencias {#S:estimating-frequency-distributions}
 
 ***
 
@@ -1158,7 +1158,7 @@ Aquí se encuentra un conjunto de ejercicios que guían al lector a través de a
 </p>
 
 
-## Recursos adicionales y autores {#Freq-further-reading-and-resources}
+## Recursos Adicionales y Autores {#Freq-further-reading-and-resources}
 El Capítulo del Apéndice \@ref(C:AppA) ofrece una introducción general a la teoría de máxima verosimilitud en relación con la estimación de los parámetros de una familia paramétrica. El Capítulo del Apéndice \@ref(C:AppC) proporciona ejemplos más específicos y expande algunos de los conceptos.
 
 #### Autoría {-}

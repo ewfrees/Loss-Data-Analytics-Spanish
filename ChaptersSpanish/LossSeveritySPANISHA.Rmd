@@ -1,16 +1,17 @@
 
 `r chapnum = 3`
 
-# Modelización de la severidad de las pérdidas {#C:Severity}
+# Modelización de la Severidad de las Pérdidas {#C:Severity}
 
 
 *Vista previa del capítulo.* El enfoque tradicional para la modelización de la distribución de las `r Gloss('pérdidas agregadas')` comienza ajustando por separado una distribución para la frecuencia al número de pérdidas y una distribución para la severidad al tamaño de las pérdidas. La distribución de pérdidas agregades estimada combina la distribución para la frecuencia y la distribución para la severidad de las pérdidas por convolución. En el Capítulo \@ref(C:Frequency-Modeling) han sido utilizadas distribuciones discretas, frecuentemente referenciades como distribuciones para el recuento o distribuciones para la frecuencia, para describir el número de eventos, como por ejemplo el número de accidentes del conductor o número de siniestros del asegurado. Tiempos de vida, valores de activos, pérdidas y tamaños de siniestros son frecuentemente modelizados como variables aleatorias continuas y como tales son modelizadas usando distribuciones continuas, frecuentemente referenciades como distribuciones de perdidas o de severidad. Una `r Gloss('distribución mixta')` es una combinación ponderada de distribuciones más simples que es usada para modelitzar un fenómeno investigado en una población heterogénea, como modelitzar más de un tipo de siniestro en el `r Gloss('seguro de responsabilidad civil')` (siniestros pequeños pero frecuentes y siniestros grandes pero relativamente raros). En este capítulo se explora el uso de distribuciones continuas y mixtas para modelitzar el tamaño aleatorio de las pérdidas. Se presentan atributos clave que caracterizan modelos continuos y que además son un medio para crear nuevas distribuciones a partir de otras existentes. También se explora el efecto de modificaciones de cobertura, que cambian las condiciones que desencadenan el pago, como por ejemplo la aplicación de franquicias, límites, o ajustes por inflación, a la distribución de las cantidades de pérdidas individuales. Las distribuciones de frecuencias del Capítulo \@ref(C:Frequency-Modeling) seran combinadas con las ideas de este capítulo para describir las pérdidas agregadas del conjunto de la cartera en el Capítulo \@ref(C:AggLossModels).
 
 
 
-## Cantidades distribucionales básicas {#S:BasicQuantities}
+## Cantidades Distribucionales Básicas {#S:BasicQuantities}
 
 ***
+
 En esta sección, se muestra la definición de algunas cantidades distribucionales básicas:
 
 -   momentos,
@@ -171,7 +172,7 @@ $$
 Tal y como se introdujo en la Sección \@ref(S:generating-functions), la función generatriz de probabilidad es más útil para *v.a.*s discretas. 
 
 
-## Distribuciones continuas para modelizar la severidad de las pérdidas {#S:ContinuousDistn}
+## Distribuciones Continuas para Modelizar la Severidad de las Pérdidas {#S:ContinuousDistn}
 
 ***
 En esta sección, se presentará la definición y aplicación de cuatro distribuciones fundamentales para la severidad:
@@ -500,7 +501,7 @@ $$
 
 Anteriormente la *GB2* también había sido aplicada a datos de ingresos y más recientemente ha sido utilitzada para modelitzar datos de siniestros de cola larga (en la Sección \@ref(S:Tails) se describen diferentes interpretaciones del concepto "cola larga"). *GB2* fue usada para modelizar diferentes tipos de siniestros en el seguro del automóvil, severidad de las pérdidas causades por el fuego así como datos de sinietros en seguros médicos.
 
-## Métodos para crear distribuciones nuevas {#MethodsCreation}
+## Métodos para Crear Distribuciones Nuevas {#MethodsCreation}
 
 ***
 En esta sección se mostrara como:
@@ -844,7 +845,7 @@ $$
 
 ***
 
-## Modificaciones de cobertura {#S:CoverageModifications}
+## Modificaciones de Cobertura {#S:CoverageModifications}
 
 En esta sección se evalúa el impacto de las modificaciones de cobertura: a) franquicias, b) límites en la póliza, c) coseguro e inflación en los costes del asegurador.
 
@@ -1163,6 +1164,7 @@ Dado que $\frac{E\left( Y_{2007}^{P} \right)}{E\left( Y_{2006}^{P} \right)} -1 =
 </div>
 
 *** 
+
 ### Reaseguro {#S:Chap3Reinsurance}
 
 En la Sección \@ref(S:PolicyDeduct) se introdujo la franquicia en la póliza, que es un acuerdo contractual bajo el cual un asegurado transfiere parte del riesgo al asegurador que garantiza su cobertura a cambio del pago de una prima. En base a esta póliza, el asegurado ha de pagar todos los costes hasta el valor de la franquicia, y el asegurador solo paga la cantidad por encima de la franquicia (si la supera). Ahora se introduce el concepto`r Gloss('reaseguro')`, un mecanismo de seguro para las compañías aseguradoras. El reaseguro es un acuerdo contractual bajo el cual un asegurador transfiere la cobertura de parte de los riesgos subyacentes asegurados a otro asegurador (al que nos referimos como el reasegurador) a cambio de una prima de reaseguro. Aunque el reaseguro implica una relación entre tres partes: el asegurado original, el asegurador (a veces denominado `r Gloss('cedente')`) y el reasegurador, el acuerdo de reaseguro solo implica al asegurador primario y al reasegurador. No existe relación contractual entre el asegurado original y el reasegurador. Aunque existen diferentes tipos de contratos de reaseguro, una forma común es la `r Gloss('cobertura de exceso de pérdida')`. En estos contratos, el asegurador primario ha de hacer todos los pagos requeridos al asegurado hasta que el total de pagos del asegurador primario alcanza el valor de la franquicia fijada en el reaseguro. El reasegurador es entonces solo responsable del pago de cuantías por encima de la franquícia de reaseguro. La cantidad máxima retenida por el asegurador primario en el acuerdo de reaseguro (la franquícia de reaseguro) se denomina `r Gloss('retención')`.  
@@ -1236,7 +1238,7 @@ En la Sección \@ref(S:Chap3Reinsurance) se proporcionaran más detalles sobre e
 
 
 
-## Estimación por máxima verosimilitud {#S:MaxLikeEstimation}
+## Estimación por Máxima Verosimilitud {#S:MaxLikeEstimation}
 
 
 ***
@@ -1860,13 +1862,14 @@ La media de la Pareto solo existe para $\alpha > 1$. Dado que $\hat{\alpha} = 0,
 
 *** 
 
-## Recursos y contribuciones adicionales {#LM-further-reading-and-resources}
-####Colaboradores {-}
+## Recursos y Contribuciones Adicionales {#LM-further-reading-and-resources}
 
-- **Zeinab Amin**, The American University in Cairo, es el principal autor de este capítulo. Email: zeinabha@aucegypt.edu para comentarios sobre el capítulo y sugerencias de mejora.
+#### Colaboradores {-}
+
+-  **Zeinab Amin**, The American University in Cairo, es el principal autor de este capítulo. Email: zeinabha@aucegypt.edu para comentarios sobre el capítulo y sugerencias de mejora.
 -  Numerosos comentarios de gran utilidad han sido proporcionados por Hirokazu (Iwahiro) Iwasawa,  <iwahiro@bb.mbn.or.jp> .
 -  Otros revisores del capítulo son: Rob Erhardt, Jorge Yslas, Tatjana Miljkovic, y Samuel Kolins.
-- Traducción al español: Ana Maria Pérez-Marín (Universitat de Barcelona)
+-  Traducción al español: Ana Maria Pérez-Marín (Universitat de Barcelona)
 
 #### Ejercicios {-}
 

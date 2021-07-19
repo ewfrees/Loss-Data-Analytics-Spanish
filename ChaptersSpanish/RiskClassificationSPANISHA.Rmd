@@ -1,6 +1,6 @@
-﻿`r chapnum = 8`
+`r chapnum = 8`
 
-# Clasificación de riesgos {#C:RiskClass}
+# Clasificación de Riesgos {#C:RiskClass}
 
 *Resumen del capítulo.* Este capítulo motiva el uso de la clasificación de riesgos en la fijación de precios de seguros y presenta a los lectores la regresión de Poisson como un ejemplo destacado de clasificación de riesgos. En la Sección \@ref(S:RC:Introducción) explicamos por qué las aseguradoras necesitan incorporar diversas características de riesgo, o factores de tarificación, de los asegurados individuales en los precios de los contratos de seguro. Luego presentamos la Sección \@ref(S:RC:PoissonRegression) donde mostramos la regresión de Poisson como una herramienta de fijación de precios para lograr diferencias en las primas. El concepto de exposición también se introduce en esta sección. Como la mayoría de los factores de tarificación son categóricos, en la Sección \@ref(S:CatVarMultiTarriff) mostramos cómo se puede incorporar el modelo de tarifa multiplicativa en el modelo de regresión de Poisson en la práctica, junto con ejemplos numéricos para ilustrarlo.
 
@@ -701,7 +701,7 @@ detach(mydat)
 
 Como observación final, comentar que la regresión de Poisson no es el único modelo de regresión posible para datos de conteo. En realidad, la distribución de Poisson puede ser restrictiva en el sentido de que tiene un único parámetro y su media y la varianza son siempre iguales. Existen otros modelos de regresión para conteos que permiten una estructura de distribución más flexible, como las regresiones binomiales negativas y las regresiones infladas en cero (ZI); Los detalles de estas regresiones alternativas se pueden encontrar en otros textos enumerados en la siguiente sección.
 
-## Más recursos y colaboradores {#RC:further-reading-and-resources }
+## Más Recursos y Colaboradores {#RC:further-reading-and-resources }
 
 
 #### Más Información y Referencias {-}
