@@ -1,6 +1,6 @@
 
 
-# Tarificación Basada en la Experiencia Mediante Teoría de la Credibilidad {#C:Credibilidad}
+# Tarificación Basada en la Experiencia Mediante Teoría de la Credibilidad {#C:Credibility}
 
 `r chapnum = 9`
 

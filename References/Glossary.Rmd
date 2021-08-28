@@ -36,7 +36,7 @@ Gloss <- function(term, section){
 ```
 
 ```{r echo = FALSE}
-QUIZ = TRUE
+QUIZ = FALSE #TRUE
 ANIMATION = TRUE
 SHOW_PDF = TRUE
 ANIMATIONHOOK <- 'gifski'

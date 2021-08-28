@@ -732,7 +732,7 @@ $$
 Tercero y tal vez de forma más relevante, el *TVaR* es una medida de riesgo coherente y de este modo es capaz de capturar de modo más acertado los efectos de la diversificación de la cartera de seguros.  En este caso, no se formula el objetivo de proporcionar la demostración de la característica coherente para el *TVaR*, que se considera técnicamente cambiante.
 
 
-## Reaseguro {#S:Reaseguro}
+## Reaseguro {#S:Reinsurance}
 
 
 ***
